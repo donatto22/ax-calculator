@@ -139,7 +139,7 @@ Area.circle(5) // 25π
 - Hypotenuse, to romanized, log, factorial, double factorial, combinatorial, fibonacci, divisors
 ```js
 Operations.hypotenuse(7, 9) // -> √11.40
-Operations.toRomanized(420); // CDXX
+Operations.toRoman(420); // CDXX
 
 // log5x = 4
 Operations.log(5, null, 4) // 625

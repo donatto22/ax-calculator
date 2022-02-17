@@ -1,34 +1,23 @@
-export class basicOperations {
+const basicOperations = {
     /**
-    Returns the sum of the numbers
-    @param {number} parameters You can add as many numbers as you wish
+        Returns the sum of the numbers
+        @param {number} parameters You can add as many numbers as you wish
     **/
-    static sum(...parameters) {      
-        for(var i = 0; i <= parameters.length - 1; i++) {
-            if(typeof parameters[i] != 'number') {
-                return "Only numbers"
-            }
+   sum: function (...parameters) {
+        for (let i = 0; i <= parameters.length - 1; i++) {
+            if (typeof parameters[i] != 'number') return "Only numbers"
 
             else {
-                var result = parameters.reduce((previous, current) => {
-                    return  previous + current
-                });
-        
-                return {
-                    result,
-                    toNegative() {
-                        return result * -1;
-                    }
-                }
+                let result = parameters.reduce((previous, current) => { return  previous + current })
+                return { result, toNegative() { return result * -1; } }
             }
         }
-    }
-
+   },
     /**
-    Returns the substract of the numbers
-    @param {number} parameters You can add as many numbers as you wish
+        Returns the substract of the numbers
+        @param {number} parameters You can add as many numbers as you wish
     **/
-    static substract(...parameters) {
+    substract: function(...parameters) {
         for(var i = 0; i <= parameters.length - 1; i++) {
             if(typeof parameters[i] != 'number') {
                 return "Only numbers"
@@ -47,14 +36,14 @@ export class basicOperations {
                 }
             }
         }
-    }
+    },
 
     /**
-    Returns the product of the numbers
-    @param {number} parameters You can add as many numbers as you wish
+        Returns the product of the numbers
+        @param {number} parameters You can add as many numbers as you wish
     **/
-    static product(...parameters) {
-        for(var i = 0; i <= parameters.length - 1; i++) {
+    product: function(...parameters) {
+        for(let i = 0; i <= parameters.length - 1; i++) {
             if(typeof parameters[i] != 'number') {
                 return "Only numbers"
             }
@@ -73,12 +62,12 @@ export class basicOperations {
             }
         }
         
-    }
+    },
 
     /**
-    Returns the division by 2 numbers
+        Returns the division by 2 numbers
     **/
-    static division(param1, param2) {
+    division: function(param1, param2) {
         if(typeof param1 != 'number' || typeof param2 != 'number') {
             return "Only numbers"
         }
@@ -86,12 +75,12 @@ export class basicOperations {
         else {
             return (param1 / param2)
         }
-    }
+    },
 
     /**
     Returns the remainder of a division by 2 numbers
     **/
-    static module(param1, param2) {
+    module: function(param1, param2) {
         if(typeof param1 != 'number' || typeof param2 != 'number') {
             return "Only numbers"
         }
@@ -99,9 +88,9 @@ export class basicOperations {
         else {
             return (param1 % param2)
         }
-    }
+    },
 
-    static raiseTo(number, exponent) {
+    raiseTo: function(number, exponent) {
         if(typeof number === 'string' || typeof exponent === 'string') {
             return "You must enter a number"
         }
@@ -119,18 +108,18 @@ export class basicOperations {
                 return (number ** exponent).toString();
             }
         }
-    }
+    },
 
     /**
-    ʳᵒᵒᵗ√number
+        ʳᵒᵒᵗ√number
 
-    If you do not enter a root, you will get the square root by default.
+        If you do not enter a root, you will get the square root by default.
 
-    @param {number} number The number whose root you need
-    @param {number} root The root you wish to obtain
+        @param {number} number The number whose root you need
+        @param {number} root The root you wish to obtain
     **/
 
-    static root(number, root = 2) {
+    root: function(number, root = 2) {
         if(typeof number === 'string' || typeof root === 'string') {
             return "You must enter a number"
         }
@@ -140,3 +129,5 @@ export class basicOperations {
         }
     }
 }
+
+export default basicOperations

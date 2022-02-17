@@ -1,25 +1,25 @@
-export class area {
-    static triangle(base, height) {
+const Area = {
+    triangle: function(base, height) {
         return (base * height) / 2
-    }
+    },
 
-    static rectangle(width, height) {
+    rectangle: function(width, height) {
         return width * height
-    }
+    },
 
-    static circle(radio) {
+    circle: function(radio) {
         return (radio * radio) + "π"
-    }
+    },
 
     /**
         @param side The measure of one side of the square
     **/
 
-    static square(side) {
+    square: function(side) {
         return String(side * side)
-    }
+    },
 
-    static square2(diagonal) {
+    square2: function(diagonal) {
         var top = diagonal ** diagonal;
 
         if(Number.isInteger(top/2)) {
@@ -29,9 +29,11 @@ export class area {
         else {
             return String(top + "/2")
         }
-    }
+    },
 
-    static trapeze(bottom, top, height) {
+    trapeze: function(bottom, top, height) {
         return ((bottom + top) / 2) * height
     }
 }
+
+export default Area

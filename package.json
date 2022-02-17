@@ -1,10 +1,10 @@
 {
   "name": "ax-calculator",
-  "version": "1.1.11",
+  "version": "2.0",
   "description": "Complex Math Calculator",
-  "main": "main.js",
+  "main": "./dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "babel src --out-dir dist"
   },
   "keywords": [
     "calculator",
@@ -22,8 +22,13 @@
     "chemistry",
     "elements"
   ],
-  "type": "module",
   "author": "Donatto Minaya",
+  "contributors": [
+    {
+      "name": "Renato Monroy",
+      "url": "https://github.com/rdev32"
+    }
+  ],
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
@@ -32,5 +37,10 @@
   "bugs": {
     "url": "https://github.com/donatto-minaya/npm-ax-calculator/issues"
   },
-  "homepage": "https://github.com/donatto-minaya/npm-ax-calculator#readme"
+  "homepage": "https://github.com/donatto-minaya/npm-ax-calculator#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.17.3",
+    "@babel/core": "^7.17.4",
+    "@babel/preset-env": "^7.16.11"
+  }
 }

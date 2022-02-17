@@ -1,12 +1,8 @@
-import { elements } from "./elements.js";
+import elements from './elements'
 
-export class chemical_elements {
-
-    /**
-    @return {object}
-    **/
-    static show(param) {
-        for(var i = 0; i < elements.length; i++) {
+const chemicalElements = {
+    show: function(param) {
+        for (let i = 0; i < elements.length; i++) {
             if(typeof param === "string") {
                 if(elements[i].simbol == param) {
                     return elements[i]
@@ -31,15 +27,11 @@ export class chemical_elements {
                 return elements
             }
         }
-    }
-
-    /**
-    @return {object}
-    **/
-    static obtainByFamily(type) {
-        var result = [];
+    },
+    obtainByFamily: function(type) {
+        let result = [];
         
-        if(typeof type == "string") {
+        if (typeof type == "string") {
             for(var i = 0; i < elements.length; i++) {
                 if(elements[i].type == type) {
                     result.push(elements[i]);
@@ -52,15 +44,11 @@ export class chemical_elements {
         }
 
         return result;
-    }
+    },
+    obtainByGroup: function(group) {
+        let result = [];
 
-    /**
-    @return {object}
-    **/
-    static obtainByGroup(group) {
-        var result = [];
-
-        if(typeof group == "string") {
+        if (typeof group == "string") {
             for(var i = 0; i < elements.length; i++) {
                 if(elements[i].group == group) {
                     result.push(elements[i]);
@@ -75,3 +63,5 @@ export class chemical_elements {
         return result;
     }
 }
+
+export default chemicalElements

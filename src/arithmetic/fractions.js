@@ -1,5 +1,5 @@
-export class fractions {
-    static sum(numerator1, denominator1, numerator2, denominator2) {
+const Fractions = {
+    sum: function(numerator1, denominator1, numerator2, denominator2) {
         var result;
 
         var bober = false;        
@@ -33,9 +33,9 @@ export class fractions {
         }
 
         return result;
-    }
+    },
 
-    static substract(numerator1, denominator1, numerator2, denominator2) {
+    substract: function(numerator1, denominator1, numerator2, denominator2) {
         var result;
 
         if(denominator1 == denominator2) {
@@ -61,34 +61,34 @@ export class fractions {
         }
 
         return result;
-    }
+    },
 
-    static product(numerator1, denominator1, numerator2, denominator2) {
+    product: function(numerator1, denominator1, numerator2, denominator2) {
         var top = numerator1 * numerator2;
         var bottom = denominator1 * denominator2;
 
         return simplify(top, bottom);
-    }
+    },
 
-    static division(numerator1, denominator1, numerator2, denominator2) {
+    division: function(numerator1, denominator1, numerator2, denominator2) {
         var top = numerator1 * denominator2;
         var bottom = denominator1 * numerator2;
 
         return simplify(top, bottom);
-    }
+    },
 
-    static simplify(top, bottom) {
+    simplify: function(top, bottom) {
         return simplify(top, bottom);
-    }
+    },
 
-    static destructure(fraction) {
+    destructure: function(fraction) {
         return destructure(fraction);
     }
 }
 
 /**
-@param {number} top - Numerator
-@param {number} bottom - Denominator
+    @param {number} top - Numerator
+    @param {number} bottom - Denominator
 **/
 
 function simplify(top, bottom) {
@@ -137,3 +137,5 @@ function destructure(string) {
         top, bottom
     }
 }
+
+export default Fractions

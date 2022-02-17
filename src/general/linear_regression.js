@@ -1,5 +1,5 @@
-export class linear_regression {
-    static simple(array_x, array_y) {
+const linealRegression = {
+    simple: function(array_x, array_y) {
         // Verificar que ambos sean arreglos
         if((typeof array_x == 'object') && (typeof array_y == 'object')) {
             //Si son arreglos, ver que tengan la misma cantidad de datos
@@ -85,3 +85,5 @@ export class linear_regression {
 }
 
 const sum = (accumulator, curr) => accumulator + curr;
+
+export default linealRegression

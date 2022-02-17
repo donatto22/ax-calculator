@@ -1,4 +1,4 @@
-export var elements = [
+const periodicTable = [
   addElement("H", 1, 1, "Hydrogen", "I A", "Non-metal", 2.2),
   addElement("He", 2, 4, "Helium", "VIII A", "Noble gas", null),
   addElement("Li", 3, 7, "Lithium", "I A", "Alkali metal", 1),
@@ -120,16 +120,17 @@ export var elements = [
 ]
 
 /**
-@param {string} simbol
-@param {number} atomic_number
-@param {number} atomic_mass
-@param {string} name
-@param {string} group
-@param {string} type
-@param {number} electronegativity
+  @param {string} simbol
+  @param {number} atomic_number
+  @param {number} atomic_mass
+  @param {string} name
+  @param {string} group
+  @param {string} type
+  @param {number} electronegativity
 **/
+
 function addElement(simbol, atomic_number, atomic_mass, name, group, type, electronegativity) {
-  var element = {
+  const element = {
     "simbol" : simbol,
     "atomic_number" : atomic_number,
     "atomic_mass" : atomic_mass,
@@ -139,5 +140,7 @@ function addElement(simbol, atomic_number, atomic_mass, name, group, type, elect
     "electronegativity" : electronegativity
   }
 
-  return element;
+  return element
 }
+
+export default periodicTable

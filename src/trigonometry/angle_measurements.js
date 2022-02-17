@@ -1,16 +1,15 @@
-import { fractions } from '../arithmetic/fractions.js';
+import fractions from '../arithmetic/fractions'
+import Const from '../constants/constants'
 
-var piNumber = 3.1415926
-var pi = "π";
+const PI_GLYPH = "π";
 
-export class angle_measurements {
-
+const angleMeasurements = {
     /**
     @param {number_string} radian You can place a string (fraction) or a number
     **/
-    static radian(radian) {
+    radian: function(radian) {
         return {
-            toCentesimal() {
+            toCentesimal: function() {
                 if(typeof radian == 'string') {
                     if(typeof destructure(radian).top == 'undefined' || typeof destructure(radian).bottom == 'undefined') {
                         return "Place a fraction"
@@ -23,7 +22,7 @@ export class angle_measurements {
                 }
 
                 else if(typeof radian == 'number') {
-                    return Number.parseFloat(((radian * 200) / piNumber).toFixed(3));
+                    return Number.parseFloat(((radian * 200) / Const.PI).toFixed(3));
                 }
 
                 else {
@@ -31,7 +30,7 @@ export class angle_measurements {
                 }
             },
 
-            toSexagesimal() {
+            toSexagesimal: function() {
                 if(typeof radian == 'string') {
                     if(typeof destructure(radian).top == 'undefined' || typeof destructure(radian).bottom == 'undefined') {
                         return "Place a fraction"
@@ -44,7 +43,7 @@ export class angle_measurements {
                 }
 
                 else if(typeof radian == 'number') {
-                    return Number.parseFloat(((radian * 180) / piNumber).toFixed(3));
+                    return Number.parseFloat(((radian * 180) / Const.PI).toFixed(3));
                 }
 
                 else {
@@ -52,11 +51,10 @@ export class angle_measurements {
                 }
             }
         }
-    }
-
-    static centesimal(number) {
+    },
+    centesimal: function(number) {
         return {
-            toRadian() {
+            toRadian: function() {
                 if(typeof number !== 'number') {
                     return "Place a number"
                 }
@@ -71,7 +69,7 @@ export class angle_measurements {
                     result = `${t}/${bottom}`
 
                     //top
-                    top == 1 ? t = `${pi}` : t = `${top}${pi}`
+                    top == 1 ? t = `${PI_GLYPH}` : t = `${top}${PI_GLYPH}`
 
                     //bottom
                     bottom == 1 ? result = `${t}` : result = `${t}/${bottom}`
@@ -80,7 +78,7 @@ export class angle_measurements {
                 }
             },
 
-            toSexagesimal() {
+            toSexagesimal: function() {
                 if(typeof number !== 'number') {
                     return "Place a number"
                 }
@@ -91,11 +89,10 @@ export class angle_measurements {
             }
         }
 
-    }
-
-    static sexagesimal(number) {
+    },
+    sexagesimal: function(number) {
         return {
-            toRadian() {
+            toRadian: function() {
                 if(typeof number !== 'number') {
                     return "Place a number"
                 }
@@ -109,7 +106,7 @@ export class angle_measurements {
                     result = `${t}/${bottom}`
 
                     //top
-                    top == 1 ? t = `${pi}` : t = `${top}${pi}`
+                    top == 1 ? t = `${PI_GLYPH}` : t = `${top}${PI_GLYPH}`
 
                     //bottom
                     bottom == 1 ? result = `${t}` : result = `${t}/${bottom}`
@@ -118,7 +115,7 @@ export class angle_measurements {
                 }
             },
 
-            toCentesimal() {
+            toCentesimal: function() {
                 if(typeof number !== 'number') {
                     return "Place a number"
                 }
@@ -148,3 +145,5 @@ function destructure(string) {
         top, bottom
     }
 }
+
+export default angleMeasurements
