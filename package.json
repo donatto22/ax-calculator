@@ -4,6 +4,7 @@
   "description": "Complex Math Calculator",
   "main": "./dist/index.js",
   "scripts": {
+    "test": "jest --config jest.config.json",
     "build": "babel src --out-dir dist"
   },
   "keywords": [
@@ -17,10 +18,8 @@
     "percentages",
     "area",
     "operations",
-    "linear",
-    "regression",
-    "chemistry",
-    "elements"
+    "linear", "regression",
+    "chemistry", "elements"
   ],
   "author": "Donatto Minaya",
   "contributors": [
