@@ -4,14 +4,15 @@ This is a quick mathematical calculator
 <a href="https://www.npmjs.com/package/ax-calculator">![npm](https://img.shields.io/npm/v/ax-calculator)</a>
 <a href="https://www.npmjs.com/package/ax-calculator">![npm](https://img.shields.io/npm/dt/ax-calculator)</a>
 
-## Last added feature
-- Angle measurements system
-
 ### Usage
 
 npm
 ```
 npm i ax-calculator
+```
+yarn
+```
+yarn add ax-calculator
 ```
 
 HTML
@@ -26,7 +27,7 @@ HTML
 - index.js
 ```js
 // In the dots you will place the class you want to use
-import { ... } from 'ax-calculator'
+import calculator from 'ax-calculator'
 ```
 
 ## Classes and their operations
@@ -62,7 +63,7 @@ Fractions.destructure("12/5") // { top: '12', bottom: '5' }
 ```
 
 ### Equations
-- Secoond degree
+- Second degree
 ```js
 // 2x² - 3x + 3 = 0
 Equations.secondDegree(2, -3, 3) // Output: { x1: '3/4 + 𝓲√15/4' , x2: '3/4 - 𝓲√15/4'  }
@@ -93,7 +94,7 @@ RuleOfThree.simple("direct", 10, undefined, 60, 90) // Output: 15
 ### Triangles
 - Functions return information about triangles
 ```js
-Triangles.angle14_76()
+Triangle.angle14_76()
 
 /* Output:
 {
@@ -174,7 +175,7 @@ var vector_a = [3, 6];
 var vector_b = [2, -7];
 
 // Sum or sustract returns object
-Vectors.sum(vector_a, vector_b)
+Vector.sum(vector_a, vector_b)
 
 /*
   {
@@ -187,7 +188,7 @@ Vectors.sum(vector_a, vector_b)
 */
 
 // (2i - j) • (5i + 2j)
-Vectors.product( [2, -1], [5, 2] ) // 8
+Vector.product( [2, -1], [5, 2] ) // 8
 
 // (-3, 5)
 Vector.unitVector(-3, 5);
@@ -198,8 +199,8 @@ Vector.unitVector(-3, 5);
 <img src="https://user-images.githubusercontent.com/68967448/150624746-9dcd85bb-58ac-4692-a083-0313d7b9674a.png" width="150px">
 
 ```js
-var equation1 = [1, 2, 10];
-var equation2 = [2, -1, 5]
+let equation1 = [1, 2, 10];
+let equation2 = [2, -1, 5]
 
 console.log(SystemEquation.double(equation1, equation2))
 // { x: 4, y: 3 }
