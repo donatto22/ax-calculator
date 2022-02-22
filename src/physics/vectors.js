@@ -1,5 +1,5 @@
-const Vector = {
-    sum: function(...vectors) {
+export class vectors {
+    static sum(...vectors) {
         var arr_x = [], arr_y = [];
 
         for(var i = 0; i <= vectors.length - 1; i++) {
@@ -17,8 +17,8 @@ const Vector = {
             }
         }
 
-        var x = arr_x.reduce(_sum)
-        var y = arr_y.reduce(_sum)
+        var x = arr_x.reduce(sum)
+        var y = arr_y.reduce(sum)
 
         var expression = validateExpression(x, y)
         var cartesian = [x, y]
@@ -28,9 +28,9 @@ const Vector = {
         return {
             x, y, expression, cartesian, unit_vector
         }
-    },
+    }
 
-    substract: function(...vectors) {
+    static substract(...vectors) {
         var arr_x = [], arr_y = [];
 
         for(var i = 0; i <= vectors.length - 1; i++) {
@@ -48,8 +48,8 @@ const Vector = {
             }
         }
 
-        var x = arr_x.reduce(_substract)
-        var y = arr_y.reduce(_substract)
+        var x = arr_x.reduce(substract)
+        var y = arr_y.reduce(substract)
 
         var expression = validateExpression(x, y)
         var cartesian = [x, y]
@@ -59,9 +59,9 @@ const Vector = {
         return {
             x, y, expression, cartesian, unit_vector
         }
-    },
+    }
 
-    product: function(...vectors) {
+    static product(...vectors) {
         var arr_x =[], arr_y = [];
 
         for(var i = 0; i <= vectors.length - 1; i++) {
@@ -79,20 +79,20 @@ const Vector = {
             }
         }
 
-        var x = arr_x.reduce(_product)
-        var y = arr_y.reduce(_product)
+        var x = arr_x.reduce(product)
+        var y = arr_y.reduce(product)
 
         return x + y;
-    },
+    }
 
-    unitVector: function(vector) {
+    static unitVector(vector) {
         return unitVector(vector[0], vector[1]);
     }
 }
 
-const _sum = (accumulator, curr) => accumulator + curr;
-const _substract = (accumulator, curr) => accumulator - curr;
-const _product = (accumulator, curr) => accumulator * curr;
+const sum = (accumulator, curr) => accumulator + curr;
+const substract = (accumulator, curr) => accumulator - curr;
+const product = (accumulator, curr) => accumulator * curr;
 
 function validateExpression(x, y) {
     var expression;
@@ -149,5 +149,3 @@ function unitVector(x, y) {
 
     return [x2, y2]
 }
-
-export default Vector

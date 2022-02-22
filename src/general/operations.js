@@ -1,25 +1,26 @@
-const Operations = {
+export class operations {
     /**
-        Returns the square root of the product of 
-        the sum of the squared sides of the triangle.
+    Returns the square root of the product of 
+    the sum of the squared sides of the triangle.
     **/
-    hypotenuse: function(param1, param2) {
-        let result = Math.sqrt((param1 * param1) + (param2 * param2));
+    static hypotenuse(param1, param2) {
+        var result = Math.sqrt((param1 * param1) + (param2 * param2));
 
-        if (Number.isInteger(result)) {
+        if(Number.isInteger(result)) {
             return String(result);
         }
 
         else {
             return "√" + String(result.toFixed(2));
         }
-    },
+    }
+
     /**
-        Convert a number to Roman numerals
-        @param {number} num The number you are going to convert
+    Convert a number to Roman numerals
+    @param {number} num The number you are going to convert
     **/
-    toRoman: function(num) {
-        const roman = {
+    static toRomanized(num) {
+        var roman = {
             M: 1000,
             CM: 900,
             D: 500,
@@ -35,23 +36,24 @@ const Operations = {
             I: 1
         }
 
-        let result = '';
+        var result = '';
         
-        for (let key in roman) {
+        for (var key in roman) {
             if (num == roman[key]) {
                 return result +=key;
             }
 
-            let bober = num > roman[key];
+            var bober = num > roman[key];
 
-            if (bober) {
+            if(bober) {
                 result = result + key.repeat(parseInt(num/roman[key]));
                 num = num % roman[key];
             }
         }
 
         return result;
-    },
+    }
+
     /**
     - You have a simple log like log(b)a = c
     
@@ -61,18 +63,18 @@ const Operations = {
     @return {string} Return the missing value in the log, 
     set null to the value you need to find
     **/
-    log: function(base, argument, logarithm) {
+    static log(base, argument, logarithm) {
         if(base == null) {
             return String(Math.pow(argument, 1/logarithm));
         }
 
-        else if (argument == null) {
+        else if(argument == null) {
             return String(base ** logarithm);
         }
 
         else {
-            for (let i = 2; i < 13; i++) {
-                if (base ** i == argument) {
+            for(var i = 2; i < 13; i++) {
+                if(base ** i == argument) {
                     return String(i);
                 }
 
@@ -81,15 +83,30 @@ const Operations = {
                 }
             }
         }
-    },
-    /**
-        - Example -> C¹¹₇
-        - Returns the number of possible combinations
+    }
 
-        @param {number} top - 11
-        @param {number} bottom - 7
+    /**
+    - Return the factorial of a number
+
+    @param {number} number 
     **/
-    combinatorial: function(top, bottom) {
+
+    static factorial(number) {
+        return factorial(number, 1);
+    }
+
+    static doubleFactorial(number) {
+        return factorial(number, 2);
+    }
+
+    /**
+    - Example -> C¹¹₇
+    - Returns the number of possible combinations
+
+    @param {number} top - 11
+    @param {number} bottom - 7
+    **/
+    static combinatorial(top, bottom) {
         if(typeof top === 'string' || typeof bottom === 'string') {
             return "You must enter a number"
         }
@@ -97,14 +114,15 @@ const Operations = {
         else {
             return factorial(top, 1) / (factorial(top - bottom, 1) * factorial(bottom, 1))
         }
-    },
+    }
+
     /**
-        Returns the fibonacci series
-        @param {number} maxlength - The number of values you wish to obtain
-        @return {object} - Returns an array with the inserted values
+    Returns the fibonacci series
+    @param {number} maxlength - The number of values you wish to obtain
+    @return {object} - Returns an array with the inserted values
     **/
     
-    fibonacci: function(maxlength) {
+    static fibonacci(maxlength) {
         let n1 = 0, n2 = 1, nextTerm;
         var serie = [0, 1];
 
@@ -127,30 +145,31 @@ const Operations = {
         }
 
         return serie;
-    },
-    /**
-        Returns the divisors of a number
+    }
 
-        @param {number} number
-        @return {object} 
+    /**
+    Returns the divisors of a number
+
+    @param {number} number
+    @return {object} 
     **/
 
-    divisors: function(number) {
+    static divisors(number) {
         if(typeof number !== 'number') {
             return "Error in divisors: Place a number"
         }
 
         else {
-            return _divisors(number);
+            return divisors(number);
         }
     }
 }
 
-function _divisors(number) {
-    let arr = [];
+function divisors(number) {
+    var arr = [];
 
-    for (let i = 1; i <= number; i++) {
-        if (number % i == 0) {
+    for(var i = 1; i <= number; i++) {
+        if(number % i == 0) {
             arr.push(i);
         }
     }
@@ -159,27 +178,27 @@ function _divisors(number) {
 }
 
 function factorial(number, decrease) {
-    let result;
+    var result;
 
-    if (typeof number === 'string') {
+    if(typeof number === 'string') {
         return "You must enter a number"
     }
 
-    else if (number < 0) {
+    else if(number < 0) {
         return "For now, it only receives positive numbers"
     }
 
     else {
-        if (number === 0 || number === 1) {
+        if(number === 0 || number === 1) {
             result = 1;
         }
 
-        else if (number === 2 && decrease === 2) {
+        else if(number === 2 && decrease === 2) {
             result = 2;
         }
 
         else {
-            for(let i = number - decrease; i >= 1; i-=decrease) {
+            for(var i = number - decrease; i >= 1; i-=decrease) {
                 result = (number *= i)
             }
         }
@@ -187,5 +206,3 @@ function factorial(number, decrease) {
         return result;
     }
 }
-
-export default Operations

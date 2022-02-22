@@ -1,8 +1,8 @@
-const ruleThree = {
+export class rule_three {
     /**
-        @param {string} type Can be direct or inverse
+    @param {string} type Can be direct or inverse
     **/
-    simple: function(type, a, b, c, d) {
+    static simple(type, a, b, c, d) {
         if(type == 'direct') {
             if(a === undefined) {
                 var top = b * c;
@@ -310,8 +310,12 @@ const ruleThree = {
             }
         }
 
-        else { return "You must write 'direct' or 'inverse', there are no other ways." }
+        else {
+            return "You must write 'direct' or 'inverse', there are no other ways."
+        }
     }
-}
 
-export default ruleThree
+    // static compound() {
+
+    // }
+}

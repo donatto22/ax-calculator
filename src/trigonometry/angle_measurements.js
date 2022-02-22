@@ -1,15 +1,16 @@
-import fractions from '../arithmetic/fractions'
-import Const from '../constants/constants'
+import { fractions } from '../arithmetic/fractions.js';
 
-const PI_GLYPH = "π";
+var piNumber = 3.1415926
+var pi = "π";
 
-const angleMeasurements = {
+export class angle_measurements {
+
     /**
     @param {number_string} radian You can place a string (fraction) or a number
     **/
-    radian: function(radian) {
+    static radian(radian) {
         return {
-            toCentesimal: function() {
+            toCentesimal() {
                 if(typeof radian == 'string') {
                     if(typeof destructure(radian).top == 'undefined' || typeof destructure(radian).bottom == 'undefined') {
                         return "Place a fraction"
@@ -22,7 +23,7 @@ const angleMeasurements = {
                 }
 
                 else if(typeof radian == 'number') {
-                    return Number.parseFloat(((radian * 200) / Const.PI).toFixed(3));
+                    return Number.parseFloat(((radian * 200) / piNumber).toFixed(3));
                 }
 
                 else {
@@ -30,7 +31,7 @@ const angleMeasurements = {
                 }
             },
 
-            toSexagesimal: function() {
+            toSexagesimal() {
                 if(typeof radian == 'string') {
                     if(typeof destructure(radian).top == 'undefined' || typeof destructure(radian).bottom == 'undefined') {
                         return "Place a fraction"
@@ -43,7 +44,7 @@ const angleMeasurements = {
                 }
 
                 else if(typeof radian == 'number') {
-                    return Number.parseFloat(((radian * 180) / Const.PI).toFixed(3));
+                    return Number.parseFloat(((radian * 180) / piNumber).toFixed(3));
                 }
 
                 else {
@@ -51,10 +52,11 @@ const angleMeasurements = {
                 }
             }
         }
-    },
-    centesimal: function(number) {
+    }
+
+    static centesimal(number) {
         return {
-            toRadian: function() {
+            toRadian() {
                 if(typeof number !== 'number') {
                     return "Place a number"
                 }
@@ -69,7 +71,7 @@ const angleMeasurements = {
                     result = `${t}/${bottom}`
 
                     //top
-                    top == 1 ? t = `${PI_GLYPH}` : t = `${top}${PI_GLYPH}`
+                    top == 1 ? t = `${pi}` : t = `${top}${pi}`
 
                     //bottom
                     bottom == 1 ? result = `${t}` : result = `${t}/${bottom}`
@@ -78,7 +80,7 @@ const angleMeasurements = {
                 }
             },
 
-            toSexagesimal: function() {
+            toSexagesimal() {
                 if(typeof number !== 'number') {
                     return "Place a number"
                 }
@@ -89,10 +91,11 @@ const angleMeasurements = {
             }
         }
 
-    },
-    sexagesimal: function(number) {
+    }
+
+    static sexagesimal(number) {
         return {
-            toRadian: function() {
+            toRadian() {
                 if(typeof number !== 'number') {
                     return "Place a number"
                 }
@@ -106,7 +109,7 @@ const angleMeasurements = {
                     result = `${t}/${bottom}`
 
                     //top
-                    top == 1 ? t = `${PI_GLYPH}` : t = `${top}${PI_GLYPH}`
+                    top == 1 ? t = `${pi}` : t = `${top}${pi}`
 
                     //bottom
                     bottom == 1 ? result = `${t}` : result = `${t}/${bottom}`
@@ -115,7 +118,7 @@ const angleMeasurements = {
                 }
             },
 
-            toCentesimal: function() {
+            toCentesimal() {
                 if(typeof number !== 'number') {
                     return "Place a number"
                 }
@@ -145,5 +148,3 @@ function destructure(string) {
         top, bottom
     }
 }
-
-export default angleMeasurements
