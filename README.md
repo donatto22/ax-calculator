@@ -2,22 +2,32 @@
 This is a quick mathematical calculator
 
 <a href="https://www.npmjs.com/package/ax-calculator">![npm](https://img.shields.io/npm/v/ax-calculator)</a>
-<a href="https://www.npmjs.com/package/ax-calculator">![npm](https://img.shields.io/npm/dm/ax-calculator)</a>
+<a href="https://www.npmjs.com/package/ax-calculator">![npm](https://img.shields.io/npm/dt/ax-calculator)</a>
 
 ## Last added feature
 - Angle measurements system
 
-### Usage
+### Instalation
 
 npm
 ```
-npm i ax-calculator
+$ npm i ax-calculator
 ```
 
-HTML
+yarn
+```
+$ yarn add ax-calculator
+```
+
+CDN
 ```html
 ...
+<!-- unpgk -->
 <script crossorigin src="https://unpkg.com/ax-calculator@1.1.11/src/main.js"></script>
+
+<!-- jsDelivr -->
+<script crossorigin src="https://cdn.jsdelivr.net/npm/ax-calculator@1.1.11/src/main.js"></script>
+
 
 ...
 <script type="module" src="index.js"></script>
@@ -26,7 +36,7 @@ HTML
 - index.js
 ```js
 // In the dots you will place the class you want to use
-import { ... } from './node_modules/ax-calculator/src/main.js'
+import { ... } from 'ax-calculator'
 ```
 
 ## Classes and their operations
