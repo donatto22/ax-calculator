@@ -11,25 +11,23 @@ This is a quick mathematical calculator
 
 npm
 ```
-$ npm i ax-calculator
+npm i ax-calculator
 ```
 
 yarn
 ```
-$ yarn add ax-calculator
+yarn add ax-calculator
 ```
 
 CDN
 ```html
-...
 <!-- unpgk -->
 <script crossorigin src="https://unpkg.com/ax-calculator@1.1.11/src/main.js"></script>
 
 <!-- jsDelivr -->
 <script crossorigin src="https://cdn.jsdelivr.net/npm/ax-calculator@1.1.11/src/main.js"></script>
 
-
-...
+<!-- external file -->
 <script type="module" src="index.js"></script>
 ```
 
