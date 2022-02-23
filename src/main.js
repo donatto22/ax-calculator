@@ -1,6 +1,5 @@
 "use strict"
 
-
 // Algebra
 export { Equations } from './algebra/equations.js';
 export { SystemEquation } from './algebra/system_equation.js';

@@ -33,12 +33,6 @@
   "bugs": {
     "url": "https://github.com/donatto-minaya/npm-ax-calculator/issues"
   },
-  "homepage": "https://github.com/donatto-minaya/npm-ax-calculator#readme",
-  "dependencies": {
-    "@babel/cli": "^7.17.3",
-    "@babel/core": "^7.17.5",
-    "@babel/preset-env": "^7.16.11",
-    "nodemon": "^2.0.15"
-  }
+  "homepage": "https://github.com/donatto-minaya/npm-ax-calculator#readme"
 }
 
