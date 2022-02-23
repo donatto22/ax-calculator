@@ -1,10 +1,11 @@
-export class system_equation {
-    /**
+/**
     Returns exact values of a system of 2 equations
     @param {number} equation1 - first equation
     @param {number} equation2 - second equation
-    **/
-    static double(equation1, equation2) {
+**/
+
+export const SystemEquation = {
+    double: function (equation1, equation2) {
         //ax + by = c
         //dx + ey = f
 
@@ -18,8 +19,6 @@ export class system_equation {
         x = ( (c * e) - (b * f) ) / ( (a * e) - (b * d) )
         y = ( (a * f) - (c * d) ) / ( (a * e) - (b * d) )
 
-        return {
-            x, y
-        }
+        return { x, y }
     }
 }
