@@ -129,3 +129,38 @@ export const BasicOperations = {
         }
     }
 }
+
+
+export class Chaining {
+    constructor() {
+        this.value = 0
+    }
+
+    baseNumber(value) {
+        typeof value === 'number' ? this.value = value : "[x] Place a number"
+        return this
+    }
+
+    sum(...args) {
+        for(let i = 0; i <= args.length - 1; i++) {
+            this.value += BasicOperations.sum(args[i]).result;
+        }
+
+        return this
+    }
+
+    multiply(value) {
+        this.value == 0 ? "[x] You can't multiply with anything" : this.value = this.value * value
+        return this
+    }
+
+    substract(value) {
+        this.value == 0 ? "[x] You can't substract with anything" : this.value = this.value - value
+        return this
+    }
+
+    divide(value) {
+        this.value == 0 ? "[x] You can't divide with anything" : this.value = this.value / value
+        return this
+    }
+}
