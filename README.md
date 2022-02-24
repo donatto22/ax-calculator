@@ -40,7 +40,7 @@ import { ... } from 'ax-calculator'
 ## Objects and their operations
 > Please be [informed](https://github.com/donatto-minaya/npm-ax-calculator/releases) of every change that is made to this calculator, many more operations are being added that can help you and an example of use is given.
 ### Basic Operations
-- Sum, substract, product, division, module, root, raise to
+- Sum, substract, product, division, module, root, raise to, Chaining _`class`_
 ```js
 BasicOperations.sum(2,5,8,4,11) // { result: 30, toNegative: [Function: toNegative] }
 BasicOperations.substract(304, 20, 51) // { result: 233, toNegative: [Function: toNegative] }
@@ -50,7 +50,7 @@ BasicOperations.module(40,4) // 10.00
 BasicOperations.root(1296, 4) // 6
 BasicOperations.raiseTo(3, 5) // 243
 
-const chaining = new calculator.BasicOperations.Chaining()
+const chaining = new BasicOperations.Chaining()
 
 console.log(chaining.baseNumber(5).multiply(4).divide(2).value); // 10
 ```
