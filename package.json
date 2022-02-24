@@ -28,11 +28,11 @@
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/donatto-minaya/npm-ax-calculator.git"
+    "url": "git+https://github.com/donatto22/ax-calculator.git"
   },
   "bugs": {
-    "url": "https://github.com/donatto-minaya/npm-ax-calculator/issues"
+    "url": "https://github.com/donatto22/ax-calculator/issues"
   },
-  "homepage": "https://github.com/donatto-minaya/npm-ax-calculator#readme"
+  "homepage": "https://github.com/donatto22/ax-calculator#readme"
 }
 
