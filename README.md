@@ -1,4 +1,4 @@
-# Npm Ax-Calculator
+# Ax-Calculator
 This is a quick mathematical calculator
 
 <a href="https://www.npmjs.com/package/ax-calculator">![npm](https://img.shields.io/npm/v/ax-calculator)</a>
