@@ -5,7 +5,7 @@ This is a quick mathematical calculator
 <a href="https://www.npmjs.com/package/ax-calculator">![npm](https://img.shields.io/npm/dt/ax-calculator)</a>
 
 ## Last added feature
-- Angle measurements system
+- [Package update](https://github.com/donatto-minaya/npm-ax-calculator/releases)
 
 ### Instalation
 
