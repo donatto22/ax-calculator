@@ -37,7 +37,7 @@ CDN
 import { ... } from 'ax-calculator'
 ```
 
-## Classes and their operations
+## Objects and their operations
 > Please be [informed](https://github.com/donatto-minaya/npm-ax-calculator/releases) of every change that is made to this calculator, many more operations are being added that can help you and an example of use is given.
 ### Basic Operations
 - Sum, substract, product, division, module, root, raise to
@@ -49,6 +49,10 @@ BasicOperations.division(25,5) // 5.00
 BasicOperations.module(40,4) // 10.00
 BasicOperations.root(1296, 4) // 6
 BasicOperations.raiseTo(3, 5) // 243
+
+const chaining = new calculator.BasicOperations.Chaining()
+
+console.log(chaining.baseNumber(5).multiply(4).divide(2).value); // 10
 ```
 
 ### Base
@@ -144,10 +148,10 @@ Area.circle(5) // 25π
 ```
 
 ### Operations
-- Hypotenuse, to romanized, log, factorial, double factorial, combinatorial, fibonacci, divisors
+- Hypotenuse, to roman, log, factorial, double factorial, combinatorial, fibonacci, divisors
 ```js
 Operations.hypotenuse(7, 9) // -> √11.40
-Operations.toRomanized(420); // CDXX
+Operations.toRoman(420); // CDXX
 
 // log5x = 4
 Operations.log(5, null, 4) // 625

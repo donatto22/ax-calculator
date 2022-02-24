@@ -127,40 +127,96 @@ export const BasicOperations = {
         else {
             return String(number ** (1/root))
         }
-    }
-}
+    },
 
-
-export class Chaining {
-    constructor() {
-        this.value = 0
-    }
-
-    baseNumber(value) {
-        typeof value === 'number' ? this.value = value : "[x] Place a number"
-        return this
-    }
-
-    sum(...args) {
-        for(let i = 0; i <= args.length - 1; i++) {
-            this.value += BasicOperations.sum(args[i]).result;
+    Chaining: class {
+        constructor() {
+            this.value = 0
         }
+    
+        /**
+        @param {number} value - Place a number to start your chain of operations
+        **/
+        baseNumber(value) {
+            typeof value === 'number' ? this.value = value : "[x] Base Number Error: Place a number"
+            return this
+        }
+    
+        sum(...args) {
+            if(typeof args == 'object') {
+                if(args.length == 0) {
+                    return "[x] Sum error: Place a number"
+                }
 
-        return this
-    }
+                else {
+                    for(let i = 0; i <= args.length - 1; i++) {
+                        if(typeof args[i] !== 'number') {
+                            return "[x] All values must be numbers"
+                        }
+                    }
+    
+                    for(let i = 0; i <= args.length - 1; i++) {
+                        this.value += BasicOperations.sum(args[i]).result;
+                    }
+            
+                    return this
+                }
+            }
 
-    multiply(value) {
-        this.value == 0 ? "[x] You can't multiply with anything" : this.value = this.value * value
-        return this
-    }
+            else if(typeof args == 'number') {
+                this.value = this.value + args
+            }
 
-    substract(value) {
-        this.value == 0 ? "[x] You can't substract with anything" : this.value = this.value - value
-        return this
-    }
+            else {
+                return "[x] Enter a number or several numbers"
+            }
+            
+            return this
+        }
+    
+        multiply(value) {
+            if(this.value == 0) {
+                return "[x] You can't multiply with anything"
+            }
 
-    divide(value) {
-        this.value == 0 ? "[x] You can't divide with anything" : this.value = this.value / value
-        return this
+            else if(typeof value != 'number') {
+                return "[x] Multiply Error: Place a number"
+            }
+
+            else {
+                this.value = this.value * value
+                return this
+            }
+        }
+    
+        substract(value) {
+            if(this.value == 0) {
+                return "[x] You can't substract with anything"
+            }
+
+            else if(typeof value != 'number') {
+                return "[x] Substract Error: Place a number"
+            }
+
+            else {
+                this.value = this.value - value
+                return this
+            }
+        }
+    
+        divide(value) {
+            if(this.value == 0) {
+                return "[x] You can't divide with anything"
+            }
+
+            else if(typeof value != 'number') {
+                return "[x] Divide Error: Place a number"
+            }
+
+            else {
+                this.value = this.value / value
+                return this
+            }
+        }
     }
 }

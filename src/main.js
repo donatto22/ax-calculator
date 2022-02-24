@@ -11,7 +11,6 @@ export { Area } from './geometry/area.js';
 export { Fractions } from './arithmetic/fractions.js';
 export { Percentage } from './arithmetic/percentage.js';
 export { RuleOfThree } from './arithmetic/rule_three.js';
-export { Chaining } from './arithmetic/basic_operations.js'
 
 // Chemistry
 export { ChemicalElements } from './chemistry/chemical_elements.js';
