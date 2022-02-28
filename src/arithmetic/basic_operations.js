@@ -9,7 +9,13 @@ export const BasicOperations = {
 
             else {
                 let result = parameters.reduce((previous, current) => { return  previous + current })
-                return { result, toNegative() { return result * -1; } }
+
+                return { 
+                    result, 
+                    toNegative() { 
+                        return result * -1; 
+                    } 
+                }
             }
         }
    },
@@ -24,9 +30,7 @@ export const BasicOperations = {
             }
 
             else {
-                var result =  parameters.reduce((previous, current) => {
-                    return previous - current;
-                });
+                var result =  parameters.reduce((previous, current) => { return previous - current})
         
                 return {
                     result,

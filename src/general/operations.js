@@ -90,7 +90,7 @@ export const Operations = {
         @param {number} bottom - 7
     **/
     combinatorial: function(top, bottom) {
-        if(typeof top === 'string' || typeof bottom === 'string') {
+        if(typeof top !== 'number' || typeof bottom !== 'number') {
             return "You must enter a number"
         }
 
@@ -112,7 +112,7 @@ export const Operations = {
             return "The base number of digits is 2";
         }
 
-        else if(typeof maxlength === 'string') {
+        else if(typeof maxlength != 'number') {
             return "You must enter a numerical value";
         }
 
@@ -161,7 +161,7 @@ function _divisors(number) {
 function factorial(number, decrease) {
     let result;
 
-    if (typeof number === 'string') {
+    if (typeof number != 'string') {
         return "You must enter a number"
     }
 
