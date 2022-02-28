@@ -4,14 +4,20 @@ export const Operations = {
         the sum of the squared sides of the triangle.
     **/
     hypotenuse: function(param1, param2) {
-        let result = Math.sqrt((param1 * param1) + (param2 * param2));
-
-        if (Number.isInteger(result)) {
-            return String(result);
+        if(typeof param1 !== 'number' || typeof param2 !== 'number') {
+            return "This function requires numbers"
         }
 
         else {
-            return "√" + String(result.toFixed(2));
+            let result = Math.sqrt((param1 * param1) + (param2 * param2));
+
+            if (Number.isInteger(result)) {
+                return String(result);
+            }
+
+            else {
+                return "√" + String(result.toFixed(2));
+            }
         }
     },
     /**
@@ -19,38 +25,38 @@ export const Operations = {
         @param {number} num The number you are going to convert
     **/
     toRoman: function(num) {
-        const roman = {
-            M: 1000,
-            CM: 900,
-            D: 500,
-            CD: 400,
-            C: 100,
-            XC: 90,
-            L: 50,
-            XL: 40,
-            X: 10,
-            IX: 9,
-            V: 5,
-            IV: 4,
-            I: 1
+        if(typeof num !== "number") {
+            return "Place a number"
         }
 
-        let result = '';
-        
-        for (let key in roman) {
-            if (num == roman[key]) {
-                return result +=key;
+        else {
+            const roman = {
+                M: 1000, CM: 900,
+                D: 500, CD: 400,
+                C: 100, XC: 90,
+                L: 50, XL: 40,
+                X: 10, IX: 9,
+                V: 5, IV: 4,
+                I: 1
             }
+    
+            let result = '';
 
-            let bober = num > roman[key];
-
-            if (bober) {
-                result = result + key.repeat(parseInt(num/roman[key]));
-                num = num % roman[key];
+            for (let key in roman) {
+                if (num == roman[key]) {
+                    return result +=key;
+                }
+    
+                let bober = num > roman[key];
+    
+                if (bober) {
+                    result = result + key.repeat(parseInt(num/roman[key]));
+                    num = num % roman[key];
+                }
             }
-        }
-
-        return result;
+    
+            return result;
+        }  
     },
     /**
     - You have a simple log like log(b)a = c
