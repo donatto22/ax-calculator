@@ -1,13 +1,11 @@
 export const Fractions = {
     sum: function(numerator1, denominator1, numerator2, denominator2) {
-        var result;
-
-        var bober = false;        
+        let result, bober = false;
 
         if(denominator1 == denominator2) {
             // When dominators are equals
-            var top = numerator1 + numerator2
-            var bottom = denominator1
+            let top = numerator1 + numerator2
+            let bottom = denominator1
             
             //Check if negative
             if(top < 0) {
@@ -26,8 +24,8 @@ export const Fractions = {
         
         else {
             // When dominators are different
-            var top = (denominator2 * numerator1) + (denominator1 * numerator2)
-            var bottom = denominator1 * denominator2
+            let top = (denominator2 * numerator1) + (denominator1 * numerator2)
+            let bottom = denominator1 * denominator2
 
             result = simplify(top, bottom);
         }

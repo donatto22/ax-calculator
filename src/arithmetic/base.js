@@ -4,8 +4,8 @@ export const Base = {
         @param base The base to which you want to pass the number
     **/
     toBase: function (number, base) {
-        if(typeof(number) == 'string' || typeof(base) == 'string') {
-            return "This method does not accept strings";
+        if(typeof(number) != 'string' || typeof(base) != 'string') {
+            return "[x] toBase: This function requires numbers";
         }
 
         else {
