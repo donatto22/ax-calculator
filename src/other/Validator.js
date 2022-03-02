@@ -29,6 +29,13 @@ export const Validator = {
     },
 
     /**
+    @param {boolean} parameter
+    **/
+    isBool: function(parameter) {
+        return typeof parameter == "boolean" ? true : false
+    },
+
+    /**
     @param {string} parameter
     **/
     isString: function(parameter) {
@@ -50,7 +57,7 @@ export const Validator = {
     },
 
     /**
-    @param {object} parameter
+    @param {object} object
     **/
     containsString: function(object) {
         let bool;
@@ -63,11 +70,16 @@ export const Validator = {
             }
 
         }
+
+        else {
+            return "[x] containsString requires a object"
+        }
+
         return bool
     },
 
     /**
-    @param {object} parameter
+    @param {object} object
     **/
     containsNumber: function(object) {
         let bool;
@@ -80,6 +92,11 @@ export const Validator = {
             }
 
         }
+
+        else {
+            return "[x] containsNumber requires a object"
+        }
+
         return bool
     }
 }

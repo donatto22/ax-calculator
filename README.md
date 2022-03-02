@@ -5,7 +5,7 @@ This is a quick mathematical calculator
 <a href="https://www.npmjs.com/package/ax-calculator">![npm](https://img.shields.io/npm/dt/ax-calculator)</a>
 
 ## Last added feature
-- [Package update](https://github.com/donatto-minaya/npm-ax-calculator/releases)
+- Validators added
 
 ### Instalation
 
@@ -42,11 +42,11 @@ import { ... } from 'ax-calculator'
 ### Basic Operations
 - Sum, substract, product, division, module, root, raise to, Chaining _`class`_
 ```js
-BasicOperations.sum(2,5,8,4,11) // { result: 30, toNegative: [Function: toNegative] }
+BasicOperations.sum(2, 5, 8, 4, 11) // { result: 30, toNegative: [Function: toNegative] }
 BasicOperations.substract(304, 20, 51) // { result: 233, toNegative: [Function: toNegative] }
-BasicOperations.product(35,1,9) // { result: 315, toNegative: [Function: toNegative] }
-BasicOperations.division(25,5) // 5.00
-BasicOperations.module(40,4) // 10.00
+BasicOperations.product(35, 1, 9) // { result: 315, toNegative: [Function: toNegative] }
+BasicOperations.division(25, 5) // 5.00
+BasicOperations.module(40, 4) // 0
 BasicOperations.root(1296, 4) // 6
 BasicOperations.raiseTo(3, 5) // 243
 
@@ -220,8 +220,6 @@ console.log(SystemEquation.double(equation1, equation2))
 ### Chemical elements
 - Show, obtain by group, obtain by family
 ```js
-// You can enter the name, symbol, or atomic number of an element to obtain its details, 
-// if you do not enter anything it will return the complete list.
 ChemicalElements.show("H")
 
 /*
@@ -243,7 +241,6 @@ ChemicalElements.obtainByGroup("I B") // object
 ChemicalElements.obtainByFamily("Halogen") // object
 ```
 
-
 ### Angle measurements system
 - Radian, Centesimal, Sexasegimal _`(toRadian, toCentesimal, toSexagesimal)`_
 ```js
@@ -257,6 +254,20 @@ AngleMeasurements.centesimal(40).toRadian() // π/5
 
 // 45°
 AngleMeasurements.sexagesimal(45).toCentesimal() // 50
+
+...
+```
+
+### Validator
+- isNumber, isString, isObject, isUndefined, containsString, containsNumber `...`
+```js
+...
+
+Validator.isNumber("2") // false
+Validator.isString("test") // true
+
+Validator.containsString([1,2,3,4]) // false
+Validator.containsNumber(["1", "2", "3", 4]) // true
 
 ...
 ```

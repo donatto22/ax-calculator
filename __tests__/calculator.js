@@ -1,3 +1,4 @@
 import { Validator } from "../src/main.js";
 
-console.log(Validator.containsNumber(["", "", 2]));
+let bool = ""
+console.log(Validator.isBool(bool));
