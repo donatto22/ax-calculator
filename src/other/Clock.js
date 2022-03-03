@@ -1,12 +1,13 @@
 import { Validator } from "./Validator.js"
 
 export const Clock = {
-    timer: function(refer, time) {
-
-    },
-
-    time: function(seconds = false, spacing = false, day = false, dayPosition = "bottom") {
-        if(Validator.isBool(seconds) && Validator.isBool(spacing) && Validator.isBool(day) && Validator.isString(dayPosition)) {
+    /**
+    @param {boolean} seconds
+    @param {boolean} spacing
+    @return {string}
+    **/
+    time: function(seconds = false, spacing = false) {
+        if(Validator.isBool(seconds) && Validator.isBool(spacing)) {
             let date = new Date(), time = ""
 
             let hour = String(date.getHours()), minute = String(date.getMinutes()), second = String(date.getSeconds())
@@ -35,11 +36,58 @@ export const Clock = {
         }
 
         else {
-
+            return "[x] Clock.time() error: This function requires boolean parameters"
         }
     },
 
-    date: function() {
+    /**
+    @param {string} format
+    @param {boolean} optionalYear
+    @return {string}
+    **/
+    date: function(format = "US", optionalYear = true) {
+        if(Validator.isString(format) && Validator.isBoolean(optionalYear)) {
+            let date = new Date(), fullDate = ""
 
+            let day = String(date.getDate()), month = String(date.getMonth() + 1), year = String(date.getFullYear())
+
+            // ---------------------- // Validar fechas
+            day.length == 1 ? day = `0${day}` : day = day
+            month.length == 1 ? month = `0${month}` : month = month
+            // ---------------------- //
+
+            // ---------------------- // Validando los formatos de fecha y booleano del year
+            if (optionalYear == true) {
+                if (format = "US")
+                    fullDate = `${month}/${day}/${year}`
+
+                else if (format = "EUR")
+                    fullDate = `${day}/${month}/${year}`
+
+                else if (format = "AS")
+                    fullDate = `${year}/${month}/${day}`
+
+                else
+                    return "[x] Format not found"
+            }
+
+            else {
+                if ((format = "US") || (format = "AS"))
+                    fullDate = `${month}/${day}`
+
+                else if (format = "EUR")
+                    fullDate = `${day}/${month}`
+
+                else
+                    return "[x] Format not found"
+            }
+        // ---------------------- //
+        }
+
+        else {
+            return "[x] Clock.date() error: Set the correct parameters"
+        }
+
+        return fullDate
     }
 }
