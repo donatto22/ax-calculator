@@ -5,7 +5,7 @@ This is a quick mathematical calculator
 <a href="https://www.npmjs.com/package/ax-calculator">![npm](https://img.shields.io/npm/dt/ax-calculator)</a>
 
 ## Last added feature
-- Validators added
+- Clock added
 
 ### Instalation
 
@@ -65,7 +65,7 @@ Base.binaryToBase10(1001) // -> 9
 ### Fractions
 - Sum, substract, product, division, simplify, destructure
 ```js
-Fractions.sum(1,2,-4,6) // 1/2 + (-4/6)-> -1/6
+Fractions.sum(1,2,-4,6) // 1/2 + (-4/6) -> -1/6
 Fractions.substract(-5,2,4,7) // -5/2 - 4/7 -> -43/14
 Fractions.product(10,2,-5,4) // 10/2 * (-5/4) -> -25/4
 Fractions.division(5,3,7,2) // (5/3)/(7/2) ->10/21
@@ -270,4 +270,13 @@ Validator.containsString([1,2,3,4]) // false
 Validator.containsNumber(["1", "2", "3", 4]) // true
 
 ...
+```
+
+### Clock
+- date, time
+```js
+Clock.time() // Sample: 23:10
+
+// the default format is US
+Clock.date() // month/day/year
 ```

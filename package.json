@@ -1,6 +1,6 @@
 {
   "name": "ax-calculator",
-  "version": "1.3.2",
+  "version": "1.4",
   "description": "Complex Math Calculator",
   "main": "src/main.js",
   "scripts": {
@@ -21,7 +21,8 @@
     "regression",
     "chemistry",
     "elements",
-    "validator"
+    "validator",
+    "clock", "time", "date"
   ],
   "type": "module",
   "author": "Donatto Minaya",
