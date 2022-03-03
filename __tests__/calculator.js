@@ -1,4 +1,4 @@
-import { Validator } from "../src/main.js";
+import { Clock } from "../src/main.js";
 
 let bool = ""
-console.log(Validator.isBool(bool));
+console.log(Clock.time(true));
