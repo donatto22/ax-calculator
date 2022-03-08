@@ -20,6 +20,12 @@ yarn add ax-calculator
 ```
 
 - Import
+
+```html
+<!-- html -->
+<script type="module" src="index.js"></script>
+```
+
 ```js
 // In the dots you will place the object you want to use
 import { ... } from 'ax-calculator'

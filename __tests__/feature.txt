@@ -12,3 +12,7 @@
 {
     "presets": ["@babel/preset-env"]
 }
+
+# using cdn
+<script type="module" src="https://unpkg.com/ax-calculator"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/ax-calculator/src/main.js"></script>
