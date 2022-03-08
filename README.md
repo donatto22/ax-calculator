@@ -19,21 +19,21 @@ yarn
 yarn add ax-calculator
 ```
 
-CDN
+<!-- CDN
 ```html
 <!-- unpgk -->
-<script crossorigin src="https://unpkg.com/ax-calculator/src/main.js"></script>
+<script type="module" src="https://unpkg.com/ax-calculator"></script>
 
 <!-- jsDelivr -->
-<script crossorigin src="https://cdn.jsdelivr.net/npm/ax-calculator/src/main.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/ax-calculator/src/main.js"></script>
 
 <!-- external file -->
 <script type="module" src="index.js"></script>
-```
+``` -->
 
-- index.js
+- Import
 ```js
-// In the dots you will place the class you want to use
+// In the dots you will place the object you want to use
 import { ... } from 'ax-calculator'
 ```
 
