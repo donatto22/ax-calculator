@@ -1,1 +1,1 @@
-import { Clock } from "../../../src/main.js";
+import * as calculator from "../../../src/main.js";

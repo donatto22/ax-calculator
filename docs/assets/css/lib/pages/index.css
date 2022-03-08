@@ -1,0 +1,22 @@
+@import url("../../styles.css");
+
+#package-name {
+    padding-top: 80px;
+    text-align: center;
+    font-size: 2.5em;
+    height: 200px;
+}
+
+#flags {
+    width: 100%;
+    display:flex;
+    justify-content: center;
+}
+
+#flags img {
+    width: auto;
+}
+
+#flags img:not(:last-child) {
+    margin-right: 5px;
+}

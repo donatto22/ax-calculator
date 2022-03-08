@@ -1,8 +1,41 @@
 /* Nunito */
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap');
 
+*, *:after, *:before {
+    box-sizing: border-box;
+}
+
+:root {
+    --red-dark: #ea2c1a;
+}
+
+:root {
+    --default-purple: #373295;
+    --default-white: #fcfcfc;
+    --default-black: #404040;
+    --default-blue: #1B3C59;
+    --default-green: #9bd4ae;
+    --default-orange: #F2D5BB;
+    --default-yellow: #F0F0A8;
+    --default-pink: #F2A999;
+    --default-red: #F28177;
+    --default-shadow-gray: #a6a6a6;
+
+}
+
+/* the same color but more clear */
+:root {
+    --shadow-clear: #d9d9d9;
+    --red-clear: #fde9e7;
+    --white-clear: #fafafa;
+    --orange-clear: #ffc999;
+    --yellow-clear: #ffff80;
+}
+
 body {
+    color: var(--default-black);
     font-family: 'Nunito';
+    background-color: var(--default-white);
 }
 
 img {
@@ -31,6 +64,6 @@ input {
     display: block;
 }
 
-.flex {
-    display: flex;
+[pointer] {
+    cursor: pointer;
 }
