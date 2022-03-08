@@ -5,7 +5,7 @@ export const BasicOperations = {
     **/
    sum: function (...parameters) {
         for (let i = 0; i <= parameters.length - 1; i++) {
-            if (typeof parameters[i] != 'number') return "Only numbers"
+            if (typeof parameters[i] != 'number') return "[x] sum requires numbers"
 
             else {
                 let result = parameters.reduce((previous, current) => { return  previous + current })
@@ -25,12 +25,10 @@ export const BasicOperations = {
     **/
     substract: function(...parameters) {
         for(var i = 0; i <= parameters.length - 1; i++) {
-            if(typeof parameters[i] != 'number') {
-                return "Only numbers"
-            }
+            if (typeof parameters[i] != 'number') return "[x] substract requires numbers"
 
             else {
-                var result =  parameters.reduce((previous, current) => { return previous - current})
+                var result =  parameters.reduce((previous, current) => { return previous - current })
         
                 return {
                     result,
@@ -48,14 +46,10 @@ export const BasicOperations = {
     **/
     product: function(...parameters) {
         for(let i = 0; i <= parameters.length - 1; i++) {
-            if(typeof parameters[i] != 'number') {
-                return "Only numbers"
-            }
+            if (typeof parameters[i] != 'number') return "[x] product requires numbers"
 
             else {
-                var result = parameters.reduce((previous, current) => {
-                    return previous * current;
-                });
+                var result = parameters.reduce((previous, current) => { return previous * current });
         
                 return {
                     result,
@@ -72,9 +66,7 @@ export const BasicOperations = {
         Returns the division by 2 numbers
     **/
     division: function(param1, param2) {
-        if(typeof param1 != 'number' || typeof param2 != 'number') {
-            return "Only numbers"
-        }
+        if(typeof param1 != 'number' || typeof param2 != 'number') return "[x] division requires two numbers"
 
         else {
             return (param1 / param2)
@@ -85,9 +77,7 @@ export const BasicOperations = {
     Returns the remainder of a division by 2 numbers
     **/
     module: function(param1, param2) {
-        if(typeof param1 != 'number' || typeof param2 != 'number') {
-            return "Only numbers"
-        }
+        if(typeof param1 != 'number' || typeof param2 != 'number') return "[x] module requires two numbers"
 
         else {
             return (param1 % param2)
@@ -95,9 +85,7 @@ export const BasicOperations = {
     },
 
     raiseTo: function(number, exponent) {
-        if(typeof number === 'string' || typeof exponent === 'string') {
-            return "You must enter a number"
-        }
+        if(typeof number === 'string' || typeof exponent === 'string') return "[x] raiseTo requires two numbers"
 
         else {
             if(exponent == 0) {
@@ -115,8 +103,6 @@ export const BasicOperations = {
     },
 
     /**
-        ʳᵒᵒᵗ√number
-
         If you do not enter a root, you will get the square root by default.
 
         @param {number} number The number whose root you need

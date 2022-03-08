@@ -1,4 +1,4 @@
-import { Clock } from "../src/main.js";
+import * as calculator from "../src/main.js";
 
 let bool = ""
-console.log(Clock.date("US", false));
+console.log(calculator.BasicOperations.division(4,2));

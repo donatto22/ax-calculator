@@ -98,5 +98,27 @@ export const Validator = {
         }
 
         return bool
+    },
+
+    /**
+    @param {object} object
+    **/
+    containsObject: function(object) {
+        let bool;
+
+        if(this.isObject(object)) {
+            let total = object.length
+
+            for(let i = 0; i <= total - 1; i++) {
+                typeof object[i] === 'object' ? bool = true : bool = false
+            }
+
+        }
+
+        else {
+            return "[x] containsObject requires a object"
+        }
+
+        return bool
     }
 }
