@@ -19,18 +19,6 @@ yarn
 yarn add ax-calculator
 ```
 
-<!-- CDN
-```html
-<!-- unpgk -->
-<script type="module" src="https://unpkg.com/ax-calculator"></script>
-
-<!-- jsDelivr -->
-<script type="module" src="https://cdn.jsdelivr.net/npm/ax-calculator/src/main.js"></script>
-
-<!-- external file -->
-<script type="module" src="index.js"></script>
-``` -->
-
 - Import
 ```js
 // In the dots you will place the object you want to use
