@@ -1,8 +1,8 @@
 # Ax-Calculator
 This is a quick mathematical calculator
 
-<a href="https://www.npmjs.com/package/ax-calculator?style=flat-square">![npm](https://img.shields.io/npm/v/ax-calculator)</a>
-<a href="https://www.npmjs.com/package/ax-calculator?style=flat-square">![npm](https://img.shields.io/npm/dt/ax-calculator)</a>
+<a href="https://www.npmjs.com/package/ax-calculator">![npm](https://img.shields.io/npm/v/ax-calculator?style=flat-square)</a>
+<a href="https://www.npmjs.com/package/ax-calculator">![npm](https://img.shields.io/npm/dt/ax-calculator?style=flat-square)</a>
 
 ## Last added feature
 - Clock added
