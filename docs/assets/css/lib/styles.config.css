@@ -33,6 +33,9 @@
 }
 
 body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
     color: var(--default-black);
     font-family: 'Nunito';
     background-color: var(--default-white);
@@ -52,6 +55,8 @@ a, li, ul, ol {
 }
 
 a {
+    color: var(--default-green);
+    text-decoration: underline;
     cursor: pointer !important;
 }
 

@@ -1,0 +1,21 @@
+footer {
+    margin-top: auto;
+    outline: 1px solid var(--default-shadow-gray);
+}
+
+#min-footer {
+    padding: 1em;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+}
+
+#footer-actions {
+    margin: .5em 0;
+    font-weight: bold;
+    display: flex;
+}
+
+#footer-actions a:not(:last-child) {
+    margin-right: 1em;
+}
