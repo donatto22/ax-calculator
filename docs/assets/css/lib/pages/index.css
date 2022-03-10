@@ -15,6 +15,7 @@
 
 #flags img {
     width: auto;
+    border-radius: 4px;
 }
 
 #flags img:not(:last-child) {
