@@ -73,3 +73,7 @@ input {
 [pointer] {
     cursor: pointer;
 }
+
+pre, code {
+    user-select: text;
+}

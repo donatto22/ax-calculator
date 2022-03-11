@@ -8,6 +8,8 @@
     <meta name="keywords" content="calculator math ax-calculator">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/lib/pages/index.css" type="text/css">
+    <!-- PrismJs css -->
+    <link rel="stylesheet" href="./assets/prismjs/prism.css">
     <title>Ax&#45;calculator</title>
 </head>
 <body>
@@ -18,14 +20,36 @@
             </div>
         </nav>
 
-        <div id="package-min-description">
-            <div id="package-name">
-                <span>4x&#45;calculator</span>
+        <div id="package">
+            <div id="package-min-description">
+                <div id="package-name">
+                    <span>4x&#45;calculator</span>
+                    
+                    <div id="flags">
+                        <img src="https://img.shields.io/npm/v/ax-calculator?style=flat-square" alt="version">
+                        <img src="https://img.shields.io/npm/dt/ax-calculator?style=flat-square" alt="downloads">
+                    </div>
+                </div>
+                
             </div>
+    
+            <div id="package-usage">
+                <h2>Usage</h2>
+                <div class="method-install">
+                    <span>using npm</span>
 
-            <div id="flags">
-                <img src="https://img.shields.io/npm/v/ax-calculator?style=flat-square" alt="version">
-                <img src="https://img.shields.io/npm/dt/ax-calculator?style=flat-square" alt="downloads">
+                    <pre>
+                        <code class="language-">npm i ax-calculator</code>
+                    </pre>
+                </div>
+
+                <div class="method-install">
+                    <span>using yarn</span>
+
+                    <pre>
+                        <code class="language-">yarn add ax-calculator</code>
+                    </pre>
+                </div>
             </div>
         </div>
     </header>
@@ -43,5 +67,8 @@
     
     <script type="module" src="./assets/js/index.js"></script>
     <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+
+    <!-- PrismJs js -->
+    <script src="./assets/prismjs/prism.js"></script>
 </body>
 </html>

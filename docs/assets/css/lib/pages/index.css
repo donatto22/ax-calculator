@@ -1,16 +1,43 @@
 @import url("../../styles.css");
 
-#package-name {
-    padding-top: 80px;
-    text-align: center;
-    font-size: 2.5em;
-    height: 200px;
+#package-min-description {
+    display: flex;
+    flex-direction: column;
 }
 
-#flags {
-    width: 100%;
-    display:flex;
-    justify-content: center;
+#package-name {
+    height: 6em;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content:center;
+    font-size: 2.5em;
+}
+
+#package-usage {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#package-usage h2 {
+    margin: 0;
+    margin-bottom: 1em;
+    padding-bottom: .3em;
+    border-bottom: 1px solid var(--default-shadow-gray);
+}
+
+.method-install {
+    display: flex;
+    flex-direction: column;
+}
+
+.method-install:not(:last-child) {
+    margin-bottom: 1fem;
+}
+
+#package-usage code:before {
+    content: '$ ';
 }
 
 #flags img {
@@ -18,6 +45,6 @@
     border-radius: 4px;
 }
 
-#flags img:not(:last-child) {
+/* #flags img:not(:last-child) {
     margin-right: 5px;
-}
+} */
