@@ -80,5 +80,16 @@ pre, code {
 
 #scrolling {
     height: calc(100vh - 5em - var(--footer-height));
-    overflow-x: scroll;
+    overflow-y: scroll;
+}
+
+#particles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+nav, footer {
+    background-color: var(--default-white);
 }
