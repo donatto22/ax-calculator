@@ -77,3 +77,8 @@ input {
 pre, code {
     user-select: text;
 }
+
+#scrolling {
+    height: calc(100vh - 5em - var(--footer-height));
+    overflow-x: scroll;
+}

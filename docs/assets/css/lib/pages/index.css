@@ -6,7 +6,7 @@
 }
 
 #package-name {
-    height: 6em;
+    height: calc(100vh - 70vh);
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -24,7 +24,7 @@
     margin: 0;
     margin-bottom: 1em;
     padding-bottom: .3em;
-    border-bottom: 1px solid var(--default-shadow-gray);
+    border-bottom: 2px solid var(--default-shadow-gray);
 }
 
 .method-install {
@@ -33,7 +33,7 @@
 }
 
 .method-install:not(:last-child) {
-    margin-bottom: 1fem;
+    margin-bottom: 1em;
 }
 
 #package-usage code:before {

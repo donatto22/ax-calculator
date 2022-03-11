@@ -10,51 +10,55 @@
     <link rel="stylesheet" href="./assets/css/lib/pages/index.css" type="text/css">
     <!-- PrismJs css -->
     <link rel="stylesheet" href="./assets/prismjs/prism.css">
+    
     <title>Ax&#45;calculator</title>
 </head>
 <body>
-    <header>
-        <nav class="flex">
-            <div id="toogle-menu" pointer>
-                <ion-icon name="menu"></ion-icon>
-            </div>
-        </nav>
+    <nav class="flex">
+        <div id="toogle-menu" pointer>
+            <ion-icon name="menu"></ion-icon>
+        </div>
+    </nav>
 
-        <div id="package">
-            <div id="package-min-description">
-                <div id="package-name">
-                    <span>4x&#45;calculator</span>
+    <div id="scrolling">
+        <header>
+
+            <div id="package">
+                <div id="package-min-description">
+                    <div id="package-name">
+                        <span>4x&#45;calculator</span>
+                        
+                        <div id="flags">
+                            <img src="https://img.shields.io/npm/v/ax-calculator?style=flat-square" alt="version">
+                            <img src="https://img.shields.io/npm/dt/ax-calculator?style=flat-square" alt="downloads">
+                        </div>
+                    </div>
                     
-                    <div id="flags">
-                        <img src="https://img.shields.io/npm/v/ax-calculator?style=flat-square" alt="version">
-                        <img src="https://img.shields.io/npm/dt/ax-calculator?style=flat-square" alt="downloads">
+                </div>
+        
+                <div id="package-usage">
+                    <h2>Usage</h2>
+                    <div class="method-install">
+                        <span>using npm</span>
+    
+                        <pre>
+                            <code class="language-">npm i ax-calculator</code>
+                        </pre>
+                    </div>
+    
+                    <div class="method-install">
+                        <span>using yarn</span>
+    
+                        <pre>
+                            <code class="language-">yarn add ax-calculator</code>
+                        </pre>
                     </div>
                 </div>
-                
             </div>
-    
-            <div id="package-usage">
-                <h2>Usage</h2>
-                <div class="method-install">
-                    <span>using npm</span>
+        </header>
+    </div>
 
-                    <pre>
-                        <code class="language-">npm i ax-calculator</code>
-                    </pre>
-                </div>
-
-                <div class="method-install">
-                    <span>using yarn</span>
-
-                    <pre>
-                        <code class="language-">yarn add ax-calculator</code>
-                    </pre>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <footer>
+    <footer id="footer">
         <div id="min-footer">
             <span>Ax-calculator</span>
 
@@ -66,7 +70,12 @@
     </footer>
     
     <script type="module" src="./assets/js/index.js"></script>
+
+    <!-- Ionicons CDN -->
     <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+
+    <!-- Css variables created in javascript -->
+    <script src="./assets/js/variables.js"></script>
 
     <!-- PrismJs js -->
     <script src="./assets/prismjs/prism.js"></script>
