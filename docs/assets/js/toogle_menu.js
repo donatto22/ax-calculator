@@ -16,3 +16,4 @@ function toggleMenu() {
 }
 
 buttonToggleMenu.addEventListener("click", toggleMenu)
+document.getElementById("icon-action").addEventListener("click", toggleMenu)

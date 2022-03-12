@@ -12,6 +12,7 @@
 
 :root {
     --red-dark: #ea2c1a;
+    --blue-dark: #0f283d;
 }
 
 :root {
@@ -79,7 +80,7 @@ input {
 }
 
 #scrolling {
-    height: calc(100vh - 5em - var(--footer-height));
+    height: calc(100vh - var(--nav-height) - var(--footer-height));
     overflow-y: scroll;
 }
 
