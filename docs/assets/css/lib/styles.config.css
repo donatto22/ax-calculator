@@ -78,8 +78,6 @@ input {
     cursor: pointer;
 }
 
-
-
 #scrolling {
     height: calc(100vh - 5em - var(--footer-height));
     overflow-y: scroll;

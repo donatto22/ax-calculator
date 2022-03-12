@@ -1,0 +1,24 @@
+#toggle-menu {
+    min-width: 320px;
+    height: 100vh;
+    position: absolute;
+    background-color: var(--default-blue);
+    left: -320px;
+    transition: left .3s;
+    z-index: 1;
+}
+
+.toggle-active {
+    left: 0 !important;
+}
+
+nav, footer, #scrolling {
+    filter: blur(var(--blur));
+    transition: filter .3s;
+}
+
+@media screen and (min-width: 321px) {
+    #toggle-menu {
+        box-shadow: 4px 0 10px var(--default-black);
+    }
+}
