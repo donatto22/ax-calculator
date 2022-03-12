@@ -1,8 +1,9 @@
 @import url("../../styles.css");
 
-#package-min-description {
-    display: flex;
-    flex-direction: column;
+#package {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #package-name {
@@ -14,13 +15,11 @@
     font-size: 2.5em;
 }
 
-#package-usage {
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
+#package-usage > div:not(:last-child) {
+    margin-bottom: 2em;
 }
 
-#package-usage h2 {
+#usage h2, #instalation h2 {
     margin: 0;
     margin-bottom: 1em;
     padding-bottom: .3em;
@@ -36,8 +35,13 @@
     margin-bottom: 1em;
 }
 
-#package-usage code:before {
+#usage code:before {
     content: '$ ';
+}
+
+#flags {
+    display: flex;
+    margin-top: .3em;
 }
 
 #flags img {
@@ -45,6 +49,57 @@
     border-radius: 4px;
 }
 
-/* #flags img:not(:last-child) {
+#flags img:not(:last-child) {
     margin-right: 5px;
-} */
+}
+
+blockquote {
+    background-color: #eee;
+    margin: 0;
+    border-radius: .3em;
+    display: flex;
+    align-items: center;
+    font-style: italic;
+}
+
+#fake-shadow {
+    border-top-left-radius: 0.3em;
+    border-bottom-left-radius: 0.3em;
+    margin-right: 1em;
+    padding: 1.5em 0;
+    background-color: #ccc;
+    width: 5px;
+}
+
+@media screen and (min-width: 600px) {
+    #package {
+        width: 75%;
+    }
+
+    #package-name {
+        height: calc(100vh - 75vh);
+        font-size: 3em;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    #package-usage {
+        display: flex;
+    }
+
+    #package-usage > div {
+        margin: 0 auto;
+        min-width: 300px;
+    }
+
+    #package-usage > div:not(:last-child) {
+        margin-right: 10px;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    #package-usage > div {
+        margin: 0 auto;
+        width: 40%;
+    }
+}

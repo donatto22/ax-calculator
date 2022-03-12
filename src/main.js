@@ -29,4 +29,5 @@ export { Vectors } from './physics/vectors.js';
 // Others
 export { Validator } from './other/Validator.js';
 export { Clock } from './other/Clock.js';
+export { OS } from './other/OS.js';
 
