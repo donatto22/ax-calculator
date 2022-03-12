@@ -47,6 +47,47 @@ nav, footer, #scrolling {
     color: var(--default-white);
 }
 
+#links-menu a {
+    color: var(--default-white);
+    text-decoration: none;
+    display: block;
+}
+
+#links-menu a:visited {
+    color: var(--default-green);
+}
+
+#links-menu .link:not(:last-child) {
+    margin-bottom: 2em;
+}
+
+#links {
+    font-size: 1.05em;
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 2em auto;
+}
+
+.link {
+    padding-bottom: .3em;
+    display: flex;
+}
+
+.link:last-child {
+    color: var(--default-pink) !important;
+}
+
+.link a {
+    margin-left: .5em;
+    color: var(--default-white) !important;
+}
+
+#links-menu .link:hover {
+    width: 70%;
+    box-shadow: 0 1px white;
+}
+
 @media screen and (min-width: 321px) {
     #toggle-menu {
         box-shadow: 4px 0 10px var(--default-black);
