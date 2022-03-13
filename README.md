@@ -3,7 +3,7 @@
 </p>
 
 
-<h1 align="center">Ax-Calculator</h1>
+<h1 align="center">4x-Calculator</h1>
 <p align="center">This is a quick mathematical calculator</p>
 
 <p align="center">
