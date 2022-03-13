@@ -21,7 +21,7 @@
 }
 
 #package > div:not(:last-child) {
-    margin-bottom: .5em;
+    margin: 1em 0;
 }
 
 #package-name {
@@ -31,13 +31,6 @@
     flex-direction: column;
     justify-content:center;
     font-size: 2.5em;
-}
-
-#usage h2, #instalation h2 {
-    margin: 0;
-    margin-bottom: 1em;
-    padding-bottom: .3em;
-    border-bottom: 2px solid var(--default-shadow-gray);
 }
 
 .method-install {
@@ -83,6 +76,12 @@ blockquote {
     padding: 1.5em 0;
     background-color: #ccc;
     width: 5px;
+}
+
+@media screen and (max-width: 768px) {
+    #package-usage > div:not(:last-child) {
+        margin-bottom: 2em;
+    }
 }
 
 @media screen and (min-width: 320px) {

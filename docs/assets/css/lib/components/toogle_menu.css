@@ -73,7 +73,7 @@ nav, footer, #scrolling {
     display: flex;
 }
 
-.link:nth-last-child(-n + 2) {
+.link:nth-last-child(1) {
     color: var(--default-pink) !important;
 }
 
@@ -87,7 +87,7 @@ nav, footer, #scrolling {
     box-shadow: 0 1px var(--default-white);
 }
 
-#links-menu .link:nth-last-child(-n + 2) a:hover {
+#links-menu .link:nth-last-child(1) a:hover {
     box-shadow: 0 1px var(--default-pink);
 }
 
