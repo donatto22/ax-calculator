@@ -1,8 +1,15 @@
-# Ax-Calculator
-This is a quick mathematical calculator
+<p align="center">
+  <img width="150px" src="https://user-images.githubusercontent.com/68967448/158041774-b2ba586a-b1a2-41b3-a30f-9eff177ae8c0.png" alt="logo">
+</p>
 
-<a href="https://www.npmjs.com/package/ax-calculator">![npm](https://img.shields.io/npm/v/ax-calculator?style=flat-square)</a>
-<a href="https://www.npmjs.com/package/ax-calculator">![npm](https://img.shields.io/npm/dt/ax-calculator?style=flat-square)</a>
+
+<h1 align="center">Ax-Calculator</h1>
+<p align="center">This is a quick mathematical calculator</p>
+
+<p align="center">
+  <a href="https://www.npmjs.com/package/ax-calculator"><img src="https://img.shields.io/npm/v/ax-calculator?style=flat-square" alt="version">
+  <a href="https://www.npmjs.com/package/ax-calculator"><img src="https://img.shields.io/npm/dt/ax-calculator?style=flat-square" alt="downloads"></a>
+</p>
 
 ## Last added feature
 - Clock added
