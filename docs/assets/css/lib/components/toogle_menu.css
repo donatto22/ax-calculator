@@ -70,22 +70,25 @@ nav, footer, #scrolling {
 }
 
 .link {
-    padding-bottom: .3em;
     display: flex;
 }
 
-.link:last-child {
+.link:nth-last-child(-n + 2) {
     color: var(--default-pink) !important;
 }
 
 .link a {
     margin-left: .5em;
     color: var(--default-white) !important;
+    padding-bottom: .3em;
 }
 
-#links-menu .link:hover {
-    width: 70%;
-    box-shadow: 0 1px white;
+#links-menu a:hover {
+    box-shadow: 0 1px var(--default-white);
+}
+
+#links-menu .link:nth-last-child(-n + 2) a:hover {
+    box-shadow: 0 1px var(--default-pink);
 }
 
 @media screen and (min-width: 321px) {

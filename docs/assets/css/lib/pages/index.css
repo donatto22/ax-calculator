@@ -1,9 +1,23 @@
 @import url("../../styles.css");
 
+#min-head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#min-head img {
+    width: 130px;
+}
+
 #package {
     width: 80%;
     margin-left: auto;
     margin-right: auto;
+}
+
+#package > div:not(:last-child) {
+    margin-bottom: .5em;
 }
 
 #package-name {
@@ -77,7 +91,7 @@ blockquote {
     }
 
     #package-name {
-        height: calc(100vh - 75vh);
+        height: calc(100vh - 65vh);
         font-size: 3em;
     }
 }
