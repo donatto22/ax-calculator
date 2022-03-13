@@ -10,6 +10,10 @@
     width: 130px;
 }
 
+#min-head span {
+    margin: .3em 0;
+}
+
 #package {
     width: 80%;
     margin-left: auto;
@@ -27,10 +31,6 @@
     flex-direction: column;
     justify-content:center;
     font-size: 2.5em;
-}
-
-#package-usage > div:not(:last-child) {
-    margin-bottom: 2em;
 }
 
 #usage h2, #instalation h2 {
@@ -83,6 +83,20 @@ blockquote {
     padding: 1.5em 0;
     background-color: #ccc;
     width: 5px;
+}
+
+@media screen and (min-width: 320px) {
+    #min-head img {
+        width: 100px;
+    }
+
+    #min-head span {
+        margin: .2em 0;
+    }
+
+    #package-name {
+        font-size: 2em;
+    }    
 }
 
 @media screen and (min-width: 600px) {

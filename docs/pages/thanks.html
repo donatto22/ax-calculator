@@ -5,9 +5,82 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/css/lib/pages/thanks.css">
+    <!-- PrismJs css -->
+    <link rel="stylesheet" href="../assets/prismjs/prism.css">
     <title>Thanks</title>
 </head>
 <body>
-    
+    <div id="toggle-menu">
+        <div id="action-menu">
+            <div id="icon-action" pointer>
+                <ion-icon name="close"></ion-icon>
+            </div>
+        </div>
+
+        <div id="links-menu">
+            <div id="links">
+                <div class="link">
+                    <ion-icon name="home"></ion-icon>
+                    <a href="https://donatto22.github.io/ax-calculator/">Home</a>
+                </div>
+                
+                <div class="link">
+                    <ion-icon name="book"></ion-icon>
+                    <a href="./pages/thanks.html">Get started</a>
+                </div>
+
+                <div class="link">
+                    <ion-icon name="document"></ion-icon>
+                    <a href="./pages/examples.html">Examples</a>
+                </div>
+
+                <div class="link">
+                    <ion-icon name="people"></ion-icon>
+                    <a href="./pages/contributing.html">Contributing</a>
+                </div>
+
+                <div class="link">
+                    <ion-icon name="heart-empty"></ion-icon>
+                    <a>Support</a>
+                </div>
+
+                <div class="link">
+                    <ion-icon name="heart-empty"></ion-icon>
+                    <a href="./pages/thanks.html">Thanks</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <nav id="nav" class="flex" >
+        <div id="button-toggle-menu" pointer>
+            <ion-icon name="menu"></ion-icon>
+        </div>
+    </nav>
+
+    <div id="scrolling"></div>
+
+    <footer id="footer">
+        <div id="min-footer">
+            <span>&copy; 2021 Ax-calculator</span>
+
+            <div id="footer-actions">
+                <a href="https://github.com/donatto22/ax-calculator">Source code</a>
+                <a href="https://github.com/donatto22">Contact</a>
+            </div>
+        </div>
+    </footer> 
+
+    <script src="../assets/js/toogle_menu.js"></script>
+
+    <!-- Ionicons CDN -->
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+
+    <!-- Css variables created in javascript -->
+    <script src="../assets/js/variables.js"></script>
+
+    <!-- PrismJs js -->
+    <script src="../assets/prismjs/prism.js"></script>
 </body>
 </html>
