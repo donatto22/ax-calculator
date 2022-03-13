@@ -29,6 +29,10 @@
 
 }
 
+:root {
+    --height-general: calc(100vh - var(--nav-height) - var(--footer-height));
+}
+
 /* the same color but more clear */
 :root {
     --shadow-clear: #d9d9d9;
@@ -86,7 +90,7 @@ input {
 }
 
 #scrolling{
-    height: calc(100vh - var(--nav-height) - var(--footer-height));
+    height: var(--height-general);
     overflow-y: scroll;
 }
 
@@ -105,6 +109,10 @@ input {
     width: 100%;
     height: 100%;
     z-index: -1;
+}
+
+.particles-effect {
+    z-index: 1 !important;
 }
 
 nav, footer {

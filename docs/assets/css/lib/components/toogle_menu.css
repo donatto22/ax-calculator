@@ -5,7 +5,7 @@
     background-color: var(--default-blue);
     left: -320px;
     transition: left .3s;
-    z-index: 1;
+    z-index: 5;
     color: var(--default-white);
 }
 
