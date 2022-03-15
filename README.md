@@ -108,7 +108,7 @@ RuleOfThree.simple("direct", 10, undefined, 60, 90) // Output: 15
 ```js
 Triangles.angle14_76()
 
-/* Output:
+/*
 {
   hypotenuse: 'k√17',
   opposite: 'k',
