@@ -1,3 +1,3 @@
 import * as calculator from "../../../src/main.js";
 
-calculator.Browser.setCSSVariable('--blur4', 'asdad')
+console.log(calculator.Browser.getComputedStyleById('nav', 'border'))

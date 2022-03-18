@@ -281,3 +281,19 @@ Clock.time() // Sample: 23:10
 // the default format is US
 Clock.date() // month/day/year
 ```
+
+### Browser
+- setCSSVariable, getCSSVariable, getBrowserDetails, isMobile, getComputedStyleById
+```js
+...
+
+Browser.isMobile() // false
+
+Browser.getComputedStyleById('main', 'margin-top') // 0px
+Browser.getComputedStyleById('nav', 'border') // 2px solid rgb(123, 123, 123)
+
+Browser.setCSSVariable('--myvariable', '4px')
+Browser.getCSSVariable('--myvariable') // '4px'
+
+...
+```

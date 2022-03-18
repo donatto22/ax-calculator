@@ -3,11 +3,35 @@ import { Validator } from "./Validator.js"
 export const Browser = {
     /**
      * Web function
-    Return the operating system
-    @return {string} Windows, Linux, Android ...
+    @param {boolean} dissableMessage Displays the console message
+    @return {object} An object with the most used data on the web
     **/
-    getOS: function() {
-        return navigator.userAgentData.platform
+
+    getBrowserDetails: function(dissableMessage = false) {
+        dissableMessage ? null : console.log('%cThis function uses \'navigator\' to provides information', 'color: pink')
+
+        let userAgent = navigator.userAgent.split(';')
+        
+        // navigator.userAgent
+        let platform = userAgent[0].split('(')[1],
+        vendor = navigator.vendor, languages = navigator.languages,
+        mobile = navigator.userAgentData.mobile
+
+        // screen
+        let resolution = {
+            width : screen.width,
+            height : screen.height
+        }
+
+        let orientation = screen.orientation.type
+        let webZoomLevel = Math.round(window.devicePixelRatio * 100)
+
+        // return
+        return {
+            platform, vendor, 
+            languages, resolution, orientation,
+            webZoomLevel, mobile
+        }
     },
 
     /**
@@ -22,7 +46,7 @@ export const Browser = {
     /**
     * Web function
     @param {string} id the element id
-    @param {string} property
+    @param {string} property the property you want to get
     **/
 
     getComputedStyleById: function(id, property) {
@@ -42,7 +66,6 @@ export const Browser = {
                 }
         
                 else if(Validator.isString(id) && Validator.isUndefined(property)) {
-                    console.log('hola2')
                     return getComputedStyle(document.getElementById(id))
                 }
         
@@ -88,6 +111,10 @@ export const Browser = {
 
             let property = root.style.getPropertyValue(variable)
             return property.length == 0 ? '[x] getCSSVariable: The variable does not exist' : property
+        }
+
+        else {
+            return "[x] getCSSVariable: Place a valid css variable"
         }
     }
 }
