@@ -1,11 +1,11 @@
 {
-    "include": ["src/**/*"],
-    "compilerOptions": {
-      "allowJs": true,
-      // Generate d.ts files
-      "declaration": true,
-      "emitDeclarationOnly": true,
-      "outDir": "dist",
-      "declarationMap": true
-    }
+  "include": ["src/**/*"],
+  "compilerOptions": {
+    "allowJs": true,
+    // Generate d.ts files
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "outDir": "dist",
+    "declarationMap": true
+  }
 }
