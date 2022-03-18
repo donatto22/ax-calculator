@@ -1,3 +1,3 @@
 import * as calculator from "../../../src/main.js";
 
-console.log(calculator.Browser.getComputedStyleById('nav', 'footer'))
+calculator.Browser.setCSSVariable('--blur4', 'asdad')

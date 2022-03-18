@@ -11,7 +11,8 @@ export const Browser = {
     },
 
     /**
-    * Web function    
+    * Web function
+    @return {boolean} true | false
     **/
 
     isMobile: function() {
@@ -49,6 +50,44 @@ export const Browser = {
                     return "[x] getComputedStyleById: Both parameters must be strings"
                 }
             }
+        }
+    },
+
+    /**
+    * Web function
+    @param {string} variable The name of the css variable
+    @param {string} value The value of the css variable
+    **/
+
+    setCSSVariable: function(variable, value) {
+        if(Validator.isString(variable) && Validator.isString(value)) {
+            const root = document.documentElement;
+            
+            if(root.style.getPropertyValue(variable) != '') {
+                console.warn('[x] setCSSVariable: The variable already exists')
+            }
+            
+            else {
+                root.style.setProperty(variable, value)
+            }
+        }
+
+        else {
+            console.error('[x] setCSSVariable: Variable and value must be strings')
+        }
+    },
+
+    /**
+    * Web function
+    @param {string} variable The name of the css variable
+    **/
+
+    getCSSVariable: function(variable) {
+        if(Validator.isString(variable)) {
+            const root = document.documentElement;
+
+            let property = root.style.getPropertyValue(variable)
+            return property.length == 0 ? '[x] getCSSVariable: The variable does not exist' : property
         }
     }
 }
