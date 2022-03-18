@@ -12,7 +12,7 @@
 </p>
 
 ## Last added feature
-- Clock added
+- [Browser](https://github.com/donatto22/ax-calculator/releases/tag/1.6.5) added
 
 ### Instalation
 
