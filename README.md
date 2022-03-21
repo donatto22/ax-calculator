@@ -36,6 +36,10 @@ yarn add ax-calculator
 ```js
 // In the dots you will place the object you want to use
 import { ... } from 'ax-calculator'
+
+...
+
+import * as ax from 'ax-calculator'
 ```
 
 ## Objects and their operations

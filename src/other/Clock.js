@@ -1,4 +1,5 @@
 import { Validator } from "./Validator.js"
+import { Config } from "./Config.js"
 
 export const Clock = {
     /**
@@ -36,7 +37,13 @@ export const Clock = {
         }
 
         else {
-            return "[x] Clock.time() error: This function requires boolean parameters"
+            let msg = ''
+
+            Config().language == 'en' ? 
+            msg = 'This function requires boolean parameters' :
+            msg = 'Esta función requiere parámetros boleanos'
+
+            return "[x] Clock.time() error: " + msg
         }
     },
 
@@ -58,36 +65,47 @@ export const Clock = {
 
             // ---------------------- // Validando los formatos de fecha y booleano del year
             if (optionalYear == true) {
-                if (format = "US")
+                if (format == "US")
                     fullDate = `${month}/${day}/${year}`
 
-                else if (format = "EUR")
+                else if (format == "EUR")
                     fullDate = `${day}/${month}/${year}`
 
-                else if (format = "AS")
+                else if (format == "AS")
                     fullDate = `${year}/${month}/${day}`
 
-                else
-                    return "[x] Format not found"
+                else {
+                    let msg = Config().language == 'en' ? 
+                    "[x] Format not found" : "[x] Formato no encontrado"
+
+                    return "[x] Clock.date(): " + msg
+                }
             }
 
             else {
-                if ((format = "US") || (format = "AS"))
+                if ((format == "US") || (format == "AS"))
                     fullDate = `${month}/${day}`
 
-                else if (format = "EUR")
+                else if (format == "EUR")
                     fullDate = `${day}/${month}`
 
-                else
-                    return "[x] Format not found"
+                else {
+                    let msg = Config().language == 'en' ? 
+                    "[x] Format not found" : "[x] Formato no encontrado"
+
+                    return "[x] Clock.date(): " + msg
+                }
             }
+
+            return fullDate
         // ---------------------- //
         }
 
         else {
-            return "[x] Clock.date() error: Set the correct parameters"
+            let msg = Config().language == 'en' ? 
+            "Set the correct parameters" : "Coloca los parámetros correctos"
+            
+            return "[x] Clock.date(): " + msg
         }
-
-        return fullDate
     }
 }
