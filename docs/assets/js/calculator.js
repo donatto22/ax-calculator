@@ -1,6 +1,6 @@
-import * as calculator from "../../../src/main.js";
+import {Config}  from "../../../src/main.js";
 
-console.log(calculator.Browser.getBrowserDetails())
+console.log(Config())
 
 /*
 {

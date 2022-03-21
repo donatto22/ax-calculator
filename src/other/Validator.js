@@ -19,7 +19,7 @@ export const Validator = {
 
     // si un número es impar
     /**
-    @param {number} parameter
+    @param {any} parameter
     **/
     isOdd: function(number) {
         if(this.isNumber(number))
@@ -29,31 +29,35 @@ export const Validator = {
     },
 
     /**
-    @param {boolean} parameter
+    @param {any} parameter
     **/
     isBool: function(parameter) {
         return typeof parameter == "boolean" ? true : false
     },
 
     /**
-    @param {string} parameter
+    @param {any} parameter
     **/
     isString: function(parameter) {
         return typeof parameter === 'string' ? true : false
     },
 
     /**
-    @param {object} parameter
+    @param {any} parameter
     **/
     isObject: function(parameter) {
         return typeof parameter === 'object' ? true : false
     },
 
     /**
-    @param {any} parameter
+    @param {any} param
     **/
-    isUndefined: function(parameter) {
-        return typeof parameter === 'undefined' ? true : false
+    isUndefined: (param) => {
+        return typeof param === 'undefined' ? true : false
+    },
+
+    isArray: (param) => {
+        return Array.isArray(param)
     },
 
     /**
