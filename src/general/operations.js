@@ -4,9 +4,12 @@ export const Operations = {
     /**
         Returns the square root of the product of 
         the sum of the squared sides of the triangle.
+
+        @param {number} param1
+        @param {number} param2
     **/
     hypotenuse: function(param1, param2) {
-        if(typeof param1 !== 'number' || typeof param2 !== 'number') {
+        if(!Validator.isNumber(param1) || !Validator.isNumber(param2)) {
             return "This function requires numbers"
         }
 
@@ -27,7 +30,7 @@ export const Operations = {
         @param {number} num The number you are going to convert
     **/
     toRoman: function(num) {
-        if(typeof num !== "number") {
+        if(!Validator.isNumber(num)) {
             return "Place a number"
         }
 
@@ -98,7 +101,7 @@ export const Operations = {
         @param {number} bottom - 7
     **/
     combinatorial: function(top, bottom) {
-        if(typeof top !== 'number' || typeof bottom !== 'number') {
+        if(!Validator.isNumber(top) || !Validator.isNumber(bottom)) {
             return "You must enter a number"
         }
 

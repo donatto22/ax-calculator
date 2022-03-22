@@ -26,7 +26,8 @@ export const SystemEquation = {
         }
 
         else {
-            let msg = Config().language == 'en' ? "" : "Coloca el arreglo con los valores de la equación"
+            let msg = Config().language == 'en' ? 
+            "Place the objects with the equation values" : "Coloca el arreglo con los valores de la equación"
 
             return "[x] SystemEquation: " + msg
         }

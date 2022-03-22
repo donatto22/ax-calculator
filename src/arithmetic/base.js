@@ -1,4 +1,4 @@
-import { Validator } from "../main.js";
+import { Validator, Config } from "../main.js";
 
 export const Base = {
     /**
@@ -7,7 +7,10 @@ export const Base = {
     **/
     toBase: function (number, base) {
         if(!Validator.isNumber(number) || !Validator.isNumber(base)) {
-            return "[x] toBase: This function requires numbers";
+            let msg = Config().language == 'en' ? 
+            "This function requires numbers" : "Esta función requiere números"
+            
+            return "[x] toBase: " + msg;
         }
 
         else {
