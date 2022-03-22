@@ -1,10 +1,12 @@
+import { Validator } from "../main.js";
+
 export const Base = {
     /**
-        @param number The number in base 10
-        @param base The base to which you want to pass the number
+        @param {number} number The number in base 10
+        @param {number} base The base to which you want to pass the number
     **/
     toBase: function (number, base) {
-        if(typeof(number) != 'string' || typeof(base) != 'string') {
+        if(!Validator.isNumber(number) || !Validator.isNumber(base)) {
             return "[x] toBase: This function requires numbers";
         }
 
@@ -13,10 +15,10 @@ export const Base = {
         }
     },
     /**
-        @param number The binary number you need in base 10
+        @param {number} number The binary number you need in base 10
     **/
     binaryToBase10: function (number) {
-        if (!isNaN(number)) {
+        if (Validator.isNumber(number)) {
             var binary = number.toString().replace(/[^01]/gi, '')
             return Number.parseInt(binary, 2).toString()
         }

@@ -1,7 +1,15 @@
+import { Validator, Config } from "../main.js"
+
 export const LinearRegression = {
+    /**
+    @param {object[]} array_x
+    @param {object[]} array_y
+    @return {object{}}
+    **/
     simple: function(array_x, array_y) {
+        let msg = ""
         // Verificar que ambos sean arreglos
-        if((typeof array_x == 'object') && (typeof array_y == 'object')) {
+        if(Validator.isArray(array_x) && Validator.isArray(array_y)) {
             //Si son arreglos, ver que tengan la misma cantidad de datos
             if(array_x.length == array_y.length) {
                 //Longitud
@@ -34,7 +42,7 @@ export const LinearRegression = {
 
                 return {
                     a, b, equation,
-                    coefficient() {
+                    coefficient: function() {
                         var average_x = sum_x / length;
                         var average_y = sum_y / length;
 
@@ -68,20 +76,28 @@ export const LinearRegression = {
                         
                         var result = sum_product / ((sum_avgx2 ** (1/2)) * (sum_avgy2 ** (1/2)))
 
-                        return Number.parseFloat((result).toFixed(5));
+                        return Number.parseFloat((result).toFixed(5))
                     }
                 }
             }
 
             else {
-                return "The arrays must have the same amount of data";
+                msg = Config().language == 'en' ? 
+                "The arrays must have the same amount of data" : 
+                "Los arreglos deben tener la misma cantidad de datos"
+
+                return "[x] LinearRegression: " + msg
             }
         }
 
         else {
-            return "The function requires objects"
+            msg = Config().language == 'en' ? 
+            "The function requires array objects" : 
+            "La función requiere objetos de tipo arreglo"
+
+            return "[x] LinearRegression: " + msg
         }
     }
 }
 
-const sum = (accumulator, curr) => accumulator + curr;
+const sum = (accumulator, curr) => accumulator + curr

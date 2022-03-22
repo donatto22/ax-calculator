@@ -1,3 +1,5 @@
+import { Config } from './Config.js'
+
 export const Validator = {
     /**
     @param {number} parameter
@@ -25,7 +27,7 @@ export const Validator = {
         if(this.isNumber(number))
         return number % 2 != 0
 
-        else return "[x] isEven requires number"
+        else return "[x] isOdd requires number"
     },
 
     /**
@@ -130,6 +132,20 @@ export const Validator = {
     @param {object[]} object
     **/
     containsArray: function(object) {
+        let bool;
 
+        if(this.isObject(object)) {
+            let total = object.length
+
+            for(let i = 0; i <= total - 1; i++) {
+                this.isArray(object[i]) ? bool = true : bool = false
+            }
+        }
+
+        else {
+            return "[x] containsArray requires a object[]"
+        }
+
+        return bool
     }
 }

@@ -1,3 +1,5 @@
+import { Config } from '../main.js'
+
 export const BasicOperations = {
     /**
         Returns the sum of the numbers
@@ -5,7 +7,10 @@ export const BasicOperations = {
     **/
    sum: function (...parameters) {
         for (let i = 0; i <= parameters.length - 1; i++) {
-            if (typeof parameters[i] != 'number') return "[x] sum requires numbers"
+            if (typeof parameters[i] != 'number') {
+                let msg = Config().language == 'en' ? "Place numbers" : "Coloca números"
+                return "[x] sum:" + msg
+            }
 
             else {
                 let result = parameters.reduce((previous, current) => { return  previous + current })
@@ -19,13 +24,17 @@ export const BasicOperations = {
             }
         }
    },
+
     /**
         Returns the substract of the numbers
         @param {number} parameters You can add as many numbers as you wish
     **/
     substract: function(...parameters) {
         for(var i = 0; i <= parameters.length - 1; i++) {
-            if (typeof parameters[i] != 'number') return "[x] substract requires numbers"
+            if (typeof parameters[i] != 'number') {
+                let msg = Config().language == 'en' ? "Place numbers" : "Coloca números"
+                return "[x] substract: " + msg
+            }
 
             else {
                 var result =  parameters.reduce((previous, current) => { return previous - current })
@@ -46,10 +55,13 @@ export const BasicOperations = {
     **/
     product: function(...parameters) {
         for(let i = 0; i <= parameters.length - 1; i++) {
-            if (typeof parameters[i] != 'number') return "[x] product requires numbers"
+            if (typeof parameters[i] != 'number') {
+                let msg = Config().language == 'en' ? "Place numbers" : "Coloca números"
+                return "[x] product: " + msg
+            }
 
             else {
-                var result = parameters.reduce((previous, current) => { return previous * current });
+                let result = parameters.reduce((previous, current) => { return previous * current });
         
                 return {
                     result,
@@ -64,12 +76,17 @@ export const BasicOperations = {
 
     /**
         Returns the division by 2 numbers
+        @param {number} number1
+        @param {number} number2
     **/
-    division: function(param1, param2) {
-        if(typeof param1 != 'number' || typeof param2 != 'number') return "[x] division requires two numbers"
+    division: function(number1, number2) {
+        if(typeof number1 != 'number' || typeof number2 != 'number') {
+            let msg = Config().language == 'en' ? "Place two numbers" : "Coloca dos números"
+            return "[x] division: " + msg
+        }
 
         else {
-            return (param1 / param2)
+            return (number1 / number2)
         }
     },
 
@@ -77,19 +94,30 @@ export const BasicOperations = {
     Returns the remainder of a division by 2 numbers
     **/
     module: function(param1, param2) {
-        if(typeof param1 != 'number' || typeof param2 != 'number') return "[x] module requires two numbers"
+        if(typeof param1 != 'number' || typeof param2 != 'number') {
+            let msg = Config().language == 'en' ? "Place two numbers" : "Coloca dos números"
+            return "[x] module: " + msg
+        }
 
         else {
-            return (param1 % param2)
+            return param1 % param2
         }
     },
 
+    /**
+    @param {number} number
+    @param {number} exponent
+    **/
+
     raiseTo: function(number, exponent) {
-        if(typeof number === 'string' || typeof exponent === 'string') return "[x] raiseTo requires two numbers"
+        if(typeof number != 'number' || typeof exponent != 'number') {
+            let msg = Config().language == 'en' ? "Place two numbers" : "Coloca dos números"
+            return "[x] raiseTo: " + msg
+        }
 
         else {
             if(exponent == 0) {
-                return "1"
+                return 1
             }
     
             else if(exponent < 0) {
@@ -97,7 +125,7 @@ export const BasicOperations = {
             }
     
             else {
-                return (number ** exponent).toString();
+                return number ** exponent;
             }
         }
     },
@@ -110,12 +138,13 @@ export const BasicOperations = {
     **/
 
     root: function(number, root = 2) {
-        if(typeof number === 'string' || typeof root === 'string') {
-            return "You must enter a number"
+        if(typeof number != 'number' || typeof root != 'number') {
+            let msg = Config().language == 'en' ? "Place a number" : "Coloca un número"
+            return "[x] root: " + msg
         }
 
         else {
-            return String(number ** (1/root))
+            return number ** (1 / root)
         }
     },
 

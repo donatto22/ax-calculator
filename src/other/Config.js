@@ -1,6 +1,6 @@
 "use strict"
 
-import { Validator } from "./Validator.js"
+import { Validator } from "../main.js"
 
 let cfg = {
     language: "en",

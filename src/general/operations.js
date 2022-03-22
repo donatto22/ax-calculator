@@ -1,3 +1,5 @@
+import { Validator, Config } from "../main.js"
+
 export const Operations = {
     /**
         Returns the square root of the product of 

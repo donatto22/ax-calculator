@@ -1,4 +1,4 @@
-import { Validator } from "./Validator.js"
+import { Validator, Config } from "../main.js"
 
 export const Browser = {
     /**
@@ -6,7 +6,6 @@ export const Browser = {
     @param {boolean} dissableMessage Displays the console message
     @return {object} An object with the most used data on the web
     **/
-
     getBrowserDetails: function(dissableMessage = false) {
         dissableMessage ? null : console.log('%cThis function uses \'navigator\' to provides information', 'color: pink')
 
@@ -38,7 +37,6 @@ export const Browser = {
     * Web function
     @return {boolean} true | false
     **/
-
     isMobile: function() {
         return navigator.userAgentData.mobile
     },
@@ -48,15 +46,22 @@ export const Browser = {
     @param {string} id the element id
     @param {string} property the property you want to get
     **/
-
     getComputedStyleById: function(id, property) {
+        let msg = ''
+        
         if(Validator.isUndefined(id)) {
-            return "[x] getComputedStyleById: Place an Id"
+            msg = Config().language == 'en' ? 
+            "Place the id of the element" : "Coloca el id del elemento"
+
+            return "[x] getComputedStyleById: " + msg
         }
 
         else {
             if(document.getElementById(id) == null) {
-                return "[x] getComputedStyleById: The id does not exist"
+                msg = Config().language == 'en' ? 
+                "The id does not exist" : "El id no existe"
+
+                return "[x] getComputedStyleById: " + msg
             }
     
             else {
@@ -81,13 +86,17 @@ export const Browser = {
     @param {string} variable The name of the css variable
     @param {string} value The value of the css variable
     **/
-
     setCSSVariable: function(variable, value) {
+        let msg = ""
+
         if(Validator.isString(variable) && Validator.isString(value)) {
             const root = document.documentElement;
             
             if(root.style.getPropertyValue(variable) != '') {
-                console.warn('[x] setCSSVariable: The variable already exists')
+                msg = Config().language == 'en' ? 
+                "The variable already exists" : "La varible ya existe"
+                
+                console.warn('[x] setCSSVariable: ' + msg)
             }
             
             else {
@@ -96,7 +105,11 @@ export const Browser = {
         }
 
         else {
-            console.error('[x] setCSSVariable: Variable and value must be strings')
+            msg = Config().language == 'en' ? 
+            "Variable and value must be strings" : 
+            "La variable y su valor deben ser cadenas de texto"
+
+            console.error('[x] setCSSVariable: ' + msg)
         }
     },
 
@@ -104,8 +117,9 @@ export const Browser = {
     * Web function
     @param {string} variable The name of the css variable
     **/
-
     getCSSVariable: function(variable) {
+        let msg = ""
+
         if(Validator.isString(variable)) {
             const root = document.documentElement;
 
@@ -114,7 +128,9 @@ export const Browser = {
         }
 
         else {
-            return "[x] getCSSVariable: Place a valid css variable"
+            msg = Config().language == 'en' ? 
+            "Place a valid css variable" : "Coloca una variable css válida"
+            return "[x] getCSSVariable: " + msg
         }
     }
 }
