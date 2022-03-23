@@ -66,8 +66,14 @@ export const Browser = {
     
             else {
                 if(Validator.isString(id) && Validator.isString(property)) {
-                    let comp = getComputedStyle(document.getElementById(id)).getPropertyValue(property)
-                    return comp.length == 0 ? `[x] getComputedStyleById: The element with id ${id} does not have the property ${property}` : comp
+                    // computed stlye
+                    let comp = getComputedStyle(document.getElementById(id)).getPropertyValue(property) 
+
+                    msg = Config().language == 'en' ? 
+                    `The element with id ${id} does not have the property ${property}` : 
+                    `El elemento con el id ${id} no tiene la propiedad ${property}`
+
+                    return comp.length == 0 ? `[x] getComputedStyleById: ${msg}` : comp
                 }
         
                 else if(Validator.isString(id) && Validator.isUndefined(property)) {
@@ -75,7 +81,10 @@ export const Browser = {
                 }
         
                 else {
-                    return "[x] getComputedStyleById: Both parameters must be strings"
+                    msg = Config().language == 'en' ? 
+                    "Both parameters must be strings" : "Ambos parámetros deben ser cadenas"
+
+                    return "[x] getComputedStyleById: " + msg
                 }
             }
         }
@@ -121,10 +130,13 @@ export const Browser = {
         let msg = ""
 
         if(Validator.isString(variable)) {
-            const root = document.documentElement;
+            const root = document.documentElement; // root
+            let property = root.style.getPropertyValue(variable) // variable
 
-            let property = root.style.getPropertyValue(variable)
-            return property.length == 0 ? '[x] getCSSVariable: The variable does not exist' : property
+            msg = Config().language == 'en' ? 
+            "The variable does not exist" : "La variable no existe"
+
+            return property.length == 0 ? ('[x] getCSSVariable: ' + msg) : property
         }
 
         else {
