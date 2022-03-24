@@ -48,7 +48,7 @@ export const Validator = {
     @param {any} param
     **/
     isObject: function(param) {
-        return typeof param === 'object'
+        return typeof param === 'object' && !Array.isArray(param)
     },
 
     /**

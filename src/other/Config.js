@@ -18,12 +18,18 @@ export const Config = (props) => {
     
     // en caso de recibir parámetro, será un objeto (no un array) con las
     // propiedades a cambiar
-    else if(Validator.isObject(props) && !Validator.isArray(props)) {
-        cfg.language = props.language ? props.language : cfg.language
-        cfg.history = props.history ? props.history : cfg.history
-        cfg.globalMessage = props.globalMessage ? props.globalMessage : cfg.globalMessage
-        cfg.pi = props.pi ? props.pi : cfg.pi
-        cfg.disabledTriangleConstants = props.disabledTriangleConstants ? props.disabledTriangleConstants : cfg.disabledTriangleConstants
+    else if(Validator.isObject(props)) {
+        cfg.history = (props.history && Validator.isBoolean(props.history)) ? 
+        props.history : cfg.history
+
+        cfg.globalMessage = (props.globalMessage && Validator.isString(props.globalMessage)) ? 
+        props.globalMessage : cfg.globalMessage
+
+        cfg.pi = (props.pi && Validator.isNumber(props.pi)) ? props.pi : cfg.pi
+
+        cfg.disabledTriangleConstants = 
+        (props.disabledTriangleConstants && Validator.isBoolean(props.disabledTriangleConstants)) ? 
+        props.disabledTriangleConstants : cfg.disabledTriangleConstants
     }
 
     // en caso se coloque algo no establecido

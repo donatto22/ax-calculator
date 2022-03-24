@@ -79,6 +79,9 @@ export const Fractions = {
         return simplify(top, bottom);
     },
 
+    /**
+    @param {string} fraction
+    **/
     destructure: function(fraction) {
         return destructure(fraction);
     }

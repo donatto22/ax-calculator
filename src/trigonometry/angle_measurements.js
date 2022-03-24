@@ -1,4 +1,4 @@
-import { Fractions as fractions } from '../main.js';
+import { Fractions as fractions, Validator, Config } from '../main.js';
 import Const from '../constants/constants.js'
 
 const PI_GLYPH = "π";
@@ -10,61 +10,74 @@ export const AngleMeasurements = {
     radian: function(radian) {
         return {
             toCentesimal: function() {
-                if(typeof radian == 'string') {
-                    if(typeof destructure(radian).top == 'undefined' || typeof destructure(radian).bottom == 'undefined') {
-                        return "Place a fraction"
+                let msg = ""
+
+                if(Validator.isString(radian)) {
+                    if(Validator.isUndefined(destructure(radian).top) || Validator.isUndefined(destructure(radian).bottom)) {
+                        msg = Config().language == 'en' ? "Place a fraction" : "Coloca una fracción"
+                        return "[x] radian.toCentesimal: " + msg
                     }
 
                     else {
-                        var top = destructure(radian).top, bottom = destructure(radian).bottom;
+                        let top = destructure(radian).top, bottom = destructure(radian).bottom;
                         return (top * 200) / bottom;
                     }
                 }
 
-                else if(typeof radian == 'number') {
+                else if(Validator.isNumber(radian)) {
                     return Number.parseFloat(((radian * 200) / Const.PI).toFixed(3));
                 }
 
                 else {
-                    return "Place a number or string (fraction)"
+                    msg = Config().language == 'en' ? 
+                    "Place a number or string (fraction)" : "Coloca un número o una fracción (cadena)"
+                    return "[x] radian.toCentesimal: " + msg
                 }
             },
 
             toSexagesimal: function() {
-                if(typeof radian == 'string') {
-                    if(typeof destructure(radian).top == 'undefined' || typeof destructure(radian).bottom == 'undefined') {
-                        return "Place a fraction"
+                let msg = ""
+
+                if(Validator.isString(radian)) {
+                    if(Validator.isUndefined(destructure(radian).top) || Validator.isUndefined(destructure(radian).bottom)) {
+                        msg = Config().language == 'en' ? "Place a fraction" : "Coloca una fracción"
+                        return "[x] radian.toSexagesimal: " + msg
                     }
 
                     else {
-                        var top = destructure(radian).top, bottom = destructure(radian).bottom;
+                        let top = destructure(radian).top, bottom = destructure(radian).bottom;
                         return (top * 180) / bottom;
                     }
                 }
 
-                else if(typeof radian == 'number') {
+                else if(Validator.isNumber(radian)) {
                     return Number.parseFloat(((radian * 180) / Const.PI).toFixed(3));
                 }
 
                 else {
-                    return "Place a number or string (fraction)"
+                    msg = Config().language == 'en' ? 
+                    "Place a number or string (fraction)" : "Coloca un número o una fracción"
+
+                    return "[x] radian.toSexagesimal: " + msg
                 }
             }
         }
     },
+
     centesimal: function(number) {
         return {
             toRadian: function() {
-                if(typeof number !== 'number') {
-                    return "Place a number"
+                let msg = ""
+
+                if(!Validator.isNumber(number)) {
+                    msg = Config().language == 'en' ? "Place a number" : "Coloca un número"
+                    return "[x] centesimal.toRadian: " + msg
                 }
 
                 else {
-                    
-                    var dest = destructure(fractions.simplify(number, 200));
-                    var top = dest.top, bottom = dest.bottom;
-
-                    var t, result;
+                    let dest = destructure(fractions.simplify(number, 200));
+                    let top = dest.top, bottom = dest.bottom;
+                    let t, result;
 
                     result = `${t}/${bottom}`
 
@@ -79,8 +92,11 @@ export const AngleMeasurements = {
             },
 
             toSexagesimal: function() {
-                if(typeof number !== 'number') {
-                    return "Place a number"
+                let msg = ""
+
+                if(!Validator.isNumber(number)) {
+                    msg = Config().language == 'en' ? "Place a number" : "Coloca un número"
+                    return "[x] cemtesimal.toSexagesimal: " + msg
                 }
 
                 else {
@@ -93,15 +109,15 @@ export const AngleMeasurements = {
     sexagesimal: function(number) {
         return {
             toRadian: function() {
-                if(typeof number !== 'number') {
+                if(!Validator.isNumber(number)) {
                     return "Place a number"
                 }
 
                 else {
-                    var dest = destructure(fractions.simplify(number, 180));
-                    var top = dest.top, bottom = dest.bottom;
+                    let dest = destructure(fractions.simplify(number, 180));
+                    let top = dest.top, bottom = dest.bottom;
 
-                    var t, result;
+                    let t, result;
 
                     result = `${t}/${bottom}`
 
