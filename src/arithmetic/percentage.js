@@ -31,7 +31,7 @@ export const Percentage = {
         }
 
         else {
-            var result = (percentage * total) / 100;
+            let result = (percentage * total) / 100;
             return result
         }
     },
@@ -46,13 +46,11 @@ export const Percentage = {
         if(Validator.isNumber(percentage1) && Validator.isNumber(value1) && Validator.isNumber(percentage2)) {
             let result = (value1 * percentage2) / percentage1;
     
-            if (Number.isInteger(result)) {
+            if (Number.isInteger(result)) 
                 return String(result);
-            }
             
-            else {
+            else 
                 return String(result.toFixed(2));
-            }
         }
 
         else {
@@ -67,14 +65,21 @@ export const Percentage = {
         @param {number} value 20
     **/
     totalFromPercent: function(percentage, value) {
-        let result = (value * 100) / percentage;
-
-        if(Number.isInteger(result)) {
-            return String(result);
+        if(Validator.isNumber(percentage) && Validator.isNumber(value)) {
+            let result = (value * 100) / percentage;
+    
+            if(Number.isInteger(result)) {
+                return String(result);
+            }
+    
+            else {
+                return String(result.toFixed(2));
+            }
         }
 
         else {
-            return String(result.toFixed(2));
+            let msg = Config().language == 'en' ? "Place numbers" : "Coloca solo números"
+            return "[x] totalFromPercent: " + msg
         }
     }
 }

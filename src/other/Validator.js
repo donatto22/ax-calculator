@@ -1,4 +1,4 @@
-import { Config } from './Config.js'
+import { Config } from '../main.js'
 
 export const Validator = {
     /**
@@ -8,15 +8,19 @@ export const Validator = {
         return typeof param === 'number'
     },
 
-    // si un número es par
+    // si un número es par5
     /**
     @param {number} number
     **/
     isEven: function(number) {
-        if(this.isNumber(number))
-        return number % 2 == 0
+        if(this.isNumber(number)) return number % 2 == 0
 
-        else return "[x] isEven requires number"
+        else {
+            let msg = Config().language == 'en' ? 
+            "Place the number to be evalue" : "Coloca el número a evaluar"
+
+            return "[x] isEven: " + msg
+        }
     },
 
     // si un número es impar
@@ -24,10 +28,14 @@ export const Validator = {
     @param {number} number
     **/
     isOdd: function(number) {
-        if(this.isNumber(number))
-        return number % 2 != 0
+        if(this.isNumber(number)) return number % 2 != 0
 
-        else return "[x] isOdd requires number"
+        else {
+            let msg = Config().language == 'en' ? 
+            "Place the number to be evalue" : "Coloca el número a evaluar"
+
+            return "[x] isOdd: " + msg
+        }
     },
 
     /**

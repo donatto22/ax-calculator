@@ -6,34 +6,31 @@ let cfg = {
     language: "en",
     history: true,
     globalMessage: "", 
-    pi: 3.1415926,
+    PI: 3.1415926,
     disabledTriangleConstants: false
 }
 
 export const Config = (props) => {
-    // si no se colocan params, retorna la configuración que hay establecida
-    if(Validator.isUndefined(props)) {
-        console.log(cfg)
-    }
-    
-    // en caso de recibir parámetro, será un objeto (no un array) con las
-    // propiedades a cambiar
+    if(Validator.isUndefined(props))
+        return Object.seal(cfg)
+
     else if(Validator.isObject(props)) {
+        cfg.language = (props.language && Validator.isString(props.language)) ? 
+        props.language : cfg.language
+
         cfg.history = (props.history && Validator.isBoolean(props.history)) ? 
         props.history : cfg.history
 
         cfg.globalMessage = (props.globalMessage && Validator.isString(props.globalMessage)) ? 
         props.globalMessage : cfg.globalMessage
 
-        cfg.pi = (props.pi && Validator.isNumber(props.pi)) ? props.pi : cfg.pi
+        cfg.PI = (props.PI && Validator.isNumber(props.PI)) ? props.PI : cfg.PI
 
         cfg.disabledTriangleConstants = 
         (props.disabledTriangleConstants && Validator.isBoolean(props.disabledTriangleConstants)) ? 
         props.disabledTriangleConstants : cfg.disabledTriangleConstants
     }
 
-    // en caso se coloque algo no establecido
-    else {
+    else
         console.log("%c[x] ax.Config: Incorrect parameter", 'color: pink')
-    }
 }

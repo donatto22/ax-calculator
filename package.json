@@ -22,7 +22,9 @@
     "chemistry",
     "elements",
     "validator",
-    "clock", "time", "date"
+    "clock",
+    "time",
+    "date"
   ],
   "type": "module",
   "author": "Donatto Minaya",
@@ -34,5 +36,8 @@
   "bugs": {
     "url": "https://github.com/donatto22/ax-calculator/issues"
   },
-  "homepage": "https://github.com/donatto22/ax-calculator#readme"
+  "homepage": "https://github.com/donatto22/ax-calculator#readme",
+  "devDependencies": {
+    "jest": "^27.5.1"
+  }
 }

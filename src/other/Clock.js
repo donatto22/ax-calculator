@@ -7,7 +7,7 @@ export const Clock = {
     @return {string}
     **/
     time: function(seconds = false, spacing = false) {
-        if(Validator.isBool(seconds) && Validator.isBool(spacing)) {
+        if(Validator.isBoolean(seconds) && Validator.isBoolean(spacing)) {
             let date = new Date(), time = ""
 
             let hour = String(date.getHours()), minute = String(date.getMinutes()), second = String(date.getSeconds())
