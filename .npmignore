@@ -4,3 +4,10 @@ docs/
 # testing
 __test__/
 test/
+
+# workflows
+.github/
+*.yml
+
+# future d.ts
+dist/

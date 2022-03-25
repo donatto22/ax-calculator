@@ -11,7 +11,7 @@ test('Verificar que se pueda convertir un número a romano', () => {
     expect(ax.Operations.toRoman(120)).toBe('CXX')
 })
 
-// Clock
-test("Prueba", () => {
-    expect(ax.Clock.time())
+// Percentage
+test('Percentage.whatPercentageIs', () => {
+    expect(ax.Percentage.whatPercentageIs(12, 30)).toBe('40.00%')
 })

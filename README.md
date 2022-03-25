@@ -2,7 +2,6 @@
   <img width="150px" src="https://user-images.githubusercontent.com/68967448/158041774-b2ba586a-b1a2-41b3-a30f-9eff177ae8c0.png" alt="logo">
 </p>
 
-
 <h1 align="center">4x-Calculator</h1>
 <p align="center">This is a quick mathematical calculator</p>
 
@@ -12,7 +11,7 @@
 </p>
 
 ## Last added feature
-- [Browser](https://github.com/donatto22/ax-calculator/releases/tag/1.6.5) added
+- Package updated (2.0)
 
 ### Instalation
 
@@ -36,9 +35,7 @@ yarn add ax-calculator
 ```js
 // In the dots you will place the object you want to use
 import { ... } from 'ax-calculator'
-
 ...
-
 import * as ax from 'ax-calculator'
 ```
 
@@ -82,7 +79,7 @@ Fractions.destructure("12/5") // { top: '12', bottom: '5' }
 - Secoond degree
 ```js
 // 2x² - 3x + 3 = 0
-Equations.secondDegree(2, -3, 3) // Output: { x1: '3/4 + 𝓲√15/4' , x2: '3/4 - 𝓲√15/4'  }
+Equations.secondDegree(2, -3, 3) // { x1: '3/4 + 𝓲√15/4' , x2: '3/4 - 𝓲√15/4'  }
 ```
 
 ### Percentage
@@ -104,7 +101,7 @@ Percentage.totalFromPercent(10, 20) // 200
 ### Rule of three
 - Simple
 ```js
-RuleOfThree.simple("direct", 10, undefined, 60, 90) // Output: 15
+RuleOfThree.simple("direct", 10, undefined, 60, 90) // 15
 ```
 
 ### Triangles
@@ -132,7 +129,7 @@ var array_y = [3, 5, 9, 10, 20, 21, 24, 24, 27, 35];
 
 console.log(LinearRegression.simple(array_x, array_y));
 
-//Output:
+//
 /*
 {
   a: -0.34788,

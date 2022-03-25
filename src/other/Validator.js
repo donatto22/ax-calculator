@@ -2,15 +2,15 @@ import { Config } from '../main.js'
 
 export const Validator = {
     /**
-    @param {number} parameter
+        @param {any} param
     **/
-    isNumber: function(param) {
-        return typeof param === 'number'
+    isNumber: function(...param) {
+        return simpleValidate(param, 'number')
     },
 
     // si un número es par5
     /**
-    @param {number} number
+        @param {number} number
     **/
     isEven: function(number) {
         if(this.isNumber(number)) return number % 2 == 0
@@ -25,7 +25,7 @@ export const Validator = {
 
     // si un número es impar
     /**
-    @param {number} number
+        @param {number} number
     **/
     isOdd: function(number) {
         if(this.isNumber(number)) return number % 2 != 0
@@ -39,47 +39,47 @@ export const Validator = {
     },
 
     /**
-    @param {any} param
+        @param {any} param
     **/
-    isBoolean: function(param) {
-        return typeof param == "boolean"
+    isBoolean: function(...param) {
+        return simpleValidate(param, 'boolean')
     },
 
     /**
-    @param {any} param
+        @param {any} param
     **/
-    isString: function(param) {
-        return typeof param === 'string'
+    isString: function(...param) {
+        return simpleValidate(param, 'string')
     },
 
     /**
-    @param {any} param
+        @param {any} param
     **/
     isObject: function(param) {
         return typeof param === 'object' && !Array.isArray(param)
     },
 
     /**
-    @param {any} param
+        @param {any} param
     **/
     isArray: function(param) {
         return Array.isArray(param)
     },
 
     /**
-    @param {any} param
+        @param {any} param
     **/
     isUndefined: function(param) {
         return typeof param === 'undefined'
     },
 
     /**
-    @param {object[]} object
+        @param {object[]} object
     **/
     containsString: function(object) {
         let bool;
 
-        if(this.isObject(object)) {
+        if(this.isArray(object)) {
             let total = object.length
 
             for(let i = 0; i <= total - 1; i++) {
@@ -95,12 +95,12 @@ export const Validator = {
     },
 
     /**
-    @param {object[]} object
+        @param {object[]} object
     **/
     containsNumber: function(object) {
         let bool;
 
-        if(this.isObject(object)) {
+        if(this.isArray(object)) {
             let total = object.length
 
             for(let i = 0; i <= total - 1; i++) {
@@ -116,12 +116,12 @@ export const Validator = {
     },
 
     /**
-    @param {object[]} object
+        @param {object[]} object
     **/
     containsObject: function(object) {
         let bool;
 
-        if(this.isObject(object)) {
+        if(this.isArray(object)) {
             let total = object.length
 
             for(let i = 0; i <= total - 1; i++) {
@@ -137,12 +137,12 @@ export const Validator = {
     },
 
     /**
-    @param {object[]} object
+        @param {object[]} object
     **/
     containsArray: function(object) {
         let bool;
 
-        if(this.isObject(object)) {
+        if(this.isArray(object)) {
             let total = object.length
 
             for(let i = 0; i <= total - 1; i++) {
@@ -156,4 +156,25 @@ export const Validator = {
 
         return bool
     }
+}
+
+/**
+    @param {object[]} param
+    @param {string} type
+**/
+
+function simpleValidate(param, type) {
+    let bool = true
+    
+    if (Validator.containsArray(param) || Validator.containsObject(param)) {
+        return false
+    }
+    
+    else {
+        for (let i = 0; i < param.length; i++) {
+            typeof param[i] == type ? bool = true : bool = false
+        }
+    }
+
+    return bool
 }
