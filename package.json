@@ -38,6 +38,7 @@
   },
   "homepage": "https://github.com/donatto22/ax-calculator#readme",
   "devDependencies": {
-    "jest": "^27.5.1"
+    "jest": "^27.5.1",
+    "ts-jest": "^27.1.4"
   }
 }

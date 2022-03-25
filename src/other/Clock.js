@@ -106,5 +106,28 @@ export const Clock = {
             
             return "[x] Clock.date(): " + msg
         }
+    },
+
+    calculateDaysBetweenDates: function(begin, end) {
+        let msg = ''
+        const dayMiliseconds = 8.64e+7 // day in milliseconds
+        let regex = /^\(?([0-9]{4})\)?[-. ]?([0-9]{2})[-. ]?([0-9]{2})$/g
+
+        if(Validator.isString(begin) && Validator.isString(end)) {
+            if((begin.match(regex) != null) && (end.match(regex) != null)) {
+                let firstDate = new Date(begin).getTime(), secondDate = new Date(end).getTime()
+                return Math.round(Math.abs((firstDate - secondDate) / dayMiliseconds))
+            }
+
+            else {
+                msg = Config().language == 'en' ? "Format incorrect (yyyy-mm-dd)" : "Formato incorrecto (yyyy-mm-dd)"
+                return "[x] Clock.calculateDaysBetweenDates: " + msg 
+            }
+        }
+
+        else {
+            msg = Config().language == 'en' ? "Place strings" : "Coloca cadenas"
+            return "[x] Clock.calculateDaysBetweenDates: " + msg
+        }
     }
 }
