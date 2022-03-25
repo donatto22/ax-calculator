@@ -27,6 +27,7 @@ export { Triangles } from './trigonometry/triangles.js'
 export { Vectors } from './physics/vectors.js'
 
 // Others
+export { TerminalColors } from './other/TerminalColors.js'
 export { Validator } from './other/Validator.js'
 export { Browser } from './other/Browser.js'
 export { History } from './other/History.js'

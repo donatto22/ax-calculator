@@ -1,7 +1,17 @@
 import * as ax from "../src/main.js";
 
-console.log(ax.Clock.calculateDaysBetweenDates('2022-03-03', '2022-06-20'))
+// Clock.calculateDaysBetweenDates
 
-test('adds 1 + 2 to equal 3', () => {
-    expect(1 + 2).toBe(3);
-  });
+test('Calcular la cantidad de días que hay entre fechas', () => {
+    expect(ax.Clock.calculateDaysBetweenDates('2022-03-03', '2022-06-20')).toBe(109)
+});
+
+// Operations.toRoman
+test('Verificar que se pueda convertir un número a romano', () => {
+    expect(ax.Operations.toRoman(120)).toBe('CXX')
+})
+
+// Clock
+test("Prueba", () => {
+    expect(ax.Clock.time())
+})
