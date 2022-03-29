@@ -6,11 +6,11 @@ export const Base = {
         @param {number} base The base to which you want to pass the number
     **/
     toBase: function (number, base) {
-        if(!Validator.isNumber(number) || !Validator.isNumber(base)) {
+        if(!Validator.isNumber(number, base)) {
             let msg = Config().language == 'en' ? 
             "This function requires numbers" : "Esta función requiere números"
             
-            return "[x] toBase: " + msg;
+            return "[x] Base.toBase: " + msg;
         }
 
         else {
@@ -27,7 +27,10 @@ export const Base = {
         }
 
         else {
-            return "You must place a binary number"
+            let msg = Config().language == 'en' ? 
+            "You must place a binary number" : "Coloca un número binario"
+
+            return "[x] Base.binaryToBase10: " + msg
         }
     }
 }

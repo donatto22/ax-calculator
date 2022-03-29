@@ -1,9 +1,10 @@
+import { Validator, Config } from '../main.js'
 import { elements }  from './elements.js'
 
 export const ChemicalElements = {
     show: function(param) {
         for (let i = 0; i < elements.length; i++) {
-            if(typeof param === "string") {
+            if(Validator.isString(param)) {
                 if(elements[i].simbol == param) {
                     return elements[i]
                 }
@@ -13,25 +14,30 @@ export const ChemicalElements = {
                 }
             }
 
-            else if(typeof param === "number") {
+            else if(Validator.isNumber(param)) {
                 if(elements[i].atomic_number == param) {
                     return elements[i]
                 }
             }
 
-            else if(typeof param != 'undefined') {
-                return "Place the atomic number, the element symbol or do not place parameters"
-            }
-
-            else {
+            else if(Validator.isUndefined(param)) {
                 return elements
+            }
+            
+            else {
+                let msg = Config().language == 'en' ? 
+                "Place the atomic number, the element symbol or do not place parameters" : 
+                "Coloca el número atómico, el simbolo del elemento o sin parámetros"
+
+                return "[x] ChemicalElements.show: " + msg
             }
         }
     },
+
     obtainByFamily: function(type) {
         let result = [];
         
-        if (typeof type == "string") {
+        if (Validator.isString(type)) {
             for(var i = 0; i < elements.length; i++) {
                 if(elements[i].type == type) {
                     result.push(elements[i]);
@@ -45,6 +51,7 @@ export const ChemicalElements = {
 
         return result;
     },
+    
     obtainByGroup: function(group) {
         let result = [];
 

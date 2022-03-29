@@ -11,7 +11,7 @@
 </p>
 
 ## Last added feature
-- [Package updated (2.0)](https://github.com/donatto22/ax-calculator/releases/tag/2.0.0)
+- [Package updated (2.0.0)](https://github.com/donatto22/ax-calculator/releases/tag/2.0.0)
 
 ### Instalation
 

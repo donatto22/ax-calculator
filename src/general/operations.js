@@ -9,15 +9,15 @@ export const Operations = {
         @param {number} param2
     **/
     hypotenuse: function(param1, param2) {
-        if(!Validator.isNumber(param1) || !Validator.isNumber(param2)) {
-            return "This function requires numbers"
+        if(!Validator.isNumber(param1, param2)) {
+            return "[x] Operations.hypotenuse: This function requires numbers"
         }
 
         else {
             let result = Math.sqrt((param1 * param1) + (param2 * param2));
 
             if (Number.isInteger(result)) {
-                return String(result);
+                return result
             }
 
             else {
@@ -74,17 +74,17 @@ export const Operations = {
     **/
     log: function(base, argument, logarithm) {
         if(base == null) {
-            return String(Math.pow(argument, 1/logarithm));
+            return Math.pow(argument, 1/logarithm)
         }
 
         else if (argument == null) {
-            return String(base ** logarithm);
+            return base ** logarithm
         }
 
         else {
             for (let i = 2; i < 13; i++) {
                 if (base ** i == argument) {
-                    return String(i);
+                    return i
                 }
 
                 else {
@@ -101,11 +101,12 @@ export const Operations = {
         @param {number} bottom - 7
     **/
     combinatorial: function(top, bottom) {
-        if(!Validator.isNumber(top) || !Validator.isNumber(bottom)) {
+        if(!Validator.isNumber(top, bottom)) {
             return "You must enter a number"
         }
-
+        
         else {
+            console.log(factorial(top, 1))
             return factorial(top, 1) / (factorial(top - bottom, 1) * factorial(bottom, 1))
         }
     },
@@ -147,8 +148,8 @@ export const Operations = {
     **/
 
     divisors: function(number) {
-        if(typeof number !== 'number') {
-            return "Error in divisors: Place a number"
+        if(!Validator.isNumber(number)) {
+            return "[x] Operations.divisors: Place a number"
         }
 
         else {
@@ -172,12 +173,12 @@ function _divisors(number) {
 function factorial(number, decrease) {
     let result;
 
-    if (typeof number != 'string') {
-        return "You must enter a number"
+    if (!Validator.isNumber(number)) {
+        return "[x] Operations.factorial: You must enter a number"
     }
 
     else if (number < 0) {
-        return "For now, it only receives positive numbers"
+        return "[!] Operations.factorial: For now, it only receives positive numbers"
     }
 
     else {

@@ -98,7 +98,7 @@ function validateExpression(x, y) {
     var expression;
 
     if(x == 0) {
-        x = '';
+        x = ''
     }
 
     if(y == 0) {
@@ -136,7 +136,6 @@ function validateExpression(x, y) {
     else {
         expression = `${x} + ${y}`
     }
-
 
     return expression;
 }

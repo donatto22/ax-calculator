@@ -65,7 +65,7 @@ export const Browser = {
             }
     
             else {
-                if(Validator.isString(id) && Validator.isString(property)) {
+                if(Validator.isString(id, property)) {
                     // computed stlye
                     let comp = getComputedStyle(document.getElementById(id)).getPropertyValue(property) 
 
@@ -98,7 +98,7 @@ export const Browser = {
     setCSSVariable: function(variable, value) {
         let msg = ""
 
-        if(Validator.isString(variable) && Validator.isString(value)) {
+        if(Validator.isString(variable, value)) {
             const root = document.documentElement;
             
             if(root.style.getPropertyValue(variable) != '') {

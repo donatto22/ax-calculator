@@ -7,7 +7,7 @@ export const Clock = {
     @return {string}
     **/
     time: function(seconds = false, spacing = false) {
-        if(Validator.isBoolean(seconds) && Validator.isBoolean(spacing)) {
+        if(Validator.isBoolean(seconds, spacing)) {
             let date = new Date(), time = ""
 
             let hour = String(date.getHours()), minute = String(date.getMinutes()), second = String(date.getSeconds())
@@ -42,7 +42,7 @@ export const Clock = {
             msg = 'This function requires boolean parameters' :
             msg = 'Esta función requiere parámetros boleanos'
 
-            return "[x] Clock.time() error: " + msg
+            return "[x] Clock.time: " + msg
         }
     },
 
@@ -77,7 +77,7 @@ export const Clock = {
                     let msg = Config().language == 'en' ? 
                     "[x] Format not found" : "[x] Formato no encontrado"
 
-                    return "[x] Clock.date(): " + msg
+                    return "[x] Clock.date: " + msg
                 }
             }
 
@@ -113,7 +113,7 @@ export const Clock = {
         const dayMiliseconds = 8.64e+7 // day in milliseconds
         let regex = /^\(?([0-9]{4})\)?[-. ]?([0-9]{2})[-. ]?([0-9]{2})$/g
 
-        if(Validator.isString(begin) && Validator.isString(end)) {
+        if(Validator.isString(begin, end)) {
             if((begin.match(regex) != null) && (end.match(regex) != null)) {
                 let firstDate = new Date(begin).getTime(), secondDate = new Date(end).getTime()
                 return Math.round(Math.abs((firstDate - secondDate) / dayMiliseconds))

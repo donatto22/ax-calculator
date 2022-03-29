@@ -157,14 +157,14 @@ export const BasicOperations = {
         @param {number} value - Place a number to start your chain of operations
         **/
         baseNumber(value) {
-            typeof value === 'number' ? this.value = value : "[x] Base Number Error: Place a number"
+            typeof value === 'number' ? this.value = value : "[x] Base Number: Place a number"
             return this
         }
     
         sum(...args) {
             if(typeof args == 'object') {
                 if(args.length == 0) {
-                    return "[x] Sum error: Place a number"
+                    return "[x] Sum: Place a number"
                 }
 
                 else {
@@ -199,7 +199,7 @@ export const BasicOperations = {
             }
 
             else if(typeof value != 'number') {
-                return "[x] Multiply Error: Place a number"
+                return "[x] Multiply: Place a number"
             }
 
             else {
