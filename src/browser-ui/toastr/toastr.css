@@ -8,6 +8,9 @@
     z-index: 99;
     border-radius: 6px;
     box-shadow: 0 2px 14px -1px #b3b3b3;
-    transition-property: right;
-    transition-duration: .2s;
+    transition: right .2s;
+}
+
+body {
+    background-color: green;
 }

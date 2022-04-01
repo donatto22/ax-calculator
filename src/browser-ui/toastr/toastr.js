@@ -1,17 +1,24 @@
 import { Validator, Config } from '../../main.js';
 
-import path from 'path'
-
-console.log(path)
-
 let toastrColors = {
     green: "#6BCC77",
     yellow: "#EAB632",
     red: "#EF4B4C"
 }
 
-let toastrElement = document.createElement('div');
-toastrElement.setAttribute('id', 'ax-toastr');
+// create element
+let toastrElement = document.createElement('div')
+toastrElement.setAttribute('id', 'ax-toastr')
+
+// import link
+let head = document.getElementsByTagName('head')[0]
+let link = document.createElement('link')
+
+link.rel = 'stylesheet'
+link.type = 'text/css'
+link.href = 'https://raw.githubusercontent.com/donatto22/ax-calculator/master/src/browser-ui/toastr/toastr.css'
+
+head.appendChild(link)
 
 // addCSS(toastrElement, {
 //     "margin" : "1em",
