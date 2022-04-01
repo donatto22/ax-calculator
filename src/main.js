@@ -28,7 +28,10 @@ export { Vectors } from './physics/vectors.js'
 // Others
 export { TerminalColors } from './other/TerminalColors.js'
 export { Validator } from './other/Validator.js'
-export { Browser } from './other/Browser.js'
 export { History } from './other/History.js'
 export { Config } from './other/Config.js'
 export { Clock } from './other/Clock.js'
+
+// Browser
+export { BrowserUI } from './browser-ui/browser_ui.js';
+export { Browser } from './other/Browser.js'
