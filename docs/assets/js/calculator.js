@@ -1,5 +1,19 @@
 import * as ax from "../../../src/main.js";
 
-ax.BrowserUI.toastr({
-    type: "success"
-});
+document.getElementById('success').addEventListener('click', function() {
+    ax.BrowserUI.toastr({
+        type: "success"
+    });
+})
+
+document.getElementById('warning').addEventListener('click', function() {
+    ax.BrowserUI.toastr({
+        type: "warning"
+    });
+})
+
+document.getElementById('danger').addEventListener('click', function() {
+    ax.BrowserUI.toastr({
+        type: "error"
+    });
+})

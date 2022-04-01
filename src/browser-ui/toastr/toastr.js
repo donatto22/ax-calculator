@@ -8,41 +8,37 @@ let toastrColors = {
 
 // create element
 let toastrElement = document.createElement('div')
-toastrElement.setAttribute('id', 'ax-toastr')
+toastrElement.setAttribute('id', 'ax-toastr-js')
 
-// import link
-let head = document.getElementsByTagName('head')[0]
-let link = document.createElement('link')
+function Toastr (p) {
+    if(Validator.isObject(p)) {     
+        addCSS(toastrElement, {
+            "margin" : "1em",
+            "right" : "0px",
+            'width' : "calc(300px - 1em)",
+            "padding" : "1em",
+            "height": "80px",
+            "position" : "absolute",
+            "z-index" : "99",
+            "display" : "true",
+            "border-radius": "6px",
+            "box-shadow": "0 2px 14px -1px #b3b3b3",
+            "transition" : "display .2s",
+            "cursor" : "pointer",
+        })
 
-link.rel = 'stylesheet'
-link.type = 'text/css'
-link.href = 'https://raw.githubusercontent.com/donatto22/ax-calculator/master/src/browser-ui/toastr/toastr.css'
-
-head.appendChild(link)
-
-// addCSS(toastrElement, {
-//     "margin" : "1em",
-//     "right" : "0px",
-//     'width' : "calc(300px - 1em)",
-//     "padding" : "1em",
-//     "height": "80px",
-//     "position" : "absolute",
-//     "z-index" : "99",
-//     "border-radius": "6px",
-//     "box-shadow": "0 2px 14px -1px #b3b3b3",
-//     "transition-property" : "right",
-//     "transition-duration" : ".2s"
-// })
-
-const Toastr = (p) => {
-    if(Validator.isObject(p)) {
         p.type == "success" ? setBgColor(toastrColors.green) :
         (p.type == "warning" ? setBgColor(toastrColors.yellow) : 
         (p.type == "error" ? setBgColor(toastrColors.red) : setBgColor("blue")))
+
+
+        toastrElement.addEventListener('click', () => {
+            toastrElement.remove()
+        })
     }
-    console.time("asd")
+
+    // add toastr to body
     document.querySelector("body").appendChild(toastrElement);
-    console.timeEnd("asd")
 }
 
 // add default css to the toast
