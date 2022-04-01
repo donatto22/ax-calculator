@@ -11,35 +11,37 @@ let toastrElement = document.createElement('div')
 toastrElement.setAttribute('id', 'ax-toastr-js')
 
 function Toastr (p) {
-    if(Validator.isObject(p)) {     
+    if(Validator.isObject(p)) {
         addCSS(toastrElement, {
-            "margin" : "1em",
-            "right" : "0px",
+            "top" : "0",
+            "margin" : "2em",
+            "right" : "0",
             'width' : "calc(300px - 1em)",
             "padding" : "1em",
             "height": "80px",
-            "position" : "absolute",
+            "position" : "fixed",
             "z-index" : "99",
             "display" : "true",
             "border-radius": "6px",
             "box-shadow": "0 2px 14px -1px #b3b3b3",
-            "transition" : "display .2s",
+            "transition" : "right .2s",
             "cursor" : "pointer",
         })
 
         p.type == "success" ? setBgColor(toastrColors.green) :
         (p.type == "warning" ? setBgColor(toastrColors.yellow) : 
         (p.type == "error" ? setBgColor(toastrColors.red) : setBgColor("blue")))
-
-
-        toastrElement.addEventListener('click', () => {
-            toastrElement.remove()
-        })
+        
+        // add toastr to body
+        document.querySelector("body").appendChild(toastrElement);
     }
-
-    // add toastr to body
-    document.querySelector("body").appendChild(toastrElement);
 }
+
+// hidden
+toastrElement.addEventListener('click', () => {
+    toastrElement.style.right = "calc(calc(300px + 2em) * -1)"
+    setTimeout(() => {toastrElement.remove()}, 500)
+})
 
 // add default css to the toast
 function addCSS(element, style) {
@@ -50,6 +52,10 @@ function addCSS(element, style) {
 // set a bg color
 const setBgColor = (color) => {
     toastrElement.style.backgroundColor = color
+}
+
+function dropToastr() {
+    toastrElement.remove()
 }
 
 export default Toastr

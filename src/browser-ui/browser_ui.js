@@ -1,4 +1,5 @@
 import Toastr from './toastr/toastr.js'
+import Table from './table/table.js'
 
 export const BrowserUI = {
     toastr: (props = null) =>  {
@@ -7,6 +8,15 @@ export const BrowserUI = {
             message : props ? props.message : null,
             bolder : props ? props.bolder : null,
             fontfamily : props ? props.fontfamily : null,
+            position : props ? props.position : null,
+            message : props ? props.message : null
+        })
+    },
+
+    table: (props) => {
+        Table({
+            tableID : props ? props.tableID : null,
+            type : props ? props.type : null,
         })
     }
 }
