@@ -1,4 +1,4 @@
-import { Validator, Config } from '../../main.js';
+import { Validator } from '../../main.js';
 
 let toastrColors = {
     green: "#6BCC77",
@@ -14,9 +14,9 @@ function Toastr (p) {
     if(Validator.isObject(p)) {
         addCSS(toastrElement, {
             "top" : "0",
-            "margin" : "2em",
+            "margin" : "1em",
             "right" : "0",
-            'width' : "calc(300px - 1em)",
+            'width' : "calc(320px - 2em)",
             "padding" : "1em",
             "height": "80px",
             "position" : "fixed",
@@ -40,7 +40,7 @@ function Toastr (p) {
 // hidden
 toastrElement.addEventListener('click', () => {
     toastrElement.style.right = "calc(calc(300px + 2em) * -1)"
-    setTimeout(() => {toastrElement.remove()}, 500)
+    setTimeout(() => {toastrElement.remove()}, 200)
 })
 
 // add default css to the toast
@@ -52,10 +52,6 @@ function addCSS(element, style) {
 // set a bg color
 const setBgColor = (color) => {
     toastrElement.style.backgroundColor = color
-}
-
-function dropToastr() {
-    toastrElement.remove()
 }
 
 export default Toastr

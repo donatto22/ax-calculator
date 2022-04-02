@@ -78,8 +78,8 @@ blockquote {
     width: 5px;
 }
 
-@media screen and (max-width: 768px) {
-    #package-usage > div:not(:last-child) {
+@media screen and (max-width: 1024px) {
+    #package-usage > div {
         margin-bottom: 2em;
     }
 }

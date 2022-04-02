@@ -17,3 +17,5 @@ document.getElementById('danger').addEventListener('click', function() {
         type: "error"
     });
 })
+
+console.log(ax.BrowserUI.colorsUI().dark)
