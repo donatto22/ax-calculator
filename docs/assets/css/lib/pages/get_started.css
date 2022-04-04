@@ -5,42 +5,9 @@
     padding: .3em 1em;
     width: 90%;
     margin: 1.5em auto;
-    height: calc(var(--height-general) - 9em);
-    overflow-y: scroll;
+    /* height: calc(var(--height-general) - 9em); */
 }
 
 .desc:not(:last-child) {
     margin-bottom: 2em;
-}
-
-pre {
-    overflow-y: scroll;
-    font-size: 14px !important;
-}
-
-code {
-    border-radius: 4px;
-}
-
-pre::before, pre::after {
-    box-shadow: 0 0 1px black !important;
-    display: none !important;
-}
-
-@media screen and (min-width: 768px) {
-    #get-started {
-        margin: 2em auto;
-    }
-}
-
-@media screen and (min-width: 1024px) {
-    #get-started {
-        margin: 2.5em auto;
-    }
-}
-
-@media screen and (min-width: 1400px) {
-    #scrolling #center-div {
-        width: 50%;
-    }
 }

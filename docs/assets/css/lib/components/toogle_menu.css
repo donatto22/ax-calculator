@@ -1,11 +1,11 @@
 #toggle-menu {
     min-width: 320px;
     height: 100vh;
-    position: absolute;
+    position: fixed;
     background-color: var(--default-blue);
     left: -320px;
     transition: left .3s;
-    z-index: 5;
+    z-index: 10;
     color: var(--default-white);
 }
 
@@ -13,7 +13,7 @@
     left: 0 !important;
 }
 
-nav, footer, #scrolling {
+nav, footer, #center-div {
     filter: blur(var(--blur));
     transition: filter .3s;
 }

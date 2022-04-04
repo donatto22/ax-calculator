@@ -1,0 +1,45 @@
+@import url("../../styles.css");
+
+#get-started {
+    padding: .3em 1em;
+    width: 90%;
+    margin: 1.5em auto;
+    /* height: calc(var(--height-general) - 9em); */
+}
+
+#api-container {
+    display: flex;
+    margin-top: 2em;
+}
+
+#list-api {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+}
+
+#list-api a:not(:first-child) {
+    margin-top: 1.5em;
+}
+
+#list-api-routes {
+    width: 70%;
+}
+
+
+#list-api-routes span, #list-api-routes .category {
+    font-weight: bold;
+    display: block;
+    margin-bottom: .5em;
+}
+
+#list-api-routes > span {
+    font-size: 25px;
+}
+
+.routes-list {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: .5em;
+    margin-left: 2em;
+}
