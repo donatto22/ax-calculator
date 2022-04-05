@@ -78,36 +78,27 @@
 
             <div id="api-container">
                 <div id="list-api">
-                    <a href=""><b>Math</b></a>
-                    <a href=""><b>Browser</b></a>
-                    <a href=""><b>Configuration</b></a>
+                    <a href="#math"><b>Math</b></a>
+                    <a href="#browser"><b>Browser</b></a>
+                    <a href="#config"><b>Configuration</b></a>
                 </div>
 
                 <div id="list-api-routes">
-                    <span>Routes</span>
+                    <span>Objects</span>
 
                     <div class="category-list">
-                        <span class="category">
+                        <span class="category" id="math">
                             Math
                         </span>
 
-                        <div class="routes-list">
+                        <div class="routes-list router-category">
                             <div class="min-list">
                                 <div class="category">
                                     Arithmetic
                                 </div>
 
                                 <div class="min-routes">
-
-                                </div>
-                            </div>
-
-                            <div class="min-list">
-                                <div class="category">
-                                    Algebra
-                                </div>
-
-                                <div class="min-routes">
+                                    <a href="">Base</a>
                                     <a href="">BasicOperations</a>
                                     <a href="">Fractions</a>
                                     <a href="">Percentage</a>
@@ -117,11 +108,23 @@
 
                             <div class="min-list">
                                 <div class="category">
+                                    Algebra
+                                </div>
+
+                                <div class="min-routes">
+                                    <a href="">Equations</a>
+                                    <a href="">System of Equations</a>
+                                </div>
+                            </div>
+
+                            <div class="min-list">
+                                <div class="category">
                                     Trigonometry
                                 </div>
 
                                 <div class="min-routes">
-                                    
+                                    <a href="">Triangles</a>
+                                    <a href="">Angle Measurements</a>
                                 </div>
                             </div>
 
@@ -131,7 +134,7 @@
                                 </div>
 
                                 <div class="min-routes">
-                                    
+                                    <a href="">Chemical Elements</a>
                                 </div>
                             </div>
 
@@ -141,26 +144,45 @@
                                 </div>
 
                                 <div class="min-routes">
-                                    
+                                    <a href="">Vectors</a>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <div class="category-list">
-                        <span class="category">
+                        <span class="category" id="browser">
                             Browser
                         </span>
 
-                        <div class="routes-list">
-                            <a href="">Browser</a>
-                            <a href="">BrowserUI</a>
+                        <div class="routes-list router-category">
+                            <div class="min-list">
+                                <div class="category">
+                                    Browser
+                                </div>
+
+                                <div class="min-routes">
+                                    <a href="">Browser</a>
+                                </div>
+                            </div>
+
+                            <div class="min-list">
+                                <div class="category">
+                                    BrowserUI
+                                </div>
+
+                                <div class="min-routes">
+                                    <a href="">Toastr</a>
+                                    <a href="">Tables</a>
+                                    <a href="">ColorsUI</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
                     <div class="category-list">
-                        <span class="category">
-                            Config
+                        <span class="category" id="config">
+                            Configuration
                         </span>
 
                         <div class="routes-list">
@@ -170,13 +192,14 @@
 
                     <div class="category-list">
                         <span class="category">
-                            Other
+                            Others
                         </span>
 
                         <div class="routes-list">
                             <a href="">Clock</a>
-                            <a href="">TerminalColors</a>
+                            <a href="">Terminal Colors</a>
                             <a href="">Validator</a>
+                            <a href="">History</a>
                         </div>
                     </div>
                 </div>

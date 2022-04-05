@@ -26,6 +26,10 @@
     width: 70%;
 }
 
+#list-api-routes a {
+    color: var(--default-purple);
+}
+
 
 #list-api-routes span, #list-api-routes .category {
     font-weight: bold;
@@ -37,9 +41,31 @@
     font-size: 25px;
 }
 
-.routes-list {
-    display: flex;
-    flex-direction: column;
+.category-list {
+    margin-bottom: 1em;
+}
+
+.min-list {
+    width: 200px;
+    margin: .5em .3em;
+}
+
+.routes-list, .min-routes {
     margin-bottom: .5em;
     margin-left: 2em;
+    flex-direction: column;
+}
+
+.routes-list, .router-category {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.router-category {
+    flex-direction: inherit;
+}
+
+.min-routes {
+    display: flex;
+    flex-direction: column;
 }
