@@ -23,10 +23,10 @@
     --default-black: #404040;
     --default-blue: #1B3C59;
     --default-green: #9bd4ae;
-    --default-orange: #F2D5BB;
+    --default-orange: #eb9e5c;
     --default-yellow: #F0F0A8;
     --default-pink: #F2A999;
-    --default-red: #F28177;
+    --default-red: #f84e3f;
     --default-shadow-gray: #a6a6a6;
 
 }
@@ -71,6 +71,7 @@ a {
     color: var(--default-green);
     text-decoration: underline;
     cursor: pointer !important;
+    width: fit-content;
 }
 
 label {
@@ -104,7 +105,7 @@ input {
 }
 
 .particles-effect {
-    z-index: 1 !important;
+    z-index: 5 !important;
 }
 
 nav, footer {
@@ -142,4 +143,24 @@ pre::before, pre::after {
     #center-div {
         width: 80%;
     }
+}
+
+a[new-element]::after, a[not-used-element]::after {
+    display: inline-block;
+    padding: .2em .4em;
+    margin: -2em 0;
+    margin-left: .3em;
+    text-decoration: none;
+    color: white;
+    border-radius: 4px;
+}
+
+a[new-element]::after {
+    background-color:var(--default-red);
+    content: 'New';
+}
+
+a[not-used-element]::after {
+    background-color:var(--default-shadow-gray);
+    content: 'Not in use'
 }

@@ -30,6 +30,13 @@
     color: var(--default-purple);
 }
 
+#list-api-routes a:hover {
+    color: var(--default-orange);
+}
+
+#list-api-routes a:not(:first-child) {
+    margin-top: 1em;
+}
 
 #list-api-routes span, #list-api-routes .category {
     font-weight: bold;

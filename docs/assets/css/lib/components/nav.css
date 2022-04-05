@@ -3,7 +3,7 @@ nav {
     align-items: center;
     position: sticky;
     top: 0;
-    z-index: 5;
+    z-index: 1;
     min-height: 5em;
     box-shadow: 0 2px 10px -2px var(--default-shadow-gray);
 }

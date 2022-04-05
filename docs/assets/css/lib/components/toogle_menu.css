@@ -13,7 +13,7 @@
     left: 0 !important;
 }
 
-nav, footer, #center-div {
+nav, footer, #scrolling, #center-div {
     filter: blur(var(--blur));
     transition: filter .3s;
 }
@@ -71,6 +71,7 @@ nav, footer, #center-div {
 
 .link {
     display: flex;
+    align-items: center
 }
 
 .link:nth-last-child(1) {
@@ -78,9 +79,10 @@ nav, footer, #center-div {
 }
 
 .link a {
+    margin-bottom: -.4em;
     margin-left: .5em;
     color: var(--default-white) !important;
-    padding-bottom: .3em;
+    padding-bottom: .4em;
 }
 
 #links-menu a:hover {
