@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="../assets/css/lib/pages/get_started.css">
     <!-- PrismJs css -->
     <link rel="stylesheet" href="../assets/prismjs/prism-coy.css">
+    <!-- Sweet alert -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>Ax &verbar; Get Started</title>
 </head>
 <body>
@@ -35,18 +37,13 @@
                 </div>
 
                 <div class="link">
-                    <ion-icon name="document"></ion-icon>
-                    <a href="./examples.html">Examples</a>
-                </div>
-
-                <div class="link">
                     <ion-icon name="people"></ion-icon>
                     <a href="./contributing.html">Contributing</a>
                 </div>
 
                 <div class="link">
                     <ion-icon name="heart-empty"></ion-icon>
-                    <a>Support</a>
+                    <a onclick="swalSupport()">Support</a>
                 </div>
             </div>
         </div>
@@ -55,6 +52,12 @@
     <nav id="nav" class="flex" >
         <div id="button-toggle-menu" pointer>
             <ion-icon name="menu"></ion-icon>
+        </div>
+
+        <div id="github-actions" class="flex">
+            <a class="github-button" href="https://github.com/donatto22/ax-calculator" data-size="large" data-icon="octicon-star" data-show-count="true" aria-label="Star donatto22/ax-calculator on GitHub">Star</a>
+            <a class="github-button" href="https://github.com/donatto22/ax-calculator/fork" data-size="large" data-icon="octicon-repo-forked" data-show-count="true" aria-label="Fork donatto22/ax-calculator on GitHub">Fork</a>
+            <a class="github-button" href="https://github.com/donatto22" data-size="large" data-show-count="true" aria-label="Follow @donatto22 on GitHub">Follow @donatto22</a>
         </div>
     </nav>
 
@@ -155,5 +158,8 @@
     <!-- Particles -->
     <script src="../assets/particlesjs/particles.js"></script>
     <script src="../assets/particlesjs/app.js"></script>
+
+    <!-- Button Support -->
+    <script src="./assets/js/swal.js"></script>
 </body>
 </html>

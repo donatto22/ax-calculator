@@ -4,14 +4,15 @@ footer {
 }
 
 #min-footer {
-    padding: 1em;
+    padding: 1em 0;
     display: flex;
-    flex-direction: column-reverse;
     align-items: center;
+    justify-content: center;
 }
 
 #footer-actions {
     margin: .5em 0;
+    margin-left: 1em;
     font-weight: bold;
     display: flex;
 }

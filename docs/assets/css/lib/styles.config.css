@@ -145,7 +145,7 @@ pre::before, pre::after {
     }
 }
 
-a[new-element]::after, a[not-used-element]::after {
+a[new-element]::after, a[not-used-element]::after, a[comming-soon]::after {
     display: inline-block;
     padding: .2em .4em;
     margin: -2em 0;
@@ -163,4 +163,19 @@ a[new-element]::after {
 a[not-used-element]::after {
     background-color:var(--default-shadow-gray);
     content: 'Not in use'
+}
+
+a[comming-soon]::after{
+    background-color:var(--default-pink);
+    content: 'Comming soon...'
+}
+
+.swal2-icon-content {
+    font-size: 2.7em !important;
+    margin-top: 8px;
+    margin-left: 1px;
+}
+
+.flex {
+    display: flex;
 }
