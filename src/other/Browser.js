@@ -144,5 +144,15 @@ export const Browser = {
             "Place a valid css variable" : "Coloca una variable css válida"
             return "[x] getCSSVariable: " + msg
         }
+    },
+
+    /**
+    * Web function
+    @param {string} element The element you want to set styles
+    @param {object} style
+    **/
+    addCSSToElement: function(element, style) {
+        for (const property in style)
+            element.style[property] = style[property];
     }
 }

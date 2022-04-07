@@ -1,21 +1,24 @@
-import * as ax from "../../../src/main.js";
+// import { BrowserUI } from "//unpkg.com/ax-calculator/src/browser-ui/browser_ui.js";
 
-// document.getElementById('success').addEventListener('click', function() {
-//     ax.BrowserUI.toastr({
-//         type: "success"
-//     });
-// })
+import {BrowserUI} from "../../../src/main.js"
 
-// document.getElementById('warning').addEventListener('click', function() {
-//     ax.BrowserUI.toastr({
-//         type: "warning"
-//     });
-// })
+document.getElementById('success').addEventListener('click', function() {
+    BrowserUI.toastr({
+        type: "success",
+        bolder: true
+    });
+})
 
-// document.getElementById('danger').addEventListener('click', function() {
-//     ax.BrowserUI.toastr({
-//         type: "error"
-//     });
-// })
+document.getElementById('warning').addEventListener('click', function() {
+    BrowserUI.toastr({
+        type: "warning",
+        bolder: true
+    });
+})
 
-console.log(ax.BrowserUI.colorsUI().dark)
+document.getElementById('danger').addEventListener('click', function() {
+    BrowserUI.toastr({
+        type: "error",
+        bolder: true
+    });
+})

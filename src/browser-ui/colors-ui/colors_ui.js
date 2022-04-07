@@ -14,7 +14,7 @@ const ColorsUI = () => {
     pastelblueviolet = "#6C63FF"
 
     return {
-        red, yellow, green,
+        red, yellow, green, skyblue,
         dark, light, dimlight,
         pastelgreen, pastelred, pastelorange, pastelblue, pastelsky, pastelblueviolet
     }

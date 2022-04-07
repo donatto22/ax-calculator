@@ -34,4 +34,4 @@ export { Clock } from './other/Clock.js'
 
 // Browser
 export { BrowserUI } from './browser-ui/browser_ui.js';
-export { Browser } from './other/Browser.js'
+export { Browser }  from './other/Browser.js'
