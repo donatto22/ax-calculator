@@ -1,0 +1,31 @@
+#ax-toastr-js {
+    display: flex;
+    align-items: center;
+    color: white;
+    margin: 1em;
+    right: 0;
+    width : calc(320px - 2em);
+    padding: 1em;
+    height: 80px;
+    position: fixed;
+    z-index: 99;
+    border-radius: 6px;
+    box-shadow: 0 2px 14px -1px #b3b3b3;
+    transition: right .2s, box-shadow .3s;
+    cursor: pointer;
+    animation: move .3s;
+}
+
+#ax-toastr-js:hover {
+    box-shadow: 0 2px 14px -1px #6e6e6e;
+}
+
+@keyframes move {
+    from {
+        right: -320px;
+    }
+
+    to {
+        right: 0px;
+    }
+}

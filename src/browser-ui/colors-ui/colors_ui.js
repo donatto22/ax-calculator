@@ -1,6 +1,6 @@
 const ColorsUI = () => {
     //default colors
-    let red = "#EF4B4C", yellow = "#EAB632", green = "#6BCC77", skyblue = "#5BC0DE"
+    let red = "#EF4B4C", yellow = "#f9bd24", green = "#6BCC77", skyblue = "#5BC0DE"
 
     // variants
     let dark = "#343A40", light = "#F8F9FA", dimlight = "#EEF1F4"

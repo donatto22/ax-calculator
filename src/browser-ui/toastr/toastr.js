@@ -11,23 +11,6 @@ message.setAttribute('id', 'message-toastr')
 
 function Toastr (p) {
     if(Validator.isObject(p)) {
-        Browser.addCSSToElement(toastrElement, {
-            "display" : "flex",
-            "align-items" : "center",
-            "color" : "white",
-            "margin" : "1em",
-            "right" : "0",
-            'width' : "calc(320px - 2em)",
-            "padding" : "1em",
-            "height": "80px",
-            "position" : "fixed",
-            "z-index" : "99",
-            "border-radius": "6px",
-            "box-shadow": "0 2px 14px -1px #b3b3b3",
-            "transition" : "right .2s",
-            "cursor" : "pointer",
-        })
-
         // set bold message
         p.bolder === true ? message.style.fontWeight = "600" : message.style.fontWeight = "normal"
         p.fontSize ? message.style.fontSize = p.fontSize : message.style.fontSize = "20px"
@@ -63,7 +46,10 @@ function Toastr (p) {
 // hidden
 toastrElement.addEventListener('click', () => {
     toastrElement.style.right = "calc(calc(300px + 2em) * -1)"
-    setTimeout(() => {toastrElement.remove()}, 200)
+    setTimeout(() => {
+        toastrElement.remove(),
+        toastrElement.style.right = "0"
+    }, 200)
 })
 
 // set a bg color
