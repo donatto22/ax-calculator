@@ -1,8 +1,7 @@
 {
-  "include": ["src/**/*"],
+  "include": ["src/**/*.js"],
   "compilerOptions": {
     "allowJs": true,
-    // Generate d.ts files
     "declaration": true,
     "emitDeclarationOnly": true,
     "outDir": "dist",

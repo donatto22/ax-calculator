@@ -2,8 +2,9 @@
 docs/
 
 # testing
-__test__/
-test/
+__tests__/
+tests/
+jest.config.json
 
 # workflows
 .github/
