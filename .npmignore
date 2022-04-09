@@ -9,6 +9,3 @@ jest.config.json
 # workflows
 .github/
 *.yml
-
-# future d.ts
-dist/
