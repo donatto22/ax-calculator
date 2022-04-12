@@ -1,21 +1,18 @@
 export const RuleOfThree = {
     /**
-        @param {string} type Can be direct or inverse
+        @param type Can be direct or inverse
     **/
-    simple: function(type, a, b, c, d) {
+    simple: function(type: string, a: number, b: number, c: number, d: number): number | string | undefined {
         if(type == 'direct') {
             if(a === undefined) {
-                var top = b * c;
-                var bottom = d;
+                let top = b * c, bottom = d
+                let bober = top < 0 ? true : false
 
-                a = top / bottom;
-
-                var bober = top < 0 ? true : false
+                let a2: string | number = top / bottom;
     
-                if(!Number.isInteger(a)) {
-                    if(bober == true) {
+                if(!Number.isInteger(a2)) {
+                    if(bober == true)
                         top = top * -1
-                    }
 
                     for(let i = 2; i < 13; i++) {
                         while((top / i > 0) && ((bottom / i) > 0)) {
@@ -25,32 +22,28 @@ export const RuleOfThree = {
                             }
 
                             else {
-                                if(bober) {
-                                    a = `-${top}/${bottom}`;
-                                }
+                                if(bober)
+                                    a2 = `-${top}/${bottom}`
                                 
-                                else {
-                                    a = `${top}/${bottom}`;
-                                }
+                                else 
+                                    a2 = `${top}/${bottom}`
 
-                                break; 
+                                break
                             }
                         }
                     }
                 }
                 
-                return a;
+                return a2;
             }
     
             else if(b === undefined) {
-                var top = a * d;
-                var bottom = c;
+                let top = a * d, bottom = c
+                let bober = top < 0 ? true : false
 
-                b = top / bottom;
-
-                var bober = top < 0 ? true : false
+                let b2: string | number = top / bottom;
                 
-                if(!Number.isInteger(b)) {
+                if(!Number.isInteger(b2)) {
                     if(bober == true) {
                         top = top * -1
                     }
@@ -64,11 +57,11 @@ export const RuleOfThree = {
 
                             else {
                                 if(bober) {
-                                    b = `-${top}/${bottom}`;
+                                    b2 = `-${top}/${bottom}`;
                                 }
                                 
                                 else {
-                                    b = `${top}/${bottom}`;
+                                    b2 = `${top}/${bottom}`;
                                 }
 
                                 break; 
@@ -77,7 +70,7 @@ export const RuleOfThree = {
                     }
                 }
 
-                return b;
+                return b2
             }
             
             else if(c === undefined) {

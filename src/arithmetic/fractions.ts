@@ -1,5 +1,5 @@
 export const Fractions = {
-    sum: function(numerator1, denominator1, numerator2, denominator2) {
+    sum: function(numerator1: number, denominator1: number, numerator2: number, denominator2: number) {
         let result, bober = false;
 
         if(denominator1 == denominator2) {
@@ -33,7 +33,7 @@ export const Fractions = {
         return result;
     },
 
-    substract: function(numerator1, denominator1, numerator2, denominator2) {
+    substract: function(numerator1: number, denominator1: number, numerator2: number, denominator2: number) {
         var result;
 
         if(denominator1 == denominator2) {
@@ -61,39 +61,38 @@ export const Fractions = {
         return result;
     },
 
-    product: function(numerator1, denominator1, numerator2, denominator2) {
+    product: function(numerator1: number, denominator1: number, numerator2: number, denominator2: number) {
         var top = numerator1 * numerator2;
         var bottom = denominator1 * denominator2;
 
         return simplify(top, bottom);
     },
 
-    division: function(numerator1, denominator1, numerator2, denominator2) {
+    division: function(numerator1: number, denominator1: number, numerator2: number, denominator2: number) {
         var top = numerator1 * denominator2;
         var bottom = denominator1 * numerator2;
 
         return simplify(top, bottom);
     },
 
-    simplify: function(top, bottom) {
+    /**
+    @param top - Numerator
+    @param bottom - Denominator
+    **/
+    simplify: function(top: number, bottom: number) {
         return simplify(top, bottom);
     },
 
     /**
-    @param {string} fraction
+    @param fraction
     **/
-    destructure: function(fraction) {
+    destructure: function(fraction: string) {
         return destructure(fraction);
     }
 }
 
-/**
-    @param {number} top - Numerator
-    @param {number} bottom - Denominator
-**/
-
-function simplify(top, bottom) {
-    var result;
+function simplify(top: number, bottom: number): string {
+    let result = '';
 
     var bober = false;
     
@@ -131,7 +130,7 @@ function simplify(top, bottom) {
     return result;
 }
 
-function destructure(string) {
+function destructure(string: string) {
     let array = string.split('/');
     var top =  array[0], bottom = array[1];
     return {

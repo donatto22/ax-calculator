@@ -1,14 +1,14 @@
 "use strict"
 
 // Algebra
-// export { SystemEquation } from './algebra/system_equation'
-// export { Equations } from './algebra/equations'
+export { SystemEquation } from './algebra/system_equation'
+export { Equations } from './algebra/equations'
 
 // Arithmetic
 export { BasicOperations } from './arithmetic/basic_operations'
-// export { RuleOfThree } from './arithmetic/rule_three'
+export { RuleOfThree } from './arithmetic/rule_three'
 export { Percentage } from './arithmetic/percentage'
-// export { Fractions } from './arithmetic/fractions'
+export { Fractions } from './arithmetic/fractions'
 export { Base } from './arithmetic/base'
 
 // Chemistry

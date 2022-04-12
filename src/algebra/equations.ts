@@ -1,17 +1,16 @@
 export const Equations = {
     /**
-        Example to Formula1: x² + 7x + 6 = 0
+        Example -> f1: x² + 7x + 6 = 0
             
-        Example to Formula2: 3x² - 27 = 0
+        Example -> f2: 3x² - 27 = 0
         @description The parameters vary according to the formula
-        @param {number} a - For formula 1 -> 1, For formula 2 -> 3
-        @param {number} b - For formula 1 -> 7, For formula 2 -> -27
-        @param {number} c - For formula 1 -> 6, Do not place anything
+        @param a - For f1 -> 1, For f2 -> 3
+        @param b - For f1 -> 7, For f2 -> -27
+        @param c - For f1 -> 6, Do not place anything
     **/
-    secondDegree: function (a, b, c) {
+    secondDegree: function (a: number, b: number, c: number) {
         if(typeof(c) == 'undefined') {
-            var x;
-            var internal = (b * -1) / a;
+            let x: string | number, internal: string | number = (b * -1) / a
             
             if(!Number.isInteger(internal)) {
                 var top = b * - 1
@@ -54,8 +53,10 @@ export const Equations = {
         }
 
         else {
-            var internal = (b*b) - (4 * a * c);
-            var interna2 = Math.sqrt(internal);
+            let internal: string | number = (b*b) - (4 * a * c)
+            let interna2: string | number = Math.sqrt(internal)
+
+            let x1: string | number, x2: string | number
 
             if (!Number.isInteger(interna2)) {
                 interna2 = "√" + internal;
@@ -66,8 +67,8 @@ export const Equations = {
             }
             
             if (typeof(interna2) == 'string') {
-                var x1 = String(-1 * b) + "/" + String(2 * a) + " + " + interna2 + "/" + String(2 * a)
-                var x2 = String(-1 * b) + "/" + String(2 * a) + " - " + interna2 + "/" + String(2 * a)
+                x1 = String(-1 * b) + "/" + String(2 * a) + " + " + interna2 + "/" + String(2 * a)
+                x2 = String(-1 * b) + "/" + String(2 * a) + " - " + interna2 + "/" + String(2 * a)
                 
                 return {
                     x1, x2
@@ -75,14 +76,14 @@ export const Equations = {
             }
 
             else {
-                var x1 = (((-1 * b) + interna2) / (2 * a)).toFixed(2)
-                var x2 = (((-1 * b) - interna2) / (2 * a)).toFixed(2)
+                x1 = (((-1 * b) + interna2) / (2 * a)).toFixed(2)
+                x2 = (((-1 * b) - interna2) / (2 * a)).toFixed(2)
             }
             
 
-            if (x1 < 1) {
-                var top = ((-1 * b) + Math.sqrt((b*b) - (4 * a * c)));
-                var bottom = 2 * a;
+            if (Number.parseInt(x1) < 1) {
+                let top = ((-1 * b) + Math.sqrt((b*b) - (4 * a * c)));
+                let bottom = 2 * a;
 
                 for (let i = 2; i < 13; i++) {
                     while((top / i > 0) && ((bottom / i) > 0)) {
@@ -92,7 +93,7 @@ export const Equations = {
                         }
 
                         else {
-                            if(x1 < 0) {
+                            if(Number.parseInt(x1) < 0) {
                                 x1 = "-" + String(top + "/" + bottom);
                             }
 
@@ -106,7 +107,7 @@ export const Equations = {
                 }  
             }
 
-            if (x2 < 1) {
+            if (Number.parseInt(x2) < 1) {
                 var top = ((-1 * b) - Math.sqrt((b*b) - (4 * a * c)));
                 var bottom = 2 * a;
 
