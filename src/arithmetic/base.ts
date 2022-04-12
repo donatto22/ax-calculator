@@ -1,9 +1,9 @@
-import { Validator, Config } from "../main.js";
+import { Validator, Config } from "../main";
 
 export const Base = {
     toBase: function(number: number, base : number): number | string {
         if(!Validator.isNumber(number, base)) {
-            let msg = Config()?.language == 'en' ? 
+            let msg = Config().language == 'en' ? 
             "This function requires numbers" : "Esta función requiere números"
             
             return "[x] Base.toBase: " + msg;
@@ -19,7 +19,7 @@ export const Base = {
         }
 
         else {
-            let msg = Config()?.language == 'en' ? 
+            let msg = Config().language == 'en' ? 
             "You must place a binary number" : "Coloca un número binario"
 
             return "[x] Base.binaryToBase10: " + msg
