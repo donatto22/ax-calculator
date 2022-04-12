@@ -9,7 +9,7 @@ export { BasicOperations } from './arithmetic/basic_operations.js'
 export { RuleOfThree } from './arithmetic/rule_three.js'
 export { Percentage } from './arithmetic/percentage.js'
 export { Fractions } from './arithmetic/fractions.js'
-export { Base } from './arithmetic/base.js'
+export { Base } from './arithmetic/base'
 
 // Chemistry
 export { ChemicalElements } from './chemistry/chemical_elements.js'

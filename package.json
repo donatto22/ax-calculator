@@ -1,11 +1,13 @@
 {
   "name": "ax-calculator",
-  "version": "2.1.5",
+  "version": "2.1.6",
   "description": "Complex Math Calculator",
-  "main": "src/main.js",
+  "main": "dist/main.js",
+  "types": "dist",
   "scripts": {
     "test": "jest --config jest.config.json",
-    "build": "tsc"
+    "build": "tsc --build -p .",
+    "clean": "tsc --build --clean"
   },
   "keywords": [
     "calculator",

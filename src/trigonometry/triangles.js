@@ -57,6 +57,12 @@ export const Triangles = {
     }
 }
 
+/**
+@param {string} hypotenuse
+@param {string} opposite
+@param {string} adjacent
+**/
+
 function triangle(hypotenuse, opposite, adjacent) {
     let sin = `${opposite}/${hypotenuse}`, cos = `${adjacent}/${hypotenuse}`, tan = `${opposite}/${adjacent}`
     return { hypotenuse, opposite, adjacent, sin, cos, tan }

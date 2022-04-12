@@ -5,7 +5,7 @@ const PI_GLYPH = "π";
 
 export const AngleMeasurements = {
     /**
-    @param {number_string} radian You can place a string (fraction) or a number
+    @param {number|string} radian You can place a string (fraction) or a number
     **/
     radian: function(radian) {
         return {

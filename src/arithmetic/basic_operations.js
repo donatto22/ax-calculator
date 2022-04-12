@@ -3,7 +3,8 @@ import { Config } from '../main.js'
 export const BasicOperations = {
     /**
         Returns the sum of the numbers
-        @param {number} parameters You can add as many numbers as you wish
+        @param {object[]} parameters You can add as many numbers as you wish
+        @return {string|number}
     **/
    sum: function (...parameters) {
         for (let i = 0; i <= parameters.length - 1; i++) {
@@ -27,7 +28,8 @@ export const BasicOperations = {
 
     /**
         Returns the substract of the numbers
-        @param {number} parameters You can add as many numbers as you wish
+        @param {object[]} parameters You can add as many numbers as you wish
+        @return {string|number}
     **/
     substract: function(...parameters) {
         for(var i = 0; i <= parameters.length - 1; i++) {
@@ -51,7 +53,8 @@ export const BasicOperations = {
 
     /**
         Returns the product of the numbers
-        @param {number} parameters You can add as many numbers as you wish
+        @param {object[]} parameters You can add as many numbers as you wish
+        @return {string|number}
     **/
     product: function(...parameters) {
         for(let i = 0; i <= parameters.length - 1; i++) {
@@ -78,6 +81,7 @@ export const BasicOperations = {
         Returns the division by 2 numbers
         @param {number} number1
         @param {number} number2
+        @return {string|number}
     **/
     division: function(number1, number2) {
         if(typeof number1 != 'number' || typeof number2 != 'number') {
@@ -92,6 +96,7 @@ export const BasicOperations = {
 
     /**
     Returns the remainder of a division by 2 numbers
+    @return {string|number}
     **/
     module: function(param1, param2) {
         if(typeof param1 != 'number' || typeof param2 != 'number') {
@@ -107,8 +112,8 @@ export const BasicOperations = {
     /**
     @param {number} number
     @param {number} exponent
+    @return {string|number}
     **/
-
     raiseTo: function(number, exponent) {
         if(typeof number != 'number' || typeof exponent != 'number') {
             let msg = Config().language == 'en' ? "Place two numbers" : "Coloca dos números"
@@ -135,6 +140,7 @@ export const BasicOperations = {
 
         @param {number} number The number whose root you need
         @param {number} root The root you wish to obtain
+        @return {string|number}
     **/
 
     root: function(number, root = 2) {
