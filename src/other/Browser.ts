@@ -1,4 +1,6 @@
-import { Validator, Config } from "../main.js"
+import { Validator, Config } from "../main"
+
+
 
 export const Browser = {
     /**
@@ -37,7 +39,7 @@ export const Browser = {
     * Web function
     @return {boolean} true | false
     **/
-    isMobile: function() {
+    isMobile: function(): boolean {
         return navigator.userAgentData.mobile
     },
 
@@ -46,7 +48,7 @@ export const Browser = {
     @param {string} id the element id
     @param {string} property the property you want to get
     **/
-    getComputedStyleById: function(id, property) {
+    getComputedStyleById: function(id: string, property: string) {
         let msg = ''
         
         if(Validator.isUndefined(id)) {
@@ -148,10 +150,10 @@ export const Browser = {
 
     /**
     * Web function
-    @param {string} element The element you want to set styles
+    @param element The element you want to set styles
     @param {object} style
     **/
-    addCSSToElement: function(element, style) {
+    addCSSToElement: function(element: string, style: object) {
         for (const property in style)
             element.style[property] = style[property];
     }

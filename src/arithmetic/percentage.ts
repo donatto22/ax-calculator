@@ -1,13 +1,13 @@
-import { Validator, Config } from "../main.js"
+import { Validator, Config } from "../main"
 
 export const Percentage = {
     /**
         Example: What percentaje is 12 out of 30?
         @description Calculates the percentage of the total according to the value you give it
-        @param {number} number 12
-        @param {number} total 30
+        @param number 12
+        @param total 30
     **/
-    whatPercentageIs: function(number, total) {
+    whatPercentageIs: function(number: number, total: number): string {
         if(!Validator.isNumber(number, total)) {
             let msg = Config().language == 'en' ? "Only numbers" : "Coloca solo números"
             return "[x] whatPercentageIs: " + msg
@@ -21,10 +21,10 @@ export const Percentage = {
     /**    
         Example: How much is 7% of 39?
         @description Calculates the percentage of a number or quantity.
-        @param {number} percentage 7%
-        @param {number} total 39
+        @param percentage 7%
+        @param total 39
     **/
-    percentageOf: function(percentage, total) {
+    percentageOf: function(percentage: number, total: number): string | number {
         if(!Validator.isNumber(percentage, total)) {
             let msg = Config().language == 'en' ? "Only numbers" : "Coloca solo números"
             return "[x] percentageOf: " + msg
@@ -38,19 +38,19 @@ export const Percentage = {
     /**
         Example: If 30% is 10, then 60% is...
         @description Calculates a percentage from another percentage.
-        @param {number} percentage1 30%
-        @param {number} value1 10
-        @param {number} percentage2 60
+        @param percentage1 30%
+        @param value1 10
+        @param percentage2 60
     **/
-    percentFromPercent: function(percentage1, value1, percentage2) {
+    percentFromPercent: function(percentage1: number, value1: number, percentage2: number): string | number {
         if(Validator.isNumber(percentage1, value1, percentage2)) {
             let result = (value1 * percentage2) / percentage1;
     
             if (Number.isInteger(result)) 
-                return String(result);
+                return result
             
             else 
-                return String(result.toFixed(2));
+                return result.toFixed(2)
         }
 
         else {
@@ -61,20 +61,18 @@ export const Percentage = {
     /**
         Example: If 10% is 20, the total is...
         @description Calculate the total from a percentage
-        @param {number} percentage 10%
-        @param {number} value 20
+        @param percentage 10%
+        @param value 20
     **/
-    totalFromPercent: function(percentage, value) {
+    totalFromPercent: function(percentage: number, value: number): string | number {
         if(Validator.isNumber(percentage, value)) {
             let result = (value * 100) / percentage;
     
-            if(Number.isInteger(result)) {
-                return String(result);
-            }
+            if(Number.isInteger(result)) 
+                return result
     
-            else {
-                return String(result.toFixed(2));
-            }
+            else 
+                return result.toFixed(2)
         }
 
         else {

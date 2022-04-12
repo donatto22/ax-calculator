@@ -1,5 +1,5 @@
 export const Vectors = {
-    sum: function(...vectors) {
+    sum: function(...vectors: Array<Array<number>>): string | object {
         var arr_x = [], arr_y = [];
 
         for(var i = 0; i <= vectors.length - 1; i++) {
@@ -30,7 +30,7 @@ export const Vectors = {
         }
     },
 
-    substract: function(...vectors) {
+    substract: function(...vectors: Array<Array<number>>): string | object {
         var arr_x = [], arr_y = [];
 
         for(var i = 0; i <= vectors.length - 1; i++) {
@@ -61,7 +61,7 @@ export const Vectors = {
         }
     },
 
-    product: function(...vectors) {
+    product: function(...vectors: Array<Array<number>>): string | number {
         var arr_x =[], arr_y = [];
 
         for(var i = 0; i <= vectors.length - 1; i++) {
@@ -85,66 +85,56 @@ export const Vectors = {
         return x + y;
     },
 
-    unitVector: function(vector) {
+    unitVector: function(vector: Array<number>) {
         return unitVector(vector[0], vector[1]);
     }
 }
 
-const _sum = (accumulator, curr) => accumulator + curr;
-const _substract = (accumulator, curr) => accumulator - curr;
-const _product = (accumulator, curr) => accumulator * curr;
+const _sum = (accumulator: any, curr: any) => accumulator + curr;
+const _substract = (accumulator: number, curr: number) => accumulator - curr;
+const _product = (accumulator: number, curr: number) => accumulator * curr;
 
-function validateExpression(x, y) {
-    var expression;
+function validateExpression(x: string | number, y: string | number) {
+    let expression
 
-    if(x == 0) {
+    if(x == 0)
         x = ''
-    }
 
-    if(y == 0) {
+    if(y == 0)
         y = ''
-    }
 
-    if(x == 1) {
+    if(x == 1)
         x = 'i'
-    }
 
-    if(y == 1) {
+    if(y == 1)
         y = 'i'
-    }
 
-    if(x > 1) {
+    if(x > 1)
         x = `${x}i`
-    }
 
-    if(y > 1 ) {
+    if(y > 1)
         y = `${y}j`
-    }
 
-    if(y < 0) {
-        expression = `${x} - ${y * -1}j`
-    }
+    if(y < 0)
+        expression = `${x} - ${Number.parseInt(String(y)) * -1}j`
 
-    else if(x < 0) {
-        expression = `-${x * -1}i + ${y}`
-    }
+    else if(x < 0)
+        expression = `-${Number.parseInt(String(x)) * -1}i + ${y}`
 
-    else if(x < 0 && y < 0) {
-        expression = `-${x * -1}i - ${y * -1}j`
-    }
+    else if(x < 0 && y < 0)
+        expression = `-${Number.parseInt(String(x)) * -1}i - ${Number.parseInt(String(y)) * -1}j`
 
-    else {
+    else
         expression = `${x} + ${y}`
-    }
 
     return expression;
 }
 
-function unitVector(x, y) {
+function unitVector(x: number, y: number) {
     var module = ((x ** 2) + (y ** 2)) ** (1/2);
 
-    var x2 = Number.parseFloat((x / module).toString().match(/^-?\d+(?:\.\d{0,2})?/))
-    var y2 = Number.parseFloat((y / module).toString().match(/^-?\d+(?:\.\d{0,2})?/))
+    var x2 = Number.parseFloat((x / module).toString()) // .match(/^-?\d+(?:\.\d{0,2})?/)
+    var y2 = Number.parseFloat((y / module).toString()) // .match(/^-?\d+(?:\.\d{0,2})?/)
 
     return [x2, y2]
 }

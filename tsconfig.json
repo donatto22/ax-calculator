@@ -3,9 +3,9 @@
   "exclude": ["node_modules"],
   "compilerOptions": {
     "target": "es6",
+    "lib": ["ES5" ,"ES6", "DOM"],
     "module": "commonjs",
     "strict": true,
-
     "declaration": true,
     "declarationMap": true,
     "sourceMap": true,

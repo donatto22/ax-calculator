@@ -1,12 +1,10 @@
-import { Validator, Config } from "../main.js"
+import { Validator, Config } from "../main"
 
 export const Clock = {
     /**
-    @param {boolean} seconds
-    @param {boolean} spacing
-    @return {string}
+    Display the time
     **/
-    time: function(seconds = false, spacing = false) {
+    time: function(seconds: boolean = false, spacing: boolean = false): string {
         if(Validator.isBoolean(seconds, spacing)) {
             let date = new Date(), time = ""
 
@@ -47,11 +45,9 @@ export const Clock = {
     },
 
     /**
-    @param {string} format
-    @param {boolean} optionalYear
     @return {string}
     **/
-    date: function(format = "US", optionalYear = true) {
+    date: function(format: string = "US", optionalYear: boolean = true): string {
         if(Validator.isString(format) && Validator.isBoolean(optionalYear)) {
             let date = new Date(), fullDate = ""
 
@@ -108,7 +104,7 @@ export const Clock = {
         }
     },
 
-    calculateDaysBetweenDates: function(begin, end) {
+    calculateDaysBetweenDates: function(begin: string, end: string): string | number {
         let msg = ''
         const dayMiliseconds = 8.64e+7 // day in milliseconds
         let regex = /^\(?([0-9]{4})\)?[-. ]?([0-9]{2})[-. ]?([0-9]{2})$/g
