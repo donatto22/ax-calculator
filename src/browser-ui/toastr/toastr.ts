@@ -1,4 +1,4 @@
-import { Validator } from '../../main';
+import { Validator } from '../../main.js';
 import ColorsUI from "../colors-ui/colors_ui";
 
 // create element

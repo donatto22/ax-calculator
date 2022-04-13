@@ -1,12 +1,11 @@
 {
   "name": "ax-calculator",
-  "version": "2.2.0",
+  "version": "2.2.5",
   "description": "Complex Math Calculator",
-  "types": "dist",
-  "type": "module",
+  "types": "dist/types",
   "scripts": {
     "test": "jest --config jest.config.json",
-    "build": "tsc -p tsconfig.json && tsc -p tsconfig-cjs.json",
+    "build": "tsc -p tsconfig.json",
     "clean": "tsc --build --clean"
   },
   "keywords": [
@@ -29,8 +28,11 @@
     "date"
   ],
   "exports": {
-    "import": "./dist/esm/main.js",
-    "require": "./dist/cjs/main.js"
+    ".": {
+      "import": "./dist/esm/main.js",
+      "require": "./dist/cjs/main.js",
+      "default": "./dist/esm/main.js"
+    }
   },
   "main": "./dist/cjs/main.js",
   "module": "./dist/esm/main.js",

@@ -1,5 +1,5 @@
-import Toastr from './toastr/toastr'
-import Table from './table/table'
+import Toastr from './toastr/toastr.js'
+import Table from './table/table.js'
 import ColorsUI from './colors-ui/colors_ui.js'
 
 export const BrowserUI = {

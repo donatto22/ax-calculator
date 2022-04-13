@@ -1,4 +1,4 @@
-import { Validator, Config } from "../main"
+import { Validator, Config } from "../main.js"
 
 export const Clock = {
     /**

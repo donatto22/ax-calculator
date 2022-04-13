@@ -1,4 +1,4 @@
-import { Validator, Config } from '../main'
+import { Validator, Config } from '../main.js'
 
 /**
     Returns exact values of a system of 2 equations

@@ -27,11 +27,6 @@ yarn add ax-calculator
 
 - Import
 
-### CommonJS
-```js
-const ax = require('ax-calculator')
-```
-
 ### ES Modules
 ```html
 <!-- html -->
@@ -39,10 +34,10 @@ const ax = require('ax-calculator')
 ```
 
 ```js
+const ax = require('ax-calculator')
+
 // In the dots you will place the object you want to use
-import { ... } from 'ax-calculator'
-...
-import * as ax from 'ax-calculator'
+const { ... } = require('ax-calculator')
 ```
 
 ## Objects and their operations
