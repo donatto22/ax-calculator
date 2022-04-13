@@ -1,4 +1,4 @@
-import { Validator, Config } from "../main"
+import { Validator, Config } from "../main.js"
 
 export const Operations = {
     /** Returns the square root of the product of the sum of the squared sides of the triangle */

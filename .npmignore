@@ -10,5 +10,7 @@ jest.config.json
 .github/
 *.yml
 
-# src
+# src and tsconfig
 src/
+tsconfig.cjs.json
+tsconfig.json

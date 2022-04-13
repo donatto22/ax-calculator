@@ -1,5 +1,5 @@
-import { Validator, Config } from '../main'
-import { elements }  from './elements'
+import { Validator, Config } from '../main.js'
+import { elements }  from './elements.js'
 
 export const ChemicalElements = {
     show: function(param: string | number ): object | string | undefined {

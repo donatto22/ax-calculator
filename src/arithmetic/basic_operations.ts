@@ -1,4 +1,4 @@
-import { Config, Validator } from '../main'
+import { Config, Validator } from '../main.js'
 
 export const BasicOperations = {
     /**

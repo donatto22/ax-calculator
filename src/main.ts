@@ -1,36 +1,36 @@
 "use strict"
 
 // Algebra
-export { SystemEquation } from './algebra/system_equation'
-export { Equations } from './algebra/equations'
+export { SystemEquation } from './algebra/system_equation.js'
+export { Equations } from './algebra/equations.js'
 
 // Arithmetic
-export { BasicOperations } from './arithmetic/basic_operations'
-export { RuleOfThree } from './arithmetic/rule_three'
-export { Percentage } from './arithmetic/percentage'
-export { Fractions } from './arithmetic/fractions'
-export { Base } from './arithmetic/base'
+export { BasicOperations } from './arithmetic/basic_operations.js'
+export { RuleOfThree } from './arithmetic/rule_three.js'
+export { Percentage } from './arithmetic/percentage.js'
+export { Fractions } from './arithmetic/fractions.js'
+export { Base } from './arithmetic/base.js'
 
 // Chemistry
-export { ChemicalElements } from './chemistry/chemical_elements'
+export { ChemicalElements } from './chemistry/chemical_elements.js'
 
 // General
-export { LinearRegression } from './general/linear_regression'
-export { Operations } from './general/operations'
+export { LinearRegression } from './general/linear_regression.js'
+export { Operations } from './general/operations.js'
 
 // Trigonometry
-export { AngleMeasurements } from './trigonometry/angle_measurements'
-export { Triangles } from './trigonometry/triangles'
+export { AngleMeasurements } from './trigonometry/angle_measurements.js'
+export { Triangles } from './trigonometry/triangles.js'
 
 // Physics
-export { Vectors } from './physics/vectors'
+export { Vectors } from './physics/vectors.js'
 
 // Others
-export { TerminalColors } from './other/TerminalColors'
-export { Validator } from './other/Validator'
-export { History } from './other/History'
-export { Config } from './other/Config'
-export { Clock } from './other/Clock'
+export { TerminalColors } from './other/TerminalColors.js'
+export { Validator } from './other/Validator.js'
+export { History } from './other/History.js'
+export { Config } from './other/Config.js'
+export { Clock } from './other/Clock.js'
 
 // Browser
 // export { BrowserUI } from './browser-ui/browser_ui';

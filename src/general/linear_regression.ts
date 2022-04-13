@@ -1,4 +1,4 @@
-import { Validator, Config } from "../main"
+import { Validator, Config } from "../main.js"
 
 export const LinearRegression = {
     simple: function(array_x: Array<number>, array_y: Array<number>): object | string {

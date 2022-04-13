@@ -1,5 +1,5 @@
-import { Fractions as fractions, Validator, Config } from '../main';
-import Const from '../constants/constants'
+import { Fractions as fractions, Validator, Config } from '../main.js';
+import Const from '../constants/constants.js'
 
 const PI_GLYPH = "π";
 
