@@ -133,8 +133,8 @@ function validateExpression(x: string | number, y: string | number) {
 function unitVector(x: number, y: number) {
     var module = ((x ** 2) + (y ** 2)) ** (1/2);
 
-    var x2 = Number.parseFloat((x / module).toString()) // .match(/^-?\d+(?:\.\d{0,2})?/)
-    var y2 = Number.parseFloat((y / module).toString()) // .match(/^-?\d+(?:\.\d{0,2})?/)
-
+    let x2 = Number.parseFloat((Number.parseFloat((x / module).toString())).toString().match(/^-?\d+(?:\.\d{0,2})?/)![0])
+    let y2 = Number.parseFloat((Number.parseFloat((y / module).toString())).toString().match(/^-?\d+(?:\.\d{0,2})?/)![0])
+    
     return [x2, y2]
 }
