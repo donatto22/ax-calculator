@@ -1,4 +1,4 @@
-import * as ax from "../src/main.js";
+const ax = require("../dist/main.js")
 
 const log = console.log
 
