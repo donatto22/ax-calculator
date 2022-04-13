@@ -27,7 +27,6 @@ yarn add ax-calculator
 
 - Import
 
-### ES Modules
 ```html
 <!-- html -->
 <script type="module" src="index.js"></script>
