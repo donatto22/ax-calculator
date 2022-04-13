@@ -1,5 +1,5 @@
-const ax = require('ax-calculator')
+import { BasicOperations } from 'ax-calculator'
 
 const log = console.log
 
-log(ax)
+log(BasicOperations)

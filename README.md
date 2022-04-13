@@ -27,6 +27,12 @@ yarn add ax-calculator
 
 - Import
 
+### CommonJS
+```js
+const ax = require('ax-calculator')
+```
+
+### ES Modules
 ```html
 <!-- html -->
 <script type="module" src="index.js"></script>
