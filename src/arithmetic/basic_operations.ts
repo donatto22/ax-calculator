@@ -1,115 +1,109 @@
-import { Config } from '../main.js'
+import { Config, Validator } from '../main'
 
 export const BasicOperations = {
     /**
         Returns the sum of the numbers
-        @param {number} parameters You can add as many numbers as you wish
     **/
-   sum: function (...parameters) {
+   sum: function (...parameters: number[]) : object | string {
         for (let i = 0; i <= parameters.length - 1; i++) {
             if (typeof parameters[i] != 'number') {
                 let msg = Config().language == 'en' ? "Place numbers" : "Coloca números"
-                return "[x] sum:" + msg
-            }
+                return "[x] sum: " + msg
+            }    
+        }
 
-            else {
-                let result = parameters.reduce((previous, current) => { return  previous + current })
+        let result:number = 0
 
-                return { 
-                    result, 
-                    toNegative() { 
-                        return result * -1; 
-                    } 
-                }
-            }
+        parameters.forEach((number, index) => {
+            result += number
+        })
+
+        return { 
+            result: result, 
+            toNegative: function() { 
+                return result * -1; 
+            } 
         }
    },
 
     /**
         Returns the substract of the numbers
-        @param {number} parameters You can add as many numbers as you wish
     **/
-    substract: function(...parameters) {
+    substract: function (...parameters: number[]) : any {
         for(var i = 0; i <= parameters.length - 1; i++) {
             if (typeof parameters[i] != 'number') {
                 let msg = Config().language == 'en' ? "Place numbers" : "Coloca números"
                 return "[x] substract: " + msg
             }
 
-            else {
-                var result =  parameters.reduce((previous, current) => { return previous - current })
-        
-                return {
-                    result,
-                    toNegative() {
-                        return result * -1;
-                    }
-                }
-            }
+            // else {
+                //     var result =  parameters.reduce(_sum)
+                
+                //     return {
+                    //         result,
+                    //         toNegative() {
+                        //             return result * -1;
+                        //         }
+                        //     }
+                        // }
         }
     },
 
-    /**
-        Returns the product of the numbers
-        @param {number} parameters You can add as many numbers as you wish
-    **/
-    product: function(...parameters) {
+    /** Returns the product of the numbers */
+    product: function (...parameters:  number[]) : object | string {
         for(let i = 0; i <= parameters.length - 1; i++) {
             if (typeof parameters[i] != 'number') {
                 let msg = Config().language == 'en' ? "Place numbers" : "Coloca números"
                 return "[x] product: " + msg
             }
+        }
 
-            else {
-                let result = parameters.reduce((previous, current) => { return previous * current });
-        
-                return {
-                    result,
-                    toNegative() {
-                        return result * -1;
-                    }
-                }
-            }
+        let result:number = 1
+
+        parameters.forEach((number, index) => {
+            result *= number
+            console.log(number)
+        })
+
+        return { 
+            result, 
+            toNegative() { 
+                return result * -1; 
+            } 
         }
         
     },
 
     /**
         Returns the division by 2 numbers
-        @param {number} number1
-        @param {number} number2
     **/
-    division: function(number1, number2) {
-        if(typeof number1 != 'number' || typeof number2 != 'number') {
+    division: function(number1:number, number2:number): string | number {
+        if(!Validator.isNumber(number1, number2)) {
             let msg = Config().language == 'en' ? "Place two numbers" : "Coloca dos números"
             return "[x] division: " + msg
         }
 
-        else {
-            return (number1 / number2)
-        }
+        else return (number1 / number2)
     },
 
     /**
     Returns the remainder of a division by 2 numbers
     **/
-    module: function(param1, param2) {
-        if(typeof param1 != 'number' || typeof param2 != 'number') {
+    module: function(number1:number, number2:number): string | number {
+        if(typeof number1 != 'number' || typeof number2 != 'number') {
             let msg = Config().language == 'en' ? "Place two numbers" : "Coloca dos números"
             return "[x] module: " + msg
         }
 
         else {
-            return param1 % param2
+            return number1 % number2
         }
     },
 
     /**
-    @param {number} number
-    @param {number} exponent
+    Raise a number to a exponent
     **/
-
-    raiseTo: function(number, exponent) {
+    raiseTo: function(number:number, exponent:number): string | number {
         if(typeof number != 'number' || typeof exponent != 'number') {
             let msg = Config().language == 'en' ? "Place two numbers" : "Coloca dos números"
             return "[x] raiseTo: " + msg
@@ -132,12 +126,9 @@ export const BasicOperations = {
 
     /**
         If you do not enter a root, you will get the square root by default.
-
-        @param {number} number The number whose root you need
-        @param {number} root The root you wish to obtain
     **/
 
-    root: function(number, root = 2) {
+    root: function(number:number, root:number = 2): string | number {
         if(typeof number != 'number' || typeof root != 'number') {
             let msg = Config().language == 'en' ? "Place a number" : "Coloca un número"
             return "[x] root: " + msg
@@ -149,19 +140,19 @@ export const BasicOperations = {
     },
 
     Chaining: class {
+        value: number
+
         constructor() {
             this.value = 0
         }
     
-        /**
-        @param {number} value - Place a number to start your chain of operations
-        **/
-        baseNumber(value) {
+        /** Place a number to start your chain of operations */
+        baseNumber(value:number): this {
             typeof value === 'number' ? this.value = value : "[x] Base Number: Place a number"
             return this
         }
     
-        sum(...args) {
+        sum(...args: Array<number>) {
             if(typeof args == 'object') {
                 if(args.length == 0) {
                     return "[x] Sum: Place a number"
@@ -175,7 +166,7 @@ export const BasicOperations = {
                     }
     
                     for(let i = 0; i <= args.length - 1; i++) {
-                        this.value += BasicOperations.sum(args[i]).result;
+                        this.value += args[i];
                     }
             
                     return this
@@ -193,7 +184,7 @@ export const BasicOperations = {
             return this
         }
     
-        multiply(value) {
+        multiply(value: number) {
             if(this.value == 0) {
                 return "[x] You can't multiply with anything"
             }
@@ -208,7 +199,7 @@ export const BasicOperations = {
             }
         }
     
-        substract(value) {
+        substract(value: number) {
             if(this.value == 0) {
                 return "[x] You can't substract with anything"
             }
@@ -223,7 +214,7 @@ export const BasicOperations = {
             }
         }
     
-        divide(value) {
+        divide(value: number) {
             if(this.value == 0) {
                 return "[x] You can't divide with anything"
             }

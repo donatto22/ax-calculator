@@ -1,6 +1,6 @@
 import { Validator, Config } from "../../main.js";
 
-const Table = (props) => {
+const Table = (props: object) => {
     if(Validator.isObject(props)) {
 
     }
@@ -12,19 +12,13 @@ const Table = (props) => {
 
 
 // default styles for the table
-function lightTable(table) {
+function lightTable(table: string) {
 
 }
 
 // table in dark mode
-function darkTable(table) {
+function darkTable(table: string) {
 
-}
-
-// add css to the table
-function addCSS(element, style) {
-    for (const property in style)
-        element.style[property] = style[property];
 }
 
 export default Table

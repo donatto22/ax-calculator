@@ -47,7 +47,7 @@ export var elements = [
   addElement("Pd", 46, 106, "Palladium", "VIII B", "Transition metal", 2.2),
   addElement("Ag", 47, 108, "Silver", "I B", "Transition metal", 1.9),
   addElement("Cd", 48, 112, "Cadmium", "II B", "Transition metal", 1.7),
-  addElement("In", 49, 115, "Indium", "III A", "Metal"), 1.8,
+  addElement("In", 49, 115, "Indium", "III A", "Metal", 1.8),
   addElement("Sn", 50, 119, "Tin", "IV A", "Metal", 1.8),
   addElement("Sb", 51, 122, "Antimony", "V A", "Metalloid", 2.1),
   addElement("Te", 52, 128, "Tellurium", "VI A", "Metalloid", 2.1),
@@ -120,15 +120,11 @@ export var elements = [
 ]
 
 /**
-@param {string} simbol
-@param {number} atomic_number
-@param {number} atomic_mass
-@param {string} name
 @param {string} group
 @param {string} type
 @param {number} electronegativity
 **/
-function addElement(simbol, atomic_number, atomic_mass, name, group, type, electronegativity) {
+function addElement(simbol: string, atomic_number: number, atomic_mass: number, name: string, group: string, type: string, electronegativity: number | null) {
   var element = {
     "simbol" : simbol,
     "atomic_number" : atomic_number,

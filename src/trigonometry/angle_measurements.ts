@@ -1,32 +1,31 @@
-import { Fractions as fractions, Validator, Config } from '../main.js';
-import Const from '../constants/constants.js'
+import { Fractions as fractions, Validator, Config } from '../main';
+import Const from '../constants/constants'
 
 const PI_GLYPH = "π";
 
 export const AngleMeasurements = {
     /**
-    @param {number_string} radian You can place a string (fraction) or a number
+    @param radian You can place a string (fraction) or a number
     **/
-    radian: function(radian) {
+    radian: function(radian: number | string) {
         return {
             toCentesimal: function() {
                 let msg = ""
 
                 if(Validator.isString(radian)) {
-                    if(Validator.isUndefined(destructure(radian).top) || Validator.isUndefined(destructure(radian).bottom)) {
+                    if(Validator.isUndefined(fractions.destructure(String(radian)).top) || Validator.isUndefined(fractions.destructure(String(radian)).bottom)) {
                         msg = Config().language == 'en' ? "Place a fraction" : "Coloca una fracción"
                         return "[x] radian.toCentesimal: " + msg
                     }
 
                     else {
-                        let top = destructure(radian).top, bottom = destructure(radian).bottom;
+                        let top = Number.parseInt(fractions.destructure(String(radian)).top), bottom = Number.parseInt(fractions.destructure(String(radian)).bottom)
                         return (top * 200) / bottom;
                     }
                 }
 
-                else if(Validator.isNumber(radian)) {
-                    return Number.parseFloat(((radian * 200) / Const.PI).toFixed(3));
-                }
+                else if(Validator.isNumber(radian))
+                    return Number.parseFloat(((Number.parseInt(radian.toString()) * 200) / Const.PI).toFixed(3))
 
                 else {
                     msg = Config().language == 'en' ? 
@@ -39,19 +38,19 @@ export const AngleMeasurements = {
                 let msg = ""
 
                 if(Validator.isString(radian)) {
-                    if(Validator.isUndefined(destructure(radian).top) || Validator.isUndefined(destructure(radian).bottom)) {
+                    if(Validator.isUndefined(fractions.destructure(String(radian)).top) || Validator.isUndefined(fractions.destructure(String(radian)).bottom)) {
                         msg = Config().language == 'en' ? "Place a fraction" : "Coloca una fracción"
                         return "[x] radian.toSexagesimal: " + msg
                     }
 
                     else {
-                        let top = destructure(radian).top, bottom = destructure(radian).bottom;
+                        let top = Number.parseInt(fractions.destructure(String(radian)).top), bottom = Number.parseInt(fractions.destructure(String(radian)).bottom)
                         return (top * 180) / bottom;
                     }
                 }
 
                 else if(Validator.isNumber(radian)) {
-                    return Number.parseFloat(((radian * 180) / Const.PI).toFixed(3));
+                    return Number.parseFloat(((Number.parseInt(radian.toString()) * 180) / Const.PI).toFixed(3));
                 }
 
                 else {
@@ -64,7 +63,7 @@ export const AngleMeasurements = {
         }
     },
 
-    centesimal: function(number) {
+    centesimal: function(number: number) {
         return {
             toRadian: function() {
                 let msg = ""
@@ -75,17 +74,17 @@ export const AngleMeasurements = {
                 }
 
                 else {
-                    let dest = destructure(fractions.simplify(number, 200));
+                    let dest = fractions.destructure(fractions.simplify(number, 200));
                     let top = dest.top, bottom = dest.bottom;
                     let t, result;
 
                     result = `${t}/${bottom}`
 
                     //top
-                    top == 1 ? t = `${PI_GLYPH}` : t = `${top}${PI_GLYPH}`
+                    top == '1' ? t = `${PI_GLYPH}` : t = `${top}${PI_GLYPH}`
 
                     //bottom
-                    bottom == 1 ? result = `${t}` : result = `${t}/${bottom}`
+                    bottom == '1' ? result = `${t}` : result = `${t}/${bottom}`
 
                     return result;
                 }
@@ -106,7 +105,7 @@ export const AngleMeasurements = {
         }
 
     },
-    sexagesimal: function(number) {
+    sexagesimal: function(number: number) {
         return {
             toRadian: function() {
                 if(!Validator.isNumber(number)) {
@@ -114,7 +113,7 @@ export const AngleMeasurements = {
                 }
 
                 else {
-                    let dest = destructure(fractions.simplify(number, 180));
+                    let dest = fractions.destructure(fractions.simplify(number, 180));
                     let top = dest.top, bottom = dest.bottom;
 
                     let t, result;
@@ -122,17 +121,17 @@ export const AngleMeasurements = {
                     result = `${t}/${bottom}`
 
                     //top
-                    top == 1 ? t = `${PI_GLYPH}` : t = `${top}${PI_GLYPH}`
+                    top == '1' ? t = `${PI_GLYPH}` : t = `${top}${PI_GLYPH}`
 
                     //bottom
-                    bottom == 1 ? result = `${t}` : result = `${t}/${bottom}`
+                    bottom == '1' ? result = `${t}` : result = `${t}/${bottom}`
 
                     return result;
                 }
             },
 
             toCentesimal: function() {
-                if(typeof number !== 'number') {
+                if(!Validator.isNumber(number)) {
                     return "Place a number"
                 }
 
@@ -151,13 +150,5 @@ export const AngleMeasurements = {
                 }
             }
         }
-    }
-}
-
-function destructure(string) {
-    let array = string.split('/');
-    var top =  array[0], bottom = array[1];
-    return {
-        top, bottom
     }
 }

@@ -1,5 +1,5 @@
-import { Validator, Browser } from '../../main.js';
-import ColorsUI from "../colors-ui/colors_ui.js";
+import { Validator } from '../../main';
+import ColorsUI from "../colors-ui/colors_ui";
 
 // create element
 let toastrElement = document.createElement('div')
@@ -9,7 +9,14 @@ toastrElement.setAttribute('id', 'ax-toastr-js')
 let message = document.createElement("div")
 message.setAttribute('id', 'message-toastr')
 
-function Toastr (p) {
+function Toastr (p: {
+    type: string | null, 
+    message: string | null,
+    bolder: boolean | null, 
+    fontfamily: string | null,
+    fontSize: string | null,
+    position: string | null,
+}): void {
     if(Validator.isObject(p)) {
         // set bold message
         p.bolder === true ? message.style.fontWeight = "600" : message.style.fontWeight = "normal"
@@ -36,7 +43,7 @@ function Toastr (p) {
         }
         
         // add toastr to body
-        document.querySelector("body").appendChild(toastrElement)
+        document.querySelector("body")?.appendChild(toastrElement)
 
         // add message in the toastr
         toastrElement.appendChild(message)
@@ -53,12 +60,12 @@ toastrElement.addEventListener('click', () => {
 })
 
 // set a bg color
-const setBgColor = (color) => {
+const setBgColor = (color: string) => {
     toastrElement.style.backgroundColor = color
 }
 
 // set a message
-const setMessage = (string) => {
+const setMessage = (string: string) => {
     message.textContent = string
 }
 

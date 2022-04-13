@@ -1,40 +1,35 @@
-import { Validator, Config } from "../main.js"
+import { Validator, Config } from "../main"
 
 export const LinearRegression = {
-    /**
-    @param {object[]} array_x
-    @param {object[]} array_y
-    @return {object{}}
-    **/
-    simple: function(array_x, array_y) {
+    simple: function(array_x: Array<number>, array_y: Array<number>): object | string {
         let msg = ""
         // Verificar que ambos sean arreglos
         if(Validator.isArray(array_x) && Validator.isArray(array_y)) {
             //Si son arreglos, ver que tengan la misma cantidad de datos
             if(array_x.length == array_y.length) {
                 //Longitud
-                var length = array_y.length
+                let length = array_y.length
 
-                var array_x2 = [], array_xy = [];
+                let array_x2: number[] = [], array_xy: number[] = [];
 
                 // x ** 2
                 array_x.forEach(e => array_x2.push(e ** 2))
 
                 // xy
-                for(var i = 0; i < length; i++) {
+                for(let i = 0; i < length; i++) {
                     array_xy.push(array_x[i] * array_y[i])
                 }
 
                 // Sumatorias
-                var sum_y = array_y.reduce(sum)
-                var sum_x = array_x.reduce(sum)
-                var sum_x2 = array_x2.reduce(sum);
-                var sum_xy = array_xy.reduce(sum);
+                let sum_y = array_y.reduce(sum)
+                let sum_x = array_x.reduce(sum)
+                let sum_x2 = array_x2.reduce(sum)
+                let sum_xy = array_xy.reduce(sum)
 
                 // Inicia la formula
-                var a, b, equation;
+                let a:number, b: number, equation: string;
 
-                a = Number.parseFloat((((length * sum_xy) - (sum_x * sum_y) ) / ( (length * sum_x2) - (sum_x ** 2))).toString().match(/^-?\d+(?:\.\d{0,5})?/)[0]);
+                a = Number.parseFloat((((length * sum_xy) - (sum_x * sum_y) ) / ( (length * sum_x2) - (sum_x ** 2))).toString()) // .match(/^-?\d+(?:\.\d{0,5})?/)
                 b = (sum_y - (a * sum_x)) / length;
 
                 //Ecuacion lineal
@@ -43,15 +38,15 @@ export const LinearRegression = {
                 return {
                     a, b, equation,
                     coefficient: function() {
-                        var average_x = sum_x / length;
-                        var average_y = sum_y / length;
+                        let average_x = sum_x / length
+                        let average_y = sum_y / length
 
                         //Aquí se necesitan 5 arreglos nuevos
-                        var array_x_avgx = [], array_y_avgy = [], 
-                        array_x_avgx2 = [], array_y_avgy2 = [], product = [];
+                        let array_x_avgx: number[] = [], array_y_avgy: number[] = [], 
+                        array_x_avgx2: number[] = [], array_y_avgy2: number[] = [], product: number[] = [];
 
                         //Agregando los valores a sus arreglos
-                        for(var i = 0; i < length; i++) {
+                        for(let i = 0; i < length; i++) {
                             // x - average_x
                             array_x_avgx.push(array_x[i] - average_x)
                             // y - average_y
@@ -65,16 +60,16 @@ export const LinearRegression = {
                         array_y_avgy.forEach(e => array_y_avgy2.push(Number.parseFloat((e ** 2).toFixed(2))))
 
                         // el producto de los cuadrados
-                        for(var i = 0; i < length; i++) {
+                        for(let i = 0; i < length; i++) {
                             product.push(Number.parseFloat((array_x_avgx[i] * array_y_avgy[i]).toFixed(2)))
                         }                        
                         
                         //3 sumatorias nuevas
-                        var sum_avgx2 = Number.parseFloat((array_x_avgx2.reduce(sum)).toFixed(2));
-                        var sum_avgy2 = Number.parseFloat((array_y_avgy2.reduce(sum)).toFixed(2));
-                        var sum_product = Number.parseInt((product.reduce(sum)).toFixed(2));
+                        let sum_avgx2 = Number.parseFloat((array_x_avgx2.reduce(sum)).toFixed(2))
+                        let sum_avgy2 = Number.parseFloat((array_y_avgy2.reduce(sum)).toFixed(2))
+                        let sum_product = Number.parseInt((product.reduce(sum)).toFixed(2))
                         
-                        var result = sum_product / ((sum_avgx2 ** (1/2)) * (sum_avgy2 ** (1/2)))
+                        let result = sum_product / ((sum_avgx2 ** (1/2)) * (sum_avgy2 ** (1/2)))
 
                         return Number.parseFloat((result).toFixed(5))
                     }
@@ -100,4 +95,4 @@ export const LinearRegression = {
     }
 }
 
-const sum = (accumulator, curr) => accumulator + curr
+const sum = (accumulator: any, curr: any) => accumulator + curr

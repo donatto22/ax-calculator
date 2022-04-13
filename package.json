@@ -1,11 +1,13 @@
 {
   "name": "ax-calculator",
-  "version": "2.1.5",
+  "version": "2.2.0",
   "description": "Complex Math Calculator",
-  "main": "src/main.js",
+  "types": "dist",
+  "type": "module",
   "scripts": {
     "test": "jest --config jest.config.json",
-    "build": "tsc"
+    "build": "tsc -p tsconfig.json && tsc -p tsconfig-cjs.json",
+    "clean": "tsc --build --clean"
   },
   "keywords": [
     "calculator",
@@ -26,7 +28,12 @@
     "time",
     "date"
   ],
-  "type": "module",
+  "exports": {
+    "import": "./dist/esm/main.js",
+    "require": "./dist/cjs/main.js"
+  },
+  "main": "./dist/cjs/main.js",
+  "module": "./dist/esm/main.js",
   "author": "Donatto Minaya",
   "license": "Apache-2.0",
   "repository": {

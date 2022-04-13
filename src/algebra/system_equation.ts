@@ -1,13 +1,13 @@
-import { Validator, Config } from '../main.js'
+import { Validator, Config } from '../main'
 
 /**
     Returns exact values of a system of 2 equations
-    @param {number} equation1 - first equation
-    @param {number} equation2 - second equation
+    @param equation1 - first equation
+    @param equation2 - second equation
 **/
 
 export const SystemEquation = {
-    double: function (equation1, equation2) {
+    double: function (equation1: Array<number>, equation2: Array<number>) {
         if(Validator.isArray(equation1) && Validator.isArray(equation2)) {
             //ax + by = c
             //dx + ey = f

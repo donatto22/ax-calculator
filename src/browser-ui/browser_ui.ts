@@ -1,22 +1,27 @@
-import Toastr from './toastr/toastr.js'
-import Table from './table/table.js'
+import Toastr from './toastr/toastr'
+import Table from './table/table'
 import ColorsUI from './colors-ui/colors_ui.js'
 
 export const BrowserUI = {
 
     /**
      * Web function
-     * @param {object} props
     **/
-    toastr: (props) =>  {
+    toastr: (props?: {
+        type: string,
+        message: string
+        bolder: boolean,
+        fontfamily: string,
+        fontSize: string,
+        position: string
+    }): void =>  {
         Toastr({
             type : props ? props.type : null,
             message : props ? props.message : null,
             bolder : props ? props.bolder : null,
             fontfamily : props ? props.fontfamily : null,
             fontSize : props ? props.fontSize : null,
-            position : props ? props.position : null,
-            message : props ? props.message : null
+            position : props ? props.position : null
         })
     },
 
@@ -24,7 +29,7 @@ export const BrowserUI = {
      * Web function
      * @param {object} props
     **/
-    table: (props) => {
+    table: (props?: {tableID: string, type: string}) => {
         Table({
             tableID : props ? props.tableID : null,
             type : props ? props.type : null,
@@ -40,10 +45,10 @@ export const BrowserUI = {
 
     /**
      * Web function
-     * @param {string} divID
-     * @param {object} props
+     * @param divID
+     * @param props
     **/
-    card: (divID, props) => {
+    card: (divID: string, props: object) => {
         
     }
 }

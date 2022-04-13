@@ -9,3 +9,6 @@ jest.config.json
 # workflows
 .github/
 *.yml
+
+# src
+src/

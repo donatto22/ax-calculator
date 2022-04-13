@@ -1,18 +1,15 @@
-import { Config } from '../main.js'
+import { Config } from '../main'
 
 export const Validator = {
     /**
         @param {any} param
     **/
-    isNumber: function(...param) {
+    isNumber: function(...param: Array<any>): boolean | string {
         return simpleValidate(param, 'number')
     },
 
-    // si un número es par5
-    /**
-        @param {number} number
-    **/
-    isEven: function(number) {
+    /** Return true if the number is even */
+    isEven: function(number:number) {
         if(this.isNumber(number)) return number % 2 == 0
 
         else {
@@ -23,11 +20,8 @@ export const Validator = {
         }
     },
 
-    // si un número es impar
-    /**
-        @param {number} number
-    **/
-    isOdd: function(number) {
+    /** Return true if the number is odd */
+    isOdd: function(number:number): boolean | string {
         if(this.isNumber(number)) return number % 2 != 0
 
         else {
@@ -41,42 +35,42 @@ export const Validator = {
     /**
         @param {any} param
     **/
-    isBoolean: function(...param) {
+    isBoolean: function(...param: Array<any>): boolean {
         return simpleValidate(param, 'boolean')
     },
 
     /**
         @param {any} param
     **/
-    isString: function(...param) {
+    isString: function(...param: Array<any>): boolean {
         return simpleValidate(param, 'string')
     },
 
     /**
         @param {any} param
     **/
-    isObject: function(param) {
+    isObject: function(param:any): boolean {
         return typeof param === 'object' && !Array.isArray(param)
     },
 
     /**
         @param {any} param
     **/
-    isArray: function(param) {
+    isArray: function(param:any): boolean {
         return Array.isArray(param)
     },
 
     /**
         @param {any} param
     **/
-    isUndefined: function(param) {
+    isUndefined: function(param: any): boolean {
         return typeof param === 'undefined'
     },
 
     /**
         @param {object[]} object
     **/
-    containsString: function(object) {
+    containsString: function(object: Array<any>): boolean | string | undefined {
         let bool;
 
         if(this.isArray(object)) {
@@ -85,19 +79,18 @@ export const Validator = {
             for(let i = 0; i <= total - 1; i++) {
                 typeof object[i] === 'string' ? bool = true : bool = false
             }
+            
         }
-
-        else {
-            return "[x] containsString requires a object[]"
-        }
-
+        
+        else return "[x] containsString requires a object[]"
+        
         return bool
     },
 
     /**
         @param {object[]} object
     **/
-    containsNumber: function(object) {
+    containsNumber: function(object: Array<any>): boolean | string | undefined {
         let bool;
 
         if(this.isArray(object)) {
@@ -118,7 +111,7 @@ export const Validator = {
     /**
         @param {object[]} object
     **/
-    containsObject: function(object) {
+    containsObject: function(object: Array<any>): boolean | string | undefined {
         let bool;
 
         if(this.isArray(object)) {
@@ -139,7 +132,7 @@ export const Validator = {
     /**
         @param {object[]} object
     **/
-    containsArray: function(object) {
+    containsArray: function(object: Array<any>): boolean | string | undefined {
         let bool;
 
         if(this.isArray(object)) {
@@ -150,9 +143,7 @@ export const Validator = {
             }
         }
 
-        else {
-            return "[x] containsArray requires a object[]"
-        }
+        else return "[x] containsArray requires a object[]"
 
         return bool
     }
@@ -163,7 +154,7 @@ export const Validator = {
     @param {string} type
 **/
 
-function simpleValidate(param, type) {
+function simpleValidate(param: Array<any>, type:string): boolean {
     let bool = true
     
     if (Validator.containsArray(param) || Validator.containsObject(param)) {
