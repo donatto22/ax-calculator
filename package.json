@@ -4,7 +4,7 @@
   "description": "Complex Math Calculator",
   "main": "dist/main.js",
   "types": "dist",
-  "type" : "module",
+  "module": "commonjs",
   "scripts": {
     "test": "jest --config jest.config.json",
     "build": "tsc -p .",
