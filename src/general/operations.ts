@@ -3,8 +3,12 @@ import { Validator, Config } from "../main.js"
 export const Operations = {
     /** Returns the square root of the product of the sum of the squared sides of the triangle */
     hypotenuse: function(param1:number, param2:number) {
-        if(!Validator.isNumber(param1, param2))
-            return "[x] Operations.hypotenuse: This function requires numbers"
+        if(!Validator.isNumber(param1, param2)) {
+            let msg = Config().language == 'en' ? 
+            "This function requires numbers" : "Esta función requiere números"
+            
+            return "[x] Operations.hypotenuse: " + msg
+        }
 
         else {
             let result = Math.sqrt((param1 * param1) + (param2 * param2));
@@ -111,10 +115,10 @@ export const Operations = {
 
         return serie;
     },
+
     /**
         Returns the divisors of a number
     **/
-
     divisors: function(number: number): number[] | string {
         if(!Validator.isNumber(number)) {
             return "[x] Operations.divisors: Place a number"
@@ -123,6 +127,22 @@ export const Operations = {
         else {
             return _divisors(number);
         }
+    },
+
+    /**
+        Returns the factorial of a number
+    **/
+    factorial: function(number: number) {
+        return factorial(number, 1)
+    },
+
+    /**
+     * 4!! is difference to (4!)!
+
+    Returns the double factorial of a number 
+    **/
+    doubleFactorial: function(number: number) {
+        return factorial(number, 2)
     }
 }
 

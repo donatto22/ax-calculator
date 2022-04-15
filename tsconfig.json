@@ -1,10 +1,14 @@
 {
     "compilerOptions": {
+      "types": [
+        "./node_modules/user-agent-data-types"
+      ],
       "target": "ES5",
       "lib": ["ES5" ,"ES6", "DOM"],             
       "module": "CommonJS",
       "moduleResolution": "node",
       "outDir": "./dist/cjs",
+      "allowJs": true,
       "declaration": true,
       "declarationDir": "dist/types",
       "sourceMap": true,

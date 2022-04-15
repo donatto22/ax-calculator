@@ -27,11 +27,6 @@ yarn add ax-calculator
 
 - Import
 
-```html
-<!-- html -->
-<script type="module" src="index.js"></script>
-```
-
 ```js
 const ax = require('ax-calculator')
 
@@ -159,7 +154,7 @@ Operations.toRoman(420); // CDXX
 Operations.log(5, null, 4) // 625
 
 // 4!
-Operations.factorial(4); // 26
+Operations.factorial(4); // 24
 
 // 10!!
 Operations.doubleFactorial(10); // 3840
