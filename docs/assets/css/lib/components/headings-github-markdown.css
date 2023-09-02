@@ -1,0 +1,13 @@
+.heading-h1 {
+
+}
+
+.heading-h2 {
+    margin: .5em 0 1em;
+    padding-bottom: .3em;
+    border-bottom: 2px solid var(--default-shadow-gray);
+}
+
+.heading-h3 {
+
+}

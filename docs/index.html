@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="Donatto Minaya">
+    <meta name="description" content="Complex math calculator">
+    <meta name="keywords" content="calculator math ax-calculator numbers">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/lib/pages/index.css" type="text/css">
+    <!-- PrismJs css -->
+    <link rel="stylesheet" href="./assets/prismjs/prism.css">
+    <!-- Calculadora -->
+    <link rel="stylesheet" href="../src/browser-ui/toastr/toastr.css">
+    <!-- Buttons github -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <!-- Sweet alert -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+    <title>Ax&#45;calculator</title>
+</head>
+<body> 
+    <div id="toggle-menu">
+        <div id="action-menu">
+            <div id="icon-action" pointer>
+                <ion-icon name="close"></ion-icon>
+            </div>
+        </div>
+
+        <div id="links-menu">
+            <div id="links">
+                <div class="link">
+                    <ion-icon name="home"></ion-icon>
+                    <a href="https://donatto22.github.io/ax-calculator/">Home</a>
+                </div>
+
+                <div class="link">
+                    <ion-icon name="settings"></ion-icon>
+                    <a href="./pages/routes.html">Routes</a>
+                </div>
+                
+                <!-- <div class="link">
+                    <ion-icon name="book"></ion-icon>
+                    <a href="./pages/get_started.html">Get started</a>
+                </div> -->
+
+                <!-- <div class="link">
+                    <ion-icon name="people"></ion-icon>
+                    <a href="./pages/contributing.html">Contributing</a>
+                </div> -->
+
+                <!-- <div class="link">
+                    <ion-icon name="heart-empty"></ion-icon>
+                    <a onclick="swalSupport()">Support</a>
+                </div> -->
+            </div>
+        </div>
+    </div>
+
+    <nav id="nav" class="flex">
+        <div id="button-toggle-menu" pointer>
+            <ion-icon name="menu"></ion-icon>    
+        </div>
+
+        <div id="github-actions" class="flex">
+            <a class="github-button" href="https://github.com/donatto22/ax-calculator" data-size="large" data-icon="octicon-star" data-show-count="true" aria-label="Star donatto22/ax-calculator on GitHub">Star</a>
+            <a class="github-button" href="https://github.com/donatto22/ax-calculator/fork" data-size="large" data-icon="octicon-repo-forked" data-show-count="true" aria-label="Fork donatto22/ax-calculator on GitHub">Fork</a>
+            <a class="github-button" href="https://github.com/donatto22" data-size="large" data-show-count="true" aria-label="Follow @donatto22 on GitHub">Follow @donatto22</a>
+        </div>
+    </nav>
+
+    <div id="particles"></div>
+    
+    <div id="scrolling">
+        <header>
+            <div id="package">
+                <div id="package-min-description">
+                    <div id="package-name">
+                        <div id="min-head">
+                            <img src="./assets/images/logo.png" alt="logo">
+                            <span>4x&#45;calculator</span>
+                        </div>
+                        
+                        <div id="flags">
+                            <img src="https://img.shields.io/npm/v/ax-calculator?style=flat-square" alt="version">
+                            <img src="https://img.shields.io/npm/dt/ax-calculator?style=flat-square" alt="downloads">
+                        </div>
+                    </div>
+                    
+                </div>
+        
+                <div id="package-usage">
+                    <div id="usage">
+                        <h2 class="heading-h2">Install</h2>
+                        <div class="method-install">
+                            <span>using npm</span>
+        
+                            <pre>
+                                <code class="language-">npm i ax-calculator</code>
+                            </pre>
+                        </div>
+        
+                        <div class="method-install">
+                            <span>using yarn</span>
+        
+                            <pre>
+                                <code class="language-">yarn add ax-calculator</code>
+                            </pre>
+                        </div>
+                    </div>
+
+                    <div id="instalation">
+                        <h2 class="heading-h2">Importing</h2>
+                        <div class="method-install">
+                            <span>Import all</span>
+                            <pre>
+                                <code class="language-javascript">import * as ax from 'ax-calculator'</code>
+                            </pre>
+                        </div>
+
+                        <div class="method-install">
+                            <span>or in the dots, place the object you want to use</span>
+
+                            <pre>
+                                <code class="language-javascript">import { ... } from 'ax-calculator'</code>
+                            </pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>    
+
+    <footer id="footer">
+        <div id="min-footer">
+            <span>&copy; 2021 Ax-calculator</span>
+
+            <div id="footer-actions">
+                <a href="https://github.com/donatto22/ax-calculator">Source code</a>
+                <a href="https://github.com/donatto22">Contact</a>
+                <a href="https://toxicdoll.vercel.app">Discord bot</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./assets/js/toogle_menu.js"></script>
+    
+
+    <!-- Ionicons CDN -->
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+
+    <!-- Css variables created in javascript -->
+    <script src="./assets/js/variables.js"></script>
+
+    <!-- PrismJs js -->
+    <script src="./assets/prismjs/prism.js"></script>
+
+    <!-- Particles -->
+    <script src="./assets/particlesjs/particles.js"></script>
+    <script src="./assets/particlesjs/app.js"></script>
+
+    <!-- Button Support -->
+    <script src="./assets/js/swal.js"></script>
+    <script type="module" src="./assets/js/calculator.js"></script>
+</body>
+</html>

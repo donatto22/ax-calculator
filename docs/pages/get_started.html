@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/lib/pages/get_started.css">
+    <!-- PrismJs css -->
+    <link rel="stylesheet" href="../assets/prismjs/prism-coy.css">
+    <!-- Buttons github -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <!-- Sweet alert -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <title>Ax &verbar; Get Started</title>
+</head>
+<body>
+    <div id="toggle-menu">
+        <div id="action-menu">
+            <div id="icon-action" pointer>
+                <ion-icon name="close"></ion-icon>
+            </div>
+        </div>
+
+        <div id="links-menu">
+            <div id="links">
+                <div class="link">
+                    <ion-icon name="home"></ion-icon>
+                    <a href="../index.html">Home</a>
+                </div>
+
+                <div class="link">
+                    <ion-icon name="settings"></ion-icon>
+                    <a href="./routes.html">Routes</a>
+                </div>
+                
+                <div class="link">
+                    <ion-icon name="book"></ion-icon>
+                    <a href="./get_started.html">Get started</a>
+                </div>
+
+                <div class="link">
+                    <ion-icon name="people"></ion-icon>
+                    <a href="./contributing.html">Contributing</a>
+                </div>
+
+                <div class="link">
+                    <ion-icon name="heart-empty"></ion-icon>
+                    <a onclick="swalSupport()">Support</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav id="nav" class="flex" >
+        <div id="button-toggle-menu" pointer>
+            <ion-icon name="menu"></ion-icon>
+        </div>
+
+        <div id="github-actions" class="flex">
+            <a class="github-button" href="https://github.com/donatto22/ax-calculator" data-size="large" data-icon="octicon-star" data-show-count="true" aria-label="Star donatto22/ax-calculator on GitHub">Star</a>
+            <a class="github-button" href="https://github.com/donatto22/ax-calculator/fork" data-size="large" data-icon="octicon-repo-forked" data-show-count="true" aria-label="Fork donatto22/ax-calculator on GitHub">Fork</a>
+            <a class="github-button" href="https://github.com/donatto22" data-size="large" data-show-count="true" aria-label="Follow @donatto22 on GitHub">Follow @donatto22</a>
+        </div>
+    </nav>
+
+    <div id="particles"></div>
+
+    <div id="center-div">
+        <div id="get-started">
+            <h2 class="heading-h2">
+                After installing...
+            </h2>
+
+            <div class="desc">
+                <b>ES modules</b>
+
+                <p>You can import everything, such as only the object you need.</p>
+                <pre>
+                    <code class="language-javascript">
+                        import * as ax from 'ax-calculator'
+                    </code>
+                </pre>
+
+                <pre>
+                    <code class="language-javascript">
+                        import { ... } from 'ax-calculator'
+                    </code>
+                </pre>
+            </div>
+
+            <div class="desc">
+                <b>Browser</b>
+
+                <p>You will need an external file that imports the calculator, and specify that it is of module type.</p>
+                    
+                <pre>
+                        <code class="language-html">
+                        &lt;!DOCTYPE HTML&gt;
+                        &lt;html&gt;
+                        &lt;head&gt;
+                            &lt;script type="module" src="file.js"&gt;&lt;/script&gt;
+                        &lt;/head&gt;
+                            &lt;body&gt;
+                            &lt;/body&gt;
+                            &lt;/html&gt;
+                    </code>
+                </pre>
+            </div>
+
+            <div class="des">
+                <b>Usage</b>
+
+                <p>The code below is a small demonstration of the calculator. If you want to see the complete documentation visit <a href="./docs">here</a>.</p>
+
+                <pre>
+                    <code class="language-javascript">
+                        const chaining = new BasicOperations.Chaining()
+                        console.log(chaining.baseNumber(5).multiply(4).divide(2).value); // 10
+                        
+                        var array_x = [100, 90, 80, 45, 50, 50, 60, 40, 25, 20];
+                        var array_y = [3, 5, 9, 10, 20, 21, 24, 24, 27, 35];
+                        
+                        console.log(LinearRegression.simple(array_x, array_y));
+                        /*
+                        {
+                            a: -0.34788,
+                            b: 37.28128,
+                            equation: '-0.34788x + 37.28128',
+                            coefficient: [Function: coefficient]
+                        }
+                        */
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </div>
+
+    <footer id="footer">
+        <div id="min-footer">
+            <span>&copy; 2021 Ax-calculator</span>
+
+            <div id="footer-actions">
+                <a href="https://github.com/donatto22/ax-calculator">Source code</a>
+                <a href="https://github.com/donatto22">Contact</a>
+            </div>
+        </div>
+    </footer> 
+
+    <script src="../assets/js/toogle_menu.js"></script>
+
+    <!-- Ionicons CDN -->
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+
+    <!-- Css variables created in javascript -->
+    <script src="../assets/js/variables.js"></script>
+
+    <!-- PrismJs js -->
+    <script src="../assets/prismjs/prism-coy.js"></script>
+
+    <!-- Particles -->
+    <script src="../assets/particlesjs/particles.js"></script>
+    <script src="../assets/particlesjs/app.js"></script>
+
+    <!-- Button Support -->
+    <script src="./assets/js/swal.js"></script>
+</body>
+</html>

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="Donatto Minaya">
+    <meta name="description" content="Complex math calculator">
+    <meta name="keywords" content="calculator math ax-calculator numbers">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/lib/pages/routes.css">
+    <!-- PrismJs css -->
+    <link rel="stylesheet" href="../assets/prismjs/prism-coy.css">
+    <!-- Buttons github -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <!-- Sweet alert -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <title>Ax &verbar; Routes </title>
+</head>
+<body>
+    <div id="toggle-menu">
+        <div id="action-menu">
+            <div id="icon-action" pointer>
+                <ion-icon name="close"></ion-icon>
+            </div>
+        </div>
+
+        <div id="links-menu">
+            <div id="links">
+                <div class="link">
+                    <ion-icon name="home"></ion-icon>
+                    <a href="../index.html">Home</a>
+                </div>
+
+                <div class="link">
+                    <ion-icon name="settings"></ion-icon>
+                    <a href="./routes.html">Routes</a>
+                </div>
+                
+                <div class="link">
+                    <ion-icon name="book"></ion-icon>
+                    <a href="./get_started.html" new-element>Get started</a>
+                </div>
+
+                <div class="link">
+                    <ion-icon name="people"></ion-icon>
+                    <a href="./contributing.html">Contributing</a>
+                </div>
+
+                <div class="link">
+                    <ion-icon name="heart-empty"></ion-icon>
+                    <a onclick="swalSupport()">Support</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav id="nav" class="flex" >
+        <div id="button-toggle-menu" pointer>
+            <ion-icon name="menu"></ion-icon>
+        </div>
+
+        <div id="github-actions" class="flex">
+            <a class="github-button" href="https://github.com/donatto22/ax-calculator" data-size="large" data-icon="octicon-star" data-show-count="true" aria-label="Star donatto22/ax-calculator on GitHub">Star</a>
+            <a class="github-button" href="https://github.com/donatto22/ax-calculator/fork" data-size="large" data-icon="octicon-repo-forked" data-show-count="true" aria-label="Fork donatto22/ax-calculator on GitHub">Fork</a>
+            <a class="github-button" href="https://github.com/donatto22" data-size="large" data-show-count="true" aria-label="Follow @donatto22 on GitHub">Follow @donatto22</a>
+        </div>
+    </nav>
+
+    <div id="particles"></div>
+
+    <div id="center-div">
+        <div id="get-started">
+            <h2 class="heading-h2">
+                Routes
+            </h2>
+
+            <div class="card-notification-info">
+                <div class="card-title">
+                    This is not a real api
+                </div>
+
+                <div class="card-description">
+                    This page is static, however you are provided with all the routes to get the information you need quickly.
+                </div>
+            </div>
+
+            <div id="api-container">
+                <div id="list-api">
+                    <a href="#math"><b>Math</b></a>
+                    <a href="#browser"><b>Browser</b></a>
+                    <a href="#config"><b>Configuration</b></a>
+                </div>
+
+                <div id="list-api-routes">
+                    <span>Objects</span>
+
+                    <div class="category-list">
+                        <span class="category" id="math">
+                            Math
+                        </span>
+
+                        <div class="routes-list router-category">
+                            <div class="min-list">
+                                <div class="category">
+                                    Arithmetic
+                                </div>
+
+                                <div class="min-routes">
+                                    <a href="">Base</a>
+                                    <a href="">BasicOperations</a>
+                                    <a href="">Fractions</a>
+                                    <a href="">Percentage</a>
+                                    <a href="">Rule of three</a>
+                                </div>
+                            </div>
+
+                            <div class="min-list">
+                                <div class="category">
+                                    Algebra
+                                </div>
+
+                                <div class="min-routes">
+                                    <a href="">Equations</a>
+                                    <a href="">System of Equations</a>
+                                </div>
+                            </div>
+
+                            <div class="min-list">
+                                <div class="category">
+                                    Trigonometry
+                                </div>
+
+                                <div class="min-routes">
+                                    <a href="">Triangles</a>
+                                    <a href="">Angle Measurements</a>
+                                </div>
+                            </div>
+
+                            <div class="min-list">
+                                <div class="category">
+                                    Chemistry
+                                </div>
+
+                                <div class="min-routes">
+                                    <a href="">Chemical Elements</a>
+                                </div>
+                            </div>
+
+                            <div class="min-list">
+                                <div class="category">
+                                    Physics
+                                </div>
+
+                                <div class="min-routes">
+                                    <a href="">Vectors</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="category-list">
+                        <span class="category" id="browser">
+                            Browser
+                        </span>
+
+                        <div class="routes-list router-category">
+                            <div class="min-list">
+                                <div class="category">
+                                    Browser
+                                </div>
+
+                                <div class="min-routes">
+                                    <a href="">Browser</a>
+                                </div>
+                            </div>
+
+                            <div class="min-list">
+                                <div class="category">
+                                    BrowserUI
+                                </div>
+
+                                <div class="min-routes">
+                                    <a href="">Toastr</a>
+                                    <a href="">Tables</a>
+                                    <a href="" new-element>ColorsUI</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="category-list">
+                        <span class="category" id="config">
+                            Configuration
+                        </span>
+
+                        <div class="routes-list">
+                            <a href="">Config</a>
+                        </div>
+                    </div>
+
+                    <div class="category-list">
+                        <span class="category">
+                            Others
+                        </span>
+
+                        <div class="routes-list">
+                            <a href="">Clock</a>
+                            <a href="">Terminal Colors</a>
+                            <a href="">Validator</a>
+                            <a href="" comming-soon>History</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer id="footer">
+        <div id="min-footer">
+            <span>&copy; 2021 Ax-calculator</span>
+
+            <div id="footer-actions">
+                <a href="https://github.com/donatto22/ax-calculator">Source code</a>
+                <a href="https://github.com/donatto22">Contact</a>
+            </div>
+        </div>
+    </footer> 
+
+    <script src="../assets/js/toogle_menu.js"></script>
+
+    <!-- Ionicons CDN -->
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+
+    <!-- Css variables created in javascript -->
+    <script src="../assets/js/variables.js"></script>
+
+    <!-- PrismJs js -->
+    <script src="../assets/prismjs/prism-coy.js"></script>
+
+    <!-- Particles -->
+    <script src="../assets/particlesjs/particles.js"></script>
+    <script src="../assets/particlesjs/app.js"></script>
+
+    <!-- Button Support -->
+    <script src="../assets/js/swal.js"></script>
+</body>
+</html>

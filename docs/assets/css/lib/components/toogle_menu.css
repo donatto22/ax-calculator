@@ -1,0 +1,97 @@
+#toggle-menu {
+    min-width: 320px;
+    height: 100vh;
+    position: fixed;
+    background-color: var(--default-blue);
+    left: -320px;
+    transition: left .3s;
+    z-index: 10;
+    color: var(--default-white);
+}
+
+.toggle-active {
+    left: 0 !important;
+}
+
+nav, footer, #scrolling, #center-div {
+    filter: blur(var(--blur));
+    transition: filter .3s;
+}
+
+#action-menu {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    font-size: 2.3em;
+    height: var(--nav-height);
+    box-shadow: -1px 1px 0 var(--default-shadow-gray);
+}
+
+#icon-action {
+    display: flex;
+    align-items: center;
+    border-radius: 4px;
+    padding: .1em;
+    border: 1px solid var(--default-shadow-gray);
+    color: var(--default-shadow-gray);
+    margin-left: .3em;
+}
+
+#icon-action:hover {
+    background-color: var(--default-white);
+    color: var(--default-black);
+}
+
+#icon-action:active {
+    background-color: var(--blue-dark);
+    color: var(--default-white);
+}
+
+#links-menu a {
+    color: var(--default-white);
+    text-decoration: none;
+    display: block;
+}
+
+#links-menu a:visited {
+    color: var(--default-green);
+}
+
+#links-menu .link:not(:last-child) {
+    margin-bottom: 2em;
+}
+
+#links {
+    width: 90%;
+    margin: 2em auto;
+}
+
+.link {
+    display: flex;
+    align-items: center
+}
+
+.link:nth-last-child(1) {
+    color: var(--default-pink) !important;
+}
+
+.link a {
+    margin-bottom: -.4em;
+    margin-left: .5em;
+    color: var(--default-white) !important;
+    padding-bottom: .4em;
+}
+
+#links-menu a:hover {
+    box-shadow: 0 1px var(--default-white);
+}
+
+#links-menu .link:nth-last-child(1) a:hover {
+    box-shadow: 0 1px var(--default-pink);
+}
+
+@media screen and (min-width: 321px) {
+    #toggle-menu {
+        box-shadow: 4px 0 10px var(--default-black);
+    }
+}

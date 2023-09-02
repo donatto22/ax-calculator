@@ -1,0 +1,17 @@
+# documentation page
+docs/
+
+# testing
+__tests__/
+tests/
+jest.config.json
+
+# workflows
+.github/
+*.yml
+
+# src and tsconfig
+src/
+tsconfig.cjs.json
+tsconfig.json
+tsconfig-base.json

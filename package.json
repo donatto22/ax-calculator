@@ -1,0 +1,49 @@
+{
+  "name": "ax-calculator",
+  "version": "2.3.1",
+  "description": "Complex Math Calculator",
+  "types": "dist/main.d.ts",
+  "scripts": {
+    "test": "jest --config jest.config.json",
+    "build": "tsup src/main.ts --format cjs,esm --dts",
+    "clean": "del /s /q dist"
+  },
+  "keywords": [
+    "calculator",
+    "equations",
+    "math",
+    "trigonometry",
+    "algebra",
+    "geometry",
+    "fractions",
+    "percentages",
+    "operations",
+    "linear",
+    "regression",
+    "chemistry",
+    "elements",
+    "validator",
+    "clock",
+    "time",
+    "date"
+  ],
+  "main": "./dist/main.cjs",
+  "module": "./dist/main.js",
+  "browser": "./dist/main.js",
+  "author": "Donatto Minaya",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/donatto22/ax-calculator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/donatto22/ax-calculator/issues"
+  },
+  "homepage": "https://github.com/donatto22/ax-calculator#readme",
+  "devDependencies": {
+    "tsup": "^7.2.0",
+    "typescript": "^5.2.2",
+    "user-agent-data-types": "^0.3.1"
+  },
+  "type": "module"
+}

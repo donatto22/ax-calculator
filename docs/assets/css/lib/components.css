@@ -1,0 +1,17 @@
+/* Botones */
+@import url("./components/buttons.css");
+
+/* Nav */
+@import url("./components/nav.css");
+
+/* Footer */
+@import url("./components/footer.css");
+
+/* Headings */
+@import url("./components/headings-github-markdown.css");
+
+/* Toogle menu */
+@import url("./components/toogle_menu.css");
+
+/* Cards notification */
+@import url("./components/cards-notification.css");

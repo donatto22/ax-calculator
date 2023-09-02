@@ -1,0 +1,181 @@
+/* Nunito */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+*, *:after, *:before {
+    box-sizing: border-box;
+    user-select: none;
+}
+
+* pre *, * code * {
+    user-select: text !important;
+}
+
+:root {
+    --red-dark: #ea2c1a;
+    --blue-dark: #0f283d;
+}
+
+:root {
+    --default-purple: #373295;
+    --default-white: #fcfcfc;
+    --default-black: #404040;
+    --default-blue: #1B3C59;
+    --default-green: #9bd4ae;
+    --default-orange: #eb9e5c;
+    --default-yellow: #F0F0A8;
+    --default-pink: #F2A999;
+    --default-red: #f84e3f;
+    --default-shadow-gray: #a6a6a6;
+
+}
+
+:root {
+    --height-general: calc(100vh - var(--nav-height) - var(--footer-height));
+}
+
+/* the same color but more clear */
+:root {
+    --shadow-clear: #d9d9d9;
+    --red-clear: #fde9e7;
+    --white-clear: #fafafa;
+    --orange-clear: #ffc999;
+    --yellow-clear: #ffff80;
+}
+
+body {
+    scroll-behavior: smooth;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    color: var(--default-black);
+    font-family: "Nunito";
+    background-color: #f2f2f2;
+}
+
+img {
+    width: 100%;
+    pointer-events: none;
+    vertical-align: middle;
+}
+
+a, li, ul, ol {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+}
+
+a {
+    color: var(--default-green);
+    text-decoration: underline;
+    cursor: pointer !important;
+    width: fit-content;
+}
+
+label {
+    display: block;
+}
+
+input {
+    outline: none;
+    display: block;
+}
+
+[pointer] {
+    cursor: pointer;
+}
+
+#center-div {
+    border-radius: 8px;
+    margin: 2em 0;
+    width: 80%;
+    align-self: center;
+    background-color: var(--default-white);
+    /* height: calc(100vh - var(--nav-height) - var(--footer-height) - 2em); */
+    box-shadow: 0 0 10px -6px var(--default-shadow-gray);
+} 
+
+#particles {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.particles-effect {
+    z-index: 5 !important;
+}
+
+nav, footer {
+    background-color: var(--default-white);
+}
+
+pre {
+    overflow-y: scroll;
+    font-size: 14px !important;
+}
+
+code {
+    border-radius: 4px;
+}
+
+pre::before, pre::after {
+    box-shadow: 0 0 1px black !important;
+    display: none !important;
+}
+
+
+@media screen and (min-width: 768px) {
+    #get-started {
+        margin: 2em auto;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    #get-started {
+        margin: 2.5em auto;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    #center-div {
+        width: 80%;
+    }
+}
+
+a[new-element]::after, a[not-used-element]::after, a[comming-soon]::after {
+    display: inline-block;
+    padding: .2em .4em;
+    margin: -2em 0;
+    margin-left: .3em;
+    text-decoration: none;
+    color: white;
+    border-radius: 4px;
+}
+
+a[new-element]::after {
+    background-color:var(--default-red);
+    content: 'New';
+}
+
+a[not-used-element]::after {
+    background-color:var(--default-shadow-gray);
+    content: 'Not in use'
+}
+
+a[comming-soon]::after{
+    background-color:var(--default-pink);
+    content: 'Comming soon...'
+}
+
+.swal2-icon-content {
+    font-size: 2.7em !important;
+    margin-top: 8px;
+    margin-left: 1px;
+}
+
+.flex {
+    display: flex;
+}

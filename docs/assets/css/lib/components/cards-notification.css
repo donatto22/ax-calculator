@@ -1,0 +1,29 @@
+.card-notification-info {
+    border-radius: 0.25em;
+    border: 1px solid #e9ecef;
+    border-left-width: 0.25em;    
+    border-left-color: #5bc0de;
+    padding: 1.5em 2em;
+}
+
+.card-notification-warning {
+    border-radius: 0.25em;
+    border: 1px solid #e9ecef;
+    border-left-width: 0.25em;
+    border-left-color: var(--default-yellow);
+    min-height: 20px;
+}
+
+.card-notification-danger {
+    border-radius: 0.25em;
+    border: 1px solid #e9ecef;
+    border-left-width: 0.25em;
+    border-left-color: var(--default-red);
+    min-height: 20px;
+}
+
+.card-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+}

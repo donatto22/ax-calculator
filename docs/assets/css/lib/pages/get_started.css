@@ -1,0 +1,13 @@
+@import url("../../styles.css");
+
+
+#get-started {
+    padding: .3em 1em;
+    width: 90%;
+    margin: 1.5em auto;
+    /* height: calc(var(--height-general) - 9em); */
+}
+
+.desc:not(:last-child) {
+    margin-bottom: 2em;
+}

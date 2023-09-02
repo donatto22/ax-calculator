@@ -1,0 +1,132 @@
+@import url("../../styles.css");
+
+#min-head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#min-head img {
+    width: 130px;
+}
+
+#min-head span {
+    margin: .3em 0;
+}
+
+#package {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#package > div:not(:last-child) {
+    margin: 1em 0;
+}
+
+#package-name {
+    height: calc(100vh - 70vh);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content:center;
+    font-size: 2.5em;
+}
+
+.method-install {
+    display: flex;
+    flex-direction: column;
+}
+
+.method-install:not(:last-child) {
+    margin-bottom: 1em;
+}
+
+#usage code:before {
+    content: '$ ';
+}
+
+#flags {
+    display: flex;
+    margin-top: .3em;
+}
+
+#flags img {
+    width: auto;
+    border-radius: 4px;
+}
+
+#flags img:not(:last-child) {
+    margin-right: 5px;
+}
+
+blockquote {
+    background-color: #eee;
+    margin: 0;
+    border-radius: .3em;
+    display: flex;
+    align-items: center;
+    font-style: italic;
+}
+
+#fake-shadow {
+    border-top-left-radius: 0.3em;
+    border-bottom-left-radius: 0.3em;
+    margin-right: 1em;
+    padding: 1.5em 0;
+    background-color: #ccc;
+    width: 5px;
+}
+
+@media screen and (max-width: 1024px) {
+    #package-usage > div {
+        margin-bottom: 2em;
+    }
+}
+
+@media screen and (min-width: 320px) {
+    #min-head img {
+        width: 100px;
+    }
+
+    #min-head span {
+        margin: .2em 0;
+    }
+
+    #package-name {
+        font-size: 2em;
+    }    
+}
+
+@media screen and (min-width: 600px) {
+    #package {
+        width: 75%;
+    }
+
+    #package-name {
+        height: calc(100vh - 65vh);
+        font-size: 3em;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    #package-usage {
+        display: flex;
+    }
+
+    #package-usage > div {
+        margin: 0 auto;
+        min-width: 300px;
+    }
+
+    #package-usage > div:not(:last-child) {
+        margin-right: 10px;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    #package-usage > div {
+        margin: 0 auto;
+        width: 40%;
+    }
+}
