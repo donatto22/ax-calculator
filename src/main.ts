@@ -10,6 +10,7 @@ export { RuleOfThree } from './arithmetic/rule_three.js'
 export { Percentage } from './arithmetic/percentage.js'
 export { Fractions } from './arithmetic/fractions.js'
 export { Base } from './arithmetic/base.js'
+export { LinearCongruences } from './arithmetic/LinearCongruences.js'
 
 // Chemistry
 export { ChemicalElements } from './chemistry/chemicalElements.js'

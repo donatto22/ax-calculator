@@ -11,7 +11,15 @@
 </p>
 
 ## Last added feature
-- [Package updated (2.0.0)](https://github.com/donatto22/ax-calculator/releases/tag/2.0.0)
+### LinearCongruences
+```js
+// 7x = 1 mod 10
+LinearCongruence.simple(7, 1, 10) // x = [3]
+
+// find values between 0 and 20, by default is 10
+// now 'x' have two values
+LinearCongruence.simple(7, 1, 10, 20) // x = [3, 13]
+```
 
 ### Instalation
 
@@ -25,12 +33,15 @@ yarn
 yarn add ax-calculator
 ```
 
-- Import
+- Import / Require
 
 ```js
-const ax = require('ax-calculator')
+//esm
+import * as ax from 'ax-calculator'
+import { ... } from 'ax-calculator
 
-// In the dots you will place the object you want to use
+//cjs
+const ax = require('ax-calculator')
 const { ... } = require('ax-calculator')
 ```
 
