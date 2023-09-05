@@ -11,14 +11,14 @@
 </p>
 
 ## Last added feature
-### LinearCongruences
+### RegexValidator
 ```js
-// 7x = 1 mod 10
-LinearCongruence.simple(7, 1, 10) // x = [3]
+RegexValidator.onlyLetters().test('abc') // true
+RegexValidator.onlyNumbers().test('123') // true
+RegexValidator.onlyLettersAndNumbers().test('abc12') // true
 
-// find values between 0 and 20, by default is 10
-// now 'x' have two values
-LinearCongruence.simple(7, 1, 10, 20) // x = [3, 13]
+RegexValidator.onlyLetters({ capitalize: true }).test('abcABC') // true
+
 ```
 
 ### Instalation

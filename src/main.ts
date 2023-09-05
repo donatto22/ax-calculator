@@ -30,6 +30,7 @@ export { Triangles } from './trigonometry/triangles.js'
 export { Validator } from './other/Validator.js'
 export { Config } from './other/Config.js'
 export { Clock } from './other/Clock.js'
+export { RegexValidator } from './other/RegexValidator.js'
 
 // Browser
 // export { BrowserUI } from './browser-ui/browser_ui';

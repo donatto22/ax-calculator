@@ -1,6 +1,6 @@
 {
   "name": "ax-calculator",
-  "version": "2.3.1",
+  "version": "2.3.3",
   "description": "Complex Math Calculator",
   "types": "dist/main.d.ts",
   "scripts": {
