@@ -1,6 +1,6 @@
 {
   "name": "ax-calculator",
-  "version": "2.3.3",
+  "version": "2.3.5",
   "description": "Complex Math Calculator",
   "types": "dist/main.d.ts",
   "scripts": {
@@ -9,23 +9,15 @@
     "clean": "del /s /q dist"
   },
   "keywords": [
-    "calculator",
     "equations",
     "math",
-    "trigonometry",
+    "mathemathics",
     "algebra",
-    "geometry",
-    "fractions",
     "percentages",
-    "operations",
-    "linear",
-    "regression",
-    "chemistry",
     "elements",
     "validator",
-    "clock",
     "time",
-    "date"
+    "regex"
   ],
   "main": "./dist/main.cjs",
   "module": "./dist/main.js",
