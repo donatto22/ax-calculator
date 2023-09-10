@@ -1,6 +1,10 @@
 # documentation page
 docs/
 
+# no minified files
+dist/main.cjs
+dist/main.js
+
 # testing
 __tests__/
 tests/

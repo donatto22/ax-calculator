@@ -1,11 +1,15 @@
 {
   "name": "ax-calculator",
-  "version": "2.3.5",
+  "version": "2.3.6",
   "description": "Complex Math Calculator",
   "types": "dist/main.d.ts",
   "scripts": {
     "test": "jest --config jest.config.json",
-    "build": "tsup src/main.ts --format cjs,esm --dts",
+    "build": "tsup src/main.ts --format cjs,esm --dts ",
+    "minify-js": "terser dist/main.js -o dist/main.min.js",
+    "minify-cjs": "terser dist/main.cjs -o dist/main.min.cjs",
+    "minify-all": "npm run minify-js && npm run minify-cjs",
+    "build-and-minify": "npm run build && npm run minify-all",
     "clean": "del /s /q dist"
   },
   "keywords": [
@@ -36,6 +40,10 @@
     "tsup": "^7.2.0",
     "typescript": "^5.2.2",
     "user-agent-data-types": "^0.3.1"
+  },
+  "funding": {
+    "type": "Github Sponsors",
+    "url": "https://github.com/sponsors/donatto22"
   },
   "type": "module"
 }

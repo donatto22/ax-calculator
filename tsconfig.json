@@ -8,6 +8,5 @@
     "skipLibCheck": true,
     "noUncheckedIndexedAccess": true,
     "noEmit": true
-    
   }
 }

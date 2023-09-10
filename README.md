@@ -13,12 +13,26 @@
 ## Last added feature
 ### RegexValidator
 ```js
-RegexValidator.onlyLetters().test('abc') // true
-RegexValidator.onlyNumbers().test('123') // true
-RegexValidator.onlyLettersAndNumbers().test('abc12') // true
-
 RegexValidator.onlyLetters({ capitalize: true }).test('abcABC') // true
 
+const example = RegexValidator.onlyLetters({
+  length: {
+    minvalue: 3,
+    maxvalue: 10,
+  }
+})
+
+console.log(example.test('ab')) // false
+console.log(example.test('abc123')) // true
+
+// in this examle, words with 2 and 4 letters are allowed
+// you can put other and more values if you need
+RegexValidator.implicitLength(2, 4).test('ab') // true
+RegexValidator.implicitLength(2, 4).test('abc123') // false, don't have 2 or 4 characters
+
+// text that contains something
+RegexValidator.coincidence('abc').test('ab1') // false
+RegexValidator.coincidence('abc').test('hello abc') // true
 ```
 
 ### Instalation

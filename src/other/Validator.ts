@@ -109,10 +109,11 @@ export const Validator = {
     },
 
     /**
-        @param {object[]} object
+        @param { Array } object Put an array, this functions validate if this array contains objects.
+        Remember that objects are differents from arrays
     **/
-    containsObject: function(object: Array<any>): boolean | string | undefined {
-        let bool;
+    containsObject: function(object: Array<any>): boolean {
+        let bool: boolean = false
 
         if(this.isArray(object)) {
             let total = object.length
@@ -120,38 +121,37 @@ export const Validator = {
             for(let i = 0; i <= total - 1; i++) {
                 typeof object[i] === 'object' && !this.isArray(object[i]) ? bool = true : bool = false
             }
-        }
 
-        else {
-            return "[x] containsObject requires a object[]"
+            return bool
         }
-
-        return bool
+        
+        else throw new Error('[x] containsObject requires an Array')
     },
 
     /**
-        @param {object[]} object
+        @param { Array } object Put an array, this functions validate if this array contains others arrays
     **/
-    containsArray: function(object: Array<any>): boolean | string | undefined {
-        let bool;
-
+    containsArray: function(object: Array<any>): boolean {
+        let bool: boolean = false
+        
         if(this.isArray(object)) {
             let total = object.length
 
             for(let i = 0; i <= total - 1; i++) {
                 this.isArray(object[i]) ? bool = true : bool = false
             }
+
+            return bool
         }
 
-        else return "[x] containsArray requires a object[]"
+        else throw new Error("[x] containsArray requires an Array")
 
-        return bool
     }
 }
 
 /**
-    @param {object[]} param
-    @param {string} type
+    @param param Put an array, no matter what it has
+    @param type you decide what type do you want to validate like "String", "Number", or others
 **/
 
 function simpleValidate(param: Array<any>, type:string): boolean {
