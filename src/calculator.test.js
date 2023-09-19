@@ -1,10 +1,5 @@
 import { RegexValidator } from '../dist/main.js' 
 
-const test = RegexValidator.onlyLetters({
-    length: {
-        minvalue: 0,
-        maxvalue: 3
-    }
-}).test('axxc')
+const prueba = RegexValidator.onlyLetters(Animation.apply(1, 2))
 
-console.log(test)
+console.log(prueba.test('abc '))

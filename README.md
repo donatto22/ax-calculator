@@ -11,28 +11,18 @@
 </p>
 
 ## Last added feature
-### RegexValidator
+### RegexValidator, you can use for validate inputs or form
 ```js
-RegexValidator.onlyLetters({ capitalize: true }).test('abcABC') // true
-
-const example = RegexValidator.onlyLetters({
-  length: {
-    minvalue: 3,
-    maxvalue: 10,
-  }
-})
-
-console.log(example.test('ab')) // false
-console.log(example.test('abc123')) // true
-
-// in this examle, words with 2 and 4 letters are allowed
-// you can put other and more values if you need
-RegexValidator.implicitLength(2, 4).test('ab') // true
-RegexValidator.implicitLength(2, 4).test('abc123') // false, don't have 2 or 4 characters
-
-// text that contains something
-RegexValidator.coincidence('abc').test('ab1') // false
-RegexValidator.coincidence('abc').test('hello abc') // true
+const form = {
+  name: RegexValidator.onlyLetters({ capitalize: true, length: { minvalue: 5, maxvalue: 30 } }),
+  lastname: RegexValidator.onlyLetters({ capitalize: true, length: { minvalue: 5, maxvalue: 30 } }),
+  phone: RegexValidator.onlyNumbers(),
+  // if the email doesn't contains '@gmail.com' returns false
+  email: RegexValidator.coincidence("@gmail.com", "@outlook.com"),
+  address: RegexValidator.onlyLettersAndNumbers({ capitalize: true, allowSpacing: true }),
+  // is obligatory to have only 2 values, 3 or 1 returns false
+  age: RegexValidator.implicitLength(2) 
+}
 ```
 
 ### Instalation

@@ -6,33 +6,43 @@ export const RegexValidator = {
      */
     onlyLetters: function (object: {
         capitalize: boolean,
+        allowSpacing: boolean,
         length: {
-            minvalue: Number,
-            maxvalue: Number
+            minvalue: Number, maxvalue: Number
         }
     }) {
-        if(object.length !== undefined) {
-            return object.capitalize ? 
-            new RegExp(`^[a-zA-Z]{${object.length.minvalue},${object.length.maxvalue}}$`) : 
-            new RegExp(`^[a-z]{${object.length.minvalue},${object.length.maxvalue}}$`)
-        } else return object.capitalize ? /^[a-zA-Z]+$/ : /^[a-z]+$/
+        if(object?.length !== undefined) {
+            return object?.capitalize ? 
+            new RegExp(`^[a-zA-Z]{${object?.length.minvalue},${object?.length.maxvalue}}$`) : 
+            new RegExp(`^[a-z]{${object?.length.minvalue},${object?.length.maxvalue}}$`)
+        } else return object?.capitalize ? /^[a-zA-Z]+$/ : /^[a-z]+$/
     },
 
     /**
      * @returns The regex pattern that allows only numbers
      */
-    onlyNumbers: function () {
+    onlyNumbers: function (object: {
+        length: {
+            minvalue: Number,
+            maxvalue: Number
+        }
+    }) {
         return /^\d+$/
     },
 
     /**
      * @param capitalize If true, you allos capital letters
+     * @param allowSpacing allow white space
      * @returns The regex pattern that allows letters and numbers
      */
     onlyLettersAndNumbers: function (object: {
-        capitalize: boolean
+        capitalize: boolean, allowSpacing: boolean
     }) {
-        return object?.capitalize ? /[a-zA-Z0-9]+$/ : /[a-z0-9]+$/
+        if (object?.capitalize == true) {
+            return object?.allowSpacing ? /[a-zA-Z0-9\s]+$/ : /[a-zA-Z0-9]$/
+        } else {
+            return object?.allowSpacing ? /[a-z0-9\s]+$/ : /[a-z0-9]$/
+        }
     },
 
     /**
@@ -87,7 +97,8 @@ export const RegexValidator = {
      * @returns The regex pattern
      * @example RegexValidator.coicidence('abc').test('Hello abc') // true
      */
-    coindicence: function (text: string) {
-        return new RegExp(`/${text}/`)
+    coindicence: function (...patterns: Array<String>) {
+        const sentence = patterns.map(p => `(${p})`).join('|')
+        return new RegExp(sentence)
     }
 }
