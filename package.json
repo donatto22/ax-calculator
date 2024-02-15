@@ -23,9 +23,9 @@
     "time",
     "regex"
   ],
-  "main": "./dist/main.cjs",
-  "module": "./dist/main.js",
-  "browser": "./dist/main.js",
+  "main": "./dist/main.min,cjs",
+  "module": "./dist/main.min.js",
+  "browser": "./dist/main.min.js",
   "author": "Donatto Minaya",
   "license": "Apache-2.0",
   "repository": {
